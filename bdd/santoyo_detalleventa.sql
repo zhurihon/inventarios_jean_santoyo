@@ -16,30 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `producto`
+-- Table structure for table `detalleventa`
 --
 
-DROP TABLE IF EXISTS `producto`;
+DROP TABLE IF EXISTS `detalleventa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `producto` (
-  `cod` varchar(16) NOT NULL,
-  `nombre` varchar(64) NOT NULL,
-  `cantidad` double DEFAULT '0',
-  `precio` float DEFAULT NULL,
-  `tipo` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`cod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `detalleventa` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `idproducto` varchar(45) DEFAULT NULL,
+  `idventa` int DEFAULT NULL,
+  `cantidad` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `producto`
+-- Dumping data for table `detalleventa`
 --
 
-LOCK TABLES `producto` WRITE;
-/*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES ('H1','Esmeril',0,12,'Herramienta');
-/*!40000 ALTER TABLE `producto` ENABLE KEYS */;
+LOCK TABLES `detalleventa` WRITE;
+/*!40000 ALTER TABLE `detalleventa` DISABLE KEYS */;
+INSERT INTO `detalleventa` VALUES (9,'H1',45,1),(10,'H1',46,1);
+/*!40000 ALTER TABLE `detalleventa` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

@@ -98,6 +98,20 @@ Module conexion
         End Function
 
 
+        Public Function consulta_cliente() As DataSet
+            miconexion.Open()
+
+            Dim llamada As New MySqlDataAdapter("SELECT * FROM santoyo.cliente", miconexion)
+
+            Dim datos_recebidos As New DataSet
+
+            llamada.Fill(datos_recebidos, "prod")
+
+            miconexion.Close()
+
+            Return datos_recebidos
+        End Function
+
 
         Public Function registrar_producto(cod As String, nombre As String, precio As Double, tipo As String) As Boolean
             Try
@@ -1259,6 +1273,59 @@ ORDER BY total_ventas DESC;", miconexion)
                 End If
             End Try
         End Function
+
+
+
+
+
+
+        Public Function Facturacion(suplies As DataSet,
+                                    cliente As Integer,
+                                    servicio As Double,
+                                    descripcion As String,
+                                    valor As Double
+                                    ) As Boolean
+            Try
+                miconexion.Open()
+
+
+
+                Dim comandoVenta As New MySqlCommand("INSERT INTO santoyo.ventas (cliente,valor, fechaventa,descripcion) VALUES (@cliente, @valor, @fechaventa, @descripcion); SELECT LAST_INSERT_ID() AS NewID;", miconexion)
+                comandoVenta.Parameters.AddWithValue("@cliente", cliente)
+                comandoVenta.Parameters.AddWithValue("@valor", valor)
+                comandoVenta.Parameters.AddWithValue("@fechaventa", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"))
+                comandoVenta.Parameters.AddWithValue("@descripcion", descripcion)
+                Dim idventa As Integer = Convert.ToInt32(comandoVenta.ExecuteScalar())
+
+                For Each row As DataRow In suplies.Tables(0).Rows
+                    ' Recorrer cada columna de la fila
+
+                    Dim comandoDetalle As New MySqlCommand("INSERT INTO detalleventa (idproducto, idventa, cantidad) VALUES (@idproducto, @idventa, @cantidad);", miconexion)
+                        comandoDetalle.Parameters.AddWithValue("@idproducto", row(0).ToString())
+                        comandoDetalle.Parameters.AddWithValue("@idventa", idventa)
+                        comandoDetalle.Parameters.AddWithValue("@cantidad", row(3))
+                        comandoDetalle.ExecuteNonQuery()
+                    Next
+
+                Return 1
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+                Return Nothing
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
+
+
+
+
+
+
+
+
+
 
     End Class
 End Module

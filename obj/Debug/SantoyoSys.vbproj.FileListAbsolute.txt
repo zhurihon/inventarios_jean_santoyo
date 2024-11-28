@@ -42,3 +42,4 @@ C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.exe
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.xml
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.pdb
+C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.FormInputCantidad.resources

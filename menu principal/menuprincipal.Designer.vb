@@ -50,7 +50,7 @@ Partial Class menuprincipal
         Me.btn_compras.BackColor = System.Drawing.Color.White
         Me.btn_compras.FlatAppearance.BorderSize = 0
         Me.btn_compras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_compras.Font = New System.Drawing.Font("Elephant", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_compras.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_compras.ForeColor = System.Drawing.Color.Black
         Me.btn_compras.Location = New System.Drawing.Point(12, 87)
         Me.btn_compras.Name = "btn_compras"
@@ -78,14 +78,14 @@ Partial Class menuprincipal
         Me.btn_ventas.BackColor = System.Drawing.Color.White
         Me.btn_ventas.FlatAppearance.BorderSize = 0
         Me.btn_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_ventas.Font = New System.Drawing.Font("Elephant", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_ventas.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_ventas.ForeColor = System.Drawing.Color.Black
         Me.btn_ventas.Location = New System.Drawing.Point(12, 126)
         Me.btn_ventas.Name = "btn_ventas"
         Me.btn_ventas.Size = New System.Drawing.Size(129, 33)
         Me.btn_ventas.TabIndex = 8
-        Me.btn_ventas.Text = "Ventas"
-        Me.btn_ventas.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btn_ventas.Text = "Facturación"
+        Me.btn_ventas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_ventas.UseVisualStyleBackColor = False
         '
         'btn_productos
@@ -93,13 +93,13 @@ Partial Class menuprincipal
         Me.btn_productos.BackColor = System.Drawing.Color.White
         Me.btn_productos.FlatAppearance.BorderSize = 0
         Me.btn_productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_productos.Font = New System.Drawing.Font("Elephant", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_productos.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_productos.ForeColor = System.Drawing.Color.Black
         Me.btn_productos.Location = New System.Drawing.Point(12, 165)
         Me.btn_productos.Name = "btn_productos"
         Me.btn_productos.Size = New System.Drawing.Size(129, 33)
         Me.btn_productos.TabIndex = 9
-        Me.btn_productos.Text = "Productos"
+        Me.btn_productos.Text = "Registro"
         Me.btn_productos.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btn_productos.UseVisualStyleBackColor = False
         '
@@ -108,7 +108,7 @@ Partial Class menuprincipal
         Me.btn_proveedores.BackColor = System.Drawing.Color.White
         Me.btn_proveedores.FlatAppearance.BorderSize = 0
         Me.btn_proveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_proveedores.Font = New System.Drawing.Font("Elephant", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_proveedores.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_proveedores.ForeColor = System.Drawing.Color.Black
         Me.btn_proveedores.Location = New System.Drawing.Point(12, 243)
         Me.btn_proveedores.Name = "btn_proveedores"
@@ -123,7 +123,7 @@ Partial Class menuprincipal
         Me.Button2.BackColor = System.Drawing.Color.White
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Elephant", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
         Me.Button2.Location = New System.Drawing.Point(12, 282)
         Me.Button2.Name = "Button2"
@@ -188,7 +188,7 @@ Partial Class menuprincipal
         Me.Button3.BackColor = System.Drawing.Color.White
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Elephant", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
         Me.Button3.Location = New System.Drawing.Point(12, 204)
         Me.Button3.Name = "Button3"

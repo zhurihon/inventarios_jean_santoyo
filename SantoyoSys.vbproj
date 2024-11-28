@@ -202,6 +202,12 @@
     <Compile Include="menu principal\Ventas\Cuadro de Ventas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="menu principal\Ventas\dialog\FormInputCantidad.Designer.vb">
+      <DependentUpon>FormInputCantidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Ventas\dialog\FormInputCantidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Comprobaciones.vb" />
     <Compile Include="Modulos\Generador de código.vb" />
     <Compile Include="Modulos\reportes.vb" />
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menu principal\Ventas\Cuadro de Ventas.resx">
       <DependentUpon>Cuadro de Ventas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Ventas\dialog\FormInputCantidad.resx">
+      <DependentUpon>FormInputCantidad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
