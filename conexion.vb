@@ -1009,6 +1009,40 @@ WHERE p.cod LIKE @buscarTexto OR p.nombre LIKE @buscarTexto"
             End Try
 
         End Function
+        Public Function dataset_facturas() As DataSet
+
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("SELECT 
+    v.id AS id_venta,
+    c.Nombre AS nombre_cliente,
+    c.Telefono AS telefono_cliente,
+    v.descripcion AS descripcion_venta,
+    v.valor AS valor_venta,
+    v.fechaventa AS fecha_venta,
+    dv.idproducto AS id_producto,
+    dv.cantidad AS cantidad_producto
+FROM 
+    ventas v
+INNER JOIN 
+    cliente c ON v.cliente = c.id
+INNER JOIN 
+    detalleventa dv ON v.id = dv.idventa;", miconexion)
+                Dim llamada As New MySqlDataAdapter(comando)
+                Dim dt As New DataSet
+                llamada.Fill(dt, "r")
+                miconexion.Close()
+                Return dt
+
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+
+        End Function
 
         Public Function dataset_10ProductosMenosVendidos() As DataSet
             Try

@@ -7,6 +7,7 @@
 
     Public Sub load_inventario()
 
+        tabla.DataSource = controller.sql.consulta_productos.Tables(0)
 
 
     End Sub
@@ -16,7 +17,7 @@
 
         If txtBuscador.BackColor = Color.White Then
 
-            tabla.DataSource = controller.sql.search_dataset_productos(txtBuscador.Text, tipo_consulta, cb_finicio.Checked, dtp_desde.Value, cb_ffin.Checked, dtp_fin.Value).Tables(0)
+            'tabla.DataSource = controller.sql.search_dataset_productos(txtBuscador.Text, tipo_consulta, cb_finicio.Checked, dtp_desde.Value, cb_ffin.Checked, dtp_fin.Value).Tables(0)
 
 
         End If
@@ -32,7 +33,7 @@
     End Sub
 
 
-    Private Sub rb_ventas_CheckedChanged(sender As Object, e As EventArgs) Handles rb_ventas.CheckedChanged
+    Private Sub rb_ventas_CheckedChanged(sender As Object, e As EventArgs)
         tipo_consulta = 2
         fbuscar()
 
@@ -40,7 +41,7 @@
 
     End Sub
 
-    Private Sub rb_compras_CheckedChanged(sender As Object, e As EventArgs) Handles rb_compras.CheckedChanged
+    Private Sub rb_compras_CheckedChanged(sender As Object, e As EventArgs)
         tipo_consulta = 3
         fbuscar()
 
@@ -67,7 +68,7 @@
         fbuscar()
     End Sub
 
-    Private Sub rb_inv_Click(sender As Object, e As EventArgs) Handles rb_inv.Click
+    Private Sub rb_inv_Click(sender As Object, e As EventArgs)
         tipo_consulta = 1
 
         ' Antes de llenar la Grilla poner este codigo
@@ -102,11 +103,11 @@
 
     End Function
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
         reportarExcel()
     End Sub
 
-    Private Sub Panel3_Click(sender As Object, e As EventArgs) Handles Panel3.Click
+    Private Sub Panel3_Click(sender As Object, e As EventArgs)
         reportarExcel()
     End Sub
 
@@ -165,5 +166,22 @@
 
     Private Sub UltimasComprasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UltimasComprasToolStripMenuItem.Click
         tabla.DataSource = controller.sql.dataset_UltimaCompraPorProveedorConProducto.Tables(0)
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub cb_typo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_typo.SelectedIndexChanged
+
+
+        Select Case cb_typo.Text
+            Case "Stock"
+                tabla.DataSource = controller.sql.consulta_productos.Tables(0)
+
+            Case "Facturas"
+                tabla.DataSource = controller.sql.dataset_facturas.Tables(0)
+
+        End Select
     End Sub
 End Class

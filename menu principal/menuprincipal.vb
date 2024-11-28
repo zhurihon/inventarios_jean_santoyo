@@ -206,8 +206,8 @@ Public Class menuprincipal
 
     Private Sub btn_proveedores_Click(sender As Object, e As EventArgs) Handles btn_proveedores.Click
         ocultar_paneles()
-        ventana_proveedor.Visible = 1
-        proveedor.mostrar_proveedores()
+        'ventana_proveedor.Visible = 1
+        'proveedor.mostrar_proveedores()
     End Sub
 
 
