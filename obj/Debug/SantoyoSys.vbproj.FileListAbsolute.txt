@@ -1,4 +1,3 @@
-C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\bin\Debug\Reporte plantilla.xlsx
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\bin\Debug\SantoyoSys.exe.config
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\bin\Debug\SantoyoSys.exe
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\bin\Debug\SantoyoSys.pdb
@@ -43,3 +42,4 @@ C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.xml
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.pdb
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.FormInputCantidad.resources
+C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\bin\Debug\Reporte.xlsx

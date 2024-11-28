@@ -20,7 +20,7 @@ Public Class menuprincipal
     Public ventana_compras As Panel = CuadroCompras.Panel1
     Public ventana_inventario As Panel = Inventario.Panel1
     Public ventana_alertar As Panel = alertas.Alerta
-
+    Public ventana_reporte As Panel = Report.Panel1
 
 
     Public Function ocultar_paneles()
@@ -35,6 +35,7 @@ Public Class menuprincipal
         ventana_inventario.Visible = 0
 
         ventana_alertar.Visible = 0
+        ventana_reporte.Visible = 0
     End Function
 
     Private Sub menuprincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -51,6 +52,8 @@ Public Class menuprincipal
         Me.Controls.Add(ventana_inventario)
 
         Me.Controls.Add(ventana_alertar)
+
+        Me.Controls.Add(ventana_reporte)
 
         Me.ControlBox = False
         Me.Text = ""
@@ -266,5 +269,11 @@ Public Class menuprincipal
 
         ventana_alertar.Visible = 1
         alertas.load_alertas()
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        ocultar_paneles()
+        ventana_reporte.Visible = 1
+
     End Sub
 End Class

@@ -136,8 +136,8 @@
                 miDataTable.Rows.Add(dataRow)
             End If
         Next
-
-        controller.sql.Facturacion(miDataSet, cb_clientes.SelectedIndex, servicio, txtDescripcion.Text, total)
+        MsgBox(cb_clientes.Text)
+        controller.sql.Facturacion(miDataSet, CInt(cb_clientes.Text), servicio, txtDescripcion.Text, total)
 
 
 

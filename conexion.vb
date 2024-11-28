@@ -1019,15 +1019,11 @@ WHERE p.cod LIKE @buscarTexto OR p.nombre LIKE @buscarTexto"
     c.Telefono AS telefono_cliente,
     v.descripcion AS descripcion_venta,
     v.valor AS valor_venta,
-    v.fechaventa AS fecha_venta,
-    dv.idproducto AS id_producto,
-    dv.cantidad AS cantidad_producto
+    v.fechaventa AS fecha_venta
 FROM 
     ventas v
 INNER JOIN 
-    cliente c ON v.cliente = c.id
-INNER JOIN 
-    detalleventa dv ON v.id = dv.idventa;", miconexion)
+    cliente c ON v.cliente = c.id;", miconexion)
                 Dim llamada As New MySqlDataAdapter(comando)
                 Dim dt As New DataSet
                 llamada.Fill(dt, "r")

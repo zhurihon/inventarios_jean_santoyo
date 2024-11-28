@@ -9,24 +9,42 @@ Module reportes
 
     Public Sub fexcel2(dat As DataSet, tipo As String)
 
-        fcarpetaSistema()
+        'fcarpetaSistema()
+
+
+
+
+        Dim saveFileDialog As New SaveFileDialog()
+        Dim filePath As String
+        ' Configurar el diálogo
+        saveFileDialog.Filter = "excel|*.XLSX|Reporte en excel|*.*"
+        saveFileDialog.Title = "Guardar archivo"
+        saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+
+        ' Mostrar el diálogo y verificar si el usuario presionó "Guardar"
+        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+            ' Obtener la ruta del archivo seleccionado
+            filePath = saveFileDialog.FileName
+
+            ' Escribir contenido al archivo
+            Try
+                'Dim contenido As String = "Es"
+                'File.WriteAllText(filePath, contenido)
+
+                'MessageBox.Show("Archivo guardado exitosamente en: " & filePath)
+            Catch ex As Exception
+                'MessageBox.Show("Error al guardar el archivo: " & ex.Message)
+            End Try
+        End If
+
 
         ' Establecer el contexto de la licencia de EPPlus
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial
 
         ' Obtener la ruta de la carpeta "reportes"
-        Dim documentosPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-        Dim reportesPath As String = Path.Combine(documentosPath, "sistema de gestion", "reportes")
-
-        ' Ruta de la plantilla
-        Dim plantillaPath As String = Path.Combine(reportesPath, "Reporte plantilla.xlsx")
-
-        ' Verificar si la plantilla existe
-        If Not File.Exists(plantillaPath) Then
-            Throw New FileNotFoundException("La plantilla 'Reporte plantilla.xlsx' no se encontró en la carpeta de reportes.")
 
 
-        End If
+        Dim plantillaPath As String = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Reporte.xlsx")
 
         ' Crear el archivo Excel a partir de la plantilla
         Using package As New ExcelPackage(New FileInfo(plantillaPath))
@@ -38,8 +56,8 @@ Module reportes
             worksheet.Cells(startRow, 1).LoadFromDataTable(dataTable, True)
 
             ' Construir el nombre del archivo
-            Dim fileName As String = "Reporte " & tipo & " " & DateTime.Now.ToString("yyyy-MM-dd") & ", " & DateTime.Now.ToString("hh-mm") & ".xlsx"
-            Dim filePath As String = Path.Combine(reportesPath, fileName)
+            Dim fileName As String = tipo & " " & DateTime.Now.ToString("yyyy-MM-dd") & ".xlsx"
+            'Dim filePath As String = Path.Combine(reportesPath, fileName)
 
             ' Guardar el archivo en la carpeta "reportes"
             package.SaveAs(New FileInfo(filePath))
@@ -47,9 +65,8 @@ Module reportes
         End Using
     End Sub
 
-    Public Sub fexcel(dat As DataSet, tipo As String)
+    Public Sub fexcelEXMAPLE(dat As DataSet, tipo As String)
 
-        fcarpetaSistema()
 
         ' Establecer el contexto de la licencia de EPPlus
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial
@@ -121,24 +138,5 @@ Module reportes
     End Function
 
 
-    Private Sub fcarpetaSistema()
-        Dim documentosPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-
-        ' Definir las rutas de las carpetas
-        Dim sistemaGestionPath As String = Path.Combine(documentosPath, "sistema de gestion")
-        Dim reportesPath As String = Path.Combine(sistemaGestionPath, "reportes")
-
-        ' Comprobar si la carpeta "sistema de gestion" existe
-        If Not Directory.Exists(sistemaGestionPath) Then
-            ' Crear la carpeta "sistema de gestion"
-            Directory.CreateDirectory(sistemaGestionPath)
-        End If
-
-        ' Comprobar si la carpeta "reportes" existe
-        If Not Directory.Exists(reportesPath) Then
-            ' Crear la carpeta "reportes"
-            Directory.CreateDirectory(reportesPath)
-        End If
-    End Sub
 
 End Module

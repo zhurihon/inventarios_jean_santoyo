@@ -94,7 +94,7 @@
         If Not IsDataGridViewEmpty(tabla) Then
 
             Dim dt As DataSet = reportes.ExtraerDataGridViewADataSet(tabla)
-            reportes.fexcel(dt, "inventario")
+            reportes.fexcel2(dt, "inventario")
 
         Else
             MsgBox("Reporte vacio")
