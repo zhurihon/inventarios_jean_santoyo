@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{155C60D2-528F-41AD-B7BF-17F86B73019C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SantoyoSys.My.MyApplication</StartupObject>
+    <RootNamespace>SantoyoSys</RootNamespace>
+    <AssemblyName>SantoyoSys</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SantoyoSys.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SantoyoSys.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=7.4.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.7.4.2\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\sometor\tecnical\SoMetor\SoMetor\Resources\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="conexion.vb" />
+    <Compile Include="controladores\controller.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Compras\CuadroCompras.Designer.vb">
+      <DependentUpon>CuadroCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Compras\CuadroCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Inicio\alertas.Designer.vb">
+      <DependentUpon>alertas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Inicio\alertas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\inventario\Inventario.Designer.vb">
+      <DependentUpon>Inventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\inventario\Inventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\menuprincipal.Designer.vb">
+      <DependentUpon>menuprincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\menuprincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Productos\menu_productos.Designer.vb">
+      <DependentUpon>menu_productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Productos\menu_productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Productos\Productos.Designer.vb">
+      <DependentUpon>Productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Productos\Productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Productos\registro_color.Designer.vb">
+      <DependentUpon>registro_color.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Productos\registro_color.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Productos\registro_marca.Designer.vb">
+      <DependentUpon>registro_marca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Productos\registro_marca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Productos\registro_producto.Designer.vb">
+      <DependentUpon>registro_producto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Productos\registro_producto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\proveedor\proveedor.Designer.vb">
+      <DependentUpon>proveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\proveedor\proveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Reportes\Report.Designer.vb">
+      <DependentUpon>Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Reportes\Report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Usuarios\Usuarios.Designer.vb">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Usuarios\Usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Ventas\Cuadro de Ventas.Designer.vb">
+      <DependentUpon>Cuadro de Ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Ventas\Cuadro de Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Ventas\dialog\FormInputCantidad.Designer.vb">
+      <DependentUpon>FormInputCantidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Ventas\dialog\FormInputCantidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Comprobaciones.vb" />
+    <Compile Include="Modulos\Generador de código.vb" />
+    <Compile Include="Modulos\reportes.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Compras\CuadroCompras.resx">
+      <DependentUpon>CuadroCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Inicio\alertas.resx">
+      <DependentUpon>alertas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\inventario\Inventario.resx">
+      <DependentUpon>Inventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\menuprincipal.resx">
+      <DependentUpon>menuprincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Productos\menu_productos.resx">
+      <DependentUpon>menu_productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Productos\Productos.resx">
+      <DependentUpon>Productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Productos\registro_color.resx">
+      <DependentUpon>registro_color.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Productos\registro_marca.resx">
+      <DependentUpon>registro_marca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Productos\registro_producto.resx">
+      <DependentUpon>registro_producto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\proveedor\proveedor.resx">
+      <DependentUpon>proveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Reportes\Report.resx">
+      <DependentUpon>Report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Usuarios\Usuarios.resx">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Ventas\Cuadro de Ventas.resx">
+      <DependentUpon>Cuadro de Ventas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Ventas\dialog\FormInputCantidad.resx">
+      <DependentUpon>FormInputCantidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reporte.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <None Include="img\x.png" />
+    <None Include="img\Accesorios la nena %281%29.png" />
+    <None Include="img\lupa.png" />
+    <None Include="img\lupa2.png" />
+    <None Include="img\logo nuevo prueba.png" />
+    <None Include="img\excel.png" />
+    <None Include="RECURSOS GUI MODERN\H__1_-removebg-preview.png" />
+    <None Include="RECURSOS GUI MODERN\icons8-x-50.png" />
+    <None Include="img\minimize.png" />
+    <Content Include="valores.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
