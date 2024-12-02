@@ -54,7 +54,6 @@
             If Not row.IsNewRow Then
                 Dim cantidad As Integer
                 If Integer.TryParse(row.Cells(cantidadColIndex).Value.ToString(), cantidad) Then
-                    MsgBox(row.Cells(cantidadColIndex).Value.ToString())
                     If cantidad <= 5 Then
                         row.DefaultCellStyle.BackColor = Color.Red
                     Else
@@ -101,7 +100,7 @@
                 tabla.DataSource = controller.sql.consulta_productos.Tables(0)
 
                 controller.sql.comprar_producto_historial(id.Text, txtIngresar.Text, txtValorComprado.Text, cbxProveedores.SelectedValue.ToString)
-
+                AnalizarDataGridView()
 
             Else
                 If Not Comprobaciones.txtnumero(txtIngresar.Text) And Comprobaciones.txtnumero(txtValorComprado.Text) Then

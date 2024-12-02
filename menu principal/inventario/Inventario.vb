@@ -178,10 +178,30 @@
         Select Case cb_typo.Text
             Case "Stock"
                 tabla.DataSource = controller.sql.consulta_productos.Tables(0)
-
+                AnalizarDataGridView()
             Case "Facturas"
                 tabla.DataSource = controller.sql.dataset_facturas.Tables(0)
 
         End Select
     End Sub
+
+
+
+    Private Sub AnalizarDataGridView()
+        Dim cantidadColIndex As Integer = 2
+        For Each row As DataGridViewRow In tabla.Rows
+            If Not row.IsNewRow Then
+                Dim cantidad As Integer
+                If Integer.TryParse(row.Cells(cantidadColIndex).Value.ToString(), cantidad) Then
+                    If cantidad <= 5 Then
+                        row.DefaultCellStyle.BackColor = Color.Red
+                    Else
+                        row.DefaultCellStyle.BackColor = Color.White
+                    End If
+                End If
+            End If
+        Next
+    End Sub
+
+
 End Class

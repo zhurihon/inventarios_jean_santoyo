@@ -14,7 +14,7 @@ Public Class Cuadro_de_Ventas
 
 
 
-
+    Private tirrapCliente As Boolean = 0
 
 
     Public PrintLine As Integer = 0
@@ -35,10 +35,32 @@ Public Class Cuadro_de_Ventas
     End Sub
 
     Public Sub load_ventas()
+        tirrapCliente = 0
         tabla.DataSource = controller.sql.consulta_productos.Tables(0)
         cb_clientes.DataSource = controller.sql.consulta_cliente.Tables(0)
+        AnalizarDataGridView()
+        tirrapCliente = 1
+
     End Sub
 
+
+
+
+    Private Sub AnalizarDataGridView()
+        Dim cantidadColIndex As Integer = 2
+        For Each row As DataGridViewRow In tabla.Rows
+            If Not row.IsNewRow Then
+                Dim cantidad As Integer
+                If Integer.TryParse(row.Cells(cantidadColIndex).Value.ToString(), cantidad) Then
+                    If cantidad <= 5 Then
+                        row.DefaultCellStyle.BackColor = Color.Red
+                    Else
+                        row.DefaultCellStyle.BackColor = Color.White
+                    End If
+                End If
+            End If
+        Next
+    End Sub
     Private Sub tabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tabla.CellContentClick
 
     End Sub
@@ -77,14 +99,13 @@ Public Class Cuadro_de_Ventas
 
     End Sub
 
-    Private b As Boolean = 0
 
     Private Sub cb_clientes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_clientes.SelectedIndexChanged
 
-        If b Then
+        If tirrapCliente Then
             MsgBox("se selecionó el cliente " & cb_clientes.SelectedValue.ToString)
         Else
-            b = True
+            tirrapCliente = True
         End If
 
     End Sub
@@ -144,7 +165,7 @@ Public Class Cuadro_de_Ventas
         factura.factura_Load(ticket, CDbl(txt_total.Text), txtDescripcion.Text, CDbl(txtMontoServicio.Text), cb_clientes.SelectedValue.ToString)
 
 
-
+        AnalizarDataGridView()
 
 
     End Sub
