@@ -40,7 +40,31 @@
         cbxProveedores.DisplayMember = "Nombre"
 
         cbxProveedores.ValueMember = "Identificacion"
+
+
+        AnalizarDataGridView()
+
+
     End Sub
+
+
+    Private Sub AnalizarDataGridView()
+        Dim cantidadColIndex As Integer = 2
+        For Each row As DataGridViewRow In tabla.Rows
+            If Not row.IsNewRow Then
+                Dim cantidad As Integer
+                If Integer.TryParse(row.Cells(cantidadColIndex).Value.ToString(), cantidad) Then
+                    MsgBox(row.Cells(cantidadColIndex).Value.ToString())
+                    If cantidad <= 5 Then
+                        row.DefaultCellStyle.BackColor = Color.Red
+                    Else
+                        row.DefaultCellStyle.BackColor = Color.White
+                    End If
+                End If
+            End If
+        Next
+    End Sub
+
 
     Private Sub tabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tabla.CellContentClick
 
@@ -91,6 +115,10 @@
             txtValorComprado.Text = 0
             txtIngresar.Text = 0
         End If
+
+    End Sub
+
+    Private Sub CuadroCompras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
