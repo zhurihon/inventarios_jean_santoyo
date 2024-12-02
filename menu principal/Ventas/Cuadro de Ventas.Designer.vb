@@ -25,10 +25,6 @@ Partial Class Cuadro_de_Ventas
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tabla = New System.Windows.Forms.DataGridView()
-        Me.cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cb_clientes = New System.Windows.Forms.ComboBox()
@@ -68,7 +64,6 @@ Partial Class Cuadro_de_Ventas
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.tabla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cod, Me.nombre, Me.precio, Me.cantidad})
         Me.tabla.Location = New System.Drawing.Point(3, 273)
         Me.tabla.MultiSelect = False
         Me.tabla.Name = "tabla"
@@ -79,42 +74,6 @@ Partial Class Cuadro_de_Ventas
         Me.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.tabla.Size = New System.Drawing.Size(572, 192)
         Me.tabla.TabIndex = 8
-        '
-        'cod
-        '
-        Me.cod.DataPropertyName = "cod"
-        Me.cod.HeaderText = "Código"
-        Me.cod.Name = "cod"
-        Me.cod.ReadOnly = True
-        Me.cod.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.cod.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'nombre
-        '
-        Me.nombre.DataPropertyName = "nombre"
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        Me.nombre.ReadOnly = True
-        Me.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'precio
-        '
-        Me.precio.DataPropertyName = "precio"
-        Me.precio.HeaderText = "Precio"
-        Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
-        Me.precio.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.precio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'cantidad
-        '
-        Me.cantidad.DataPropertyName = "cantidad"
-        Me.cantidad.HeaderText = "Cantidad"
-        Me.cantidad.Name = "cantidad"
-        Me.cantidad.ReadOnly = True
-        Me.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'Panel1
         '
@@ -453,10 +412,6 @@ Partial Class Cuadro_de_Ventas
     Friend WithEvents Código As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents tabla As DataGridView
-    Friend WithEvents cod As DataGridViewTextBoxColumn
-    Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents precio As DataGridViewTextBoxColumn
-    Friend WithEvents cantidad As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents txtPrecio As TextBox
     Friend WithEvents Label5 As Label

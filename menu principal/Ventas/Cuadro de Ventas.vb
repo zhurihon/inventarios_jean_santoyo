@@ -46,7 +46,6 @@ Public Class Cuadro_de_Ventas
 
 
 
-
     Private Sub AnalizarDataGridView()
         Dim cantidadColIndex As Integer = 2
         For Each row As DataGridViewRow In tabla.Rows
@@ -65,35 +64,26 @@ Public Class Cuadro_de_Ventas
 
 
     Private Sub analizarDgv_litros()
-        ' Asegúrate de que las columnas existen y tienen los índices correctos
-        Dim tipoColIndex As Integer = 4 ' Índice de la columna "Tipo"
-        Dim cantidadColIndex As Integer = 3 ' Índice de la columna "Cantidad"
+        ' Asumiendo que tu DataGridView se llama DataGridView1
+        For Each col As DataGridViewColumn In tabla.Columns
+            ' Verificamos que la fila no sea una fila nueva
+            col.ValueType = GetType(String)
+        Next
 
-        ' Recorrer todas las filas del DataGridView
+
+        ' Asumiendo que tu DataGridView se llama DataGridView1
         For Each row As DataGridViewRow In tabla.Rows
-            ' Verificar si la fila es una fila de datos (no es una fila nueva)
+            ' Verificamos que la fila no sea una fila nueva
             If Not row.IsNewRow Then
-                ' Obtener el valor de la columna "Tipo"
-                Dim tipo As String = row.Cells(tipoColIndex).Value.ToString()
-
-                ' Verificar si el tipo es "Aceites"
-                If tipo.Equals("Aceites", StringComparison.OrdinalIgnoreCase) Then
-                    ' Obtener el valor de la columna "Cantidad"
-                    Dim cantidad As Integer
-                    If Integer.TryParse(row.Cells(cantidadColIndex).Value.ToString(), cantidad) Then
-                        ' Sumar " lt" a la cantidad como cadena
-                        row.Cells(cantidadColIndex).Value = cantidad.ToString() & " lt"
-                    Else
-                        ' Manejar el caso en que la conversión falla
-                        MessageBox.Show("El valor en la columna 'Cantidad' no es un número válido.")
-                    End If
-                End If
+                ' Modificamos el valor de la columna 2 (índice 1, ya que es cero basado)
+                'row.Cells(2).Value = "lt"
             End If
         Next
+
+
+
+
     End Sub
-
-
-
 
 
 
