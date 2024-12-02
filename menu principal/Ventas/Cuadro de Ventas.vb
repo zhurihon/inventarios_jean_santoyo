@@ -39,6 +39,7 @@ Public Class Cuadro_de_Ventas
         tabla.DataSource = controller.sql.consulta_productos.Tables(0)
         cb_clientes.DataSource = controller.sql.consulta_cliente.Tables(0)
         AnalizarDataGridView()
+        analizarDgv_litros()
         tirrapCliente = 1
 
     End Sub
@@ -61,6 +62,42 @@ Public Class Cuadro_de_Ventas
             End If
         Next
     End Sub
+
+
+    Private Sub analizarDgv_litros()
+        ' Asegúrate de que las columnas existen y tienen los índices correctos
+        Dim tipoColIndex As Integer = 4 ' Índice de la columna "Tipo"
+        Dim cantidadColIndex As Integer = 3 ' Índice de la columna "Cantidad"
+
+        ' Recorrer todas las filas del DataGridView
+        For Each row As DataGridViewRow In tabla.Rows
+            ' Verificar si la fila es una fila de datos (no es una fila nueva)
+            If Not row.IsNewRow Then
+                ' Obtener el valor de la columna "Tipo"
+                Dim tipo As String = row.Cells(tipoColIndex).Value.ToString()
+
+                ' Verificar si el tipo es "Aceites"
+                If tipo.Equals("Aceites", StringComparison.OrdinalIgnoreCase) Then
+                    ' Obtener el valor de la columna "Cantidad"
+                    Dim cantidad As Integer
+                    If Integer.TryParse(row.Cells(cantidadColIndex).Value.ToString(), cantidad) Then
+                        ' Sumar " lt" a la cantidad como cadena
+                        row.Cells(cantidadColIndex).Value = cantidad.ToString() & " lt"
+                    Else
+                        ' Manejar el caso en que la conversión falla
+                        MessageBox.Show("El valor en la columna 'Cantidad' no es un número válido.")
+                    End If
+                End If
+            End If
+        Next
+    End Sub
+
+
+
+
+
+
+
     Private Sub tabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tabla.CellContentClick
 
     End Sub
