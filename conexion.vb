@@ -137,6 +137,31 @@ Module conexion
             End Try
         End Function
 
+
+
+        Public Function registrar_cliente(id As Integer, nombre As String, telefono As String, direccion As String, mail As String) As Boolean
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("INSERT INTO cliente (id, Nombre, Telefono, Direccion, Mail) VALUES (@id, @nombre, @telefono, @direccion, @mail)", miconexion)
+                comando.Parameters.AddWithValue("@id", id)
+                comando.Parameters.AddWithValue("@nombre", nombre)
+                comando.Parameters.AddWithValue("@telefono", telefono)
+                comando.Parameters.AddWithValue("@direccion", direccion)
+                comando.Parameters.AddWithValue("@mail", mail)
+
+                Dim filas_afectadas As Integer = comando.ExecuteNonQuery()
+
+                Return filas_afectadas > 0
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+                Return False
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
+
         Public Function actualizar_producto(pk As String, cod As String, nombre As String, precio As Single, tipo As String, proveedor As String, marca As String, color As String) As Boolean
             Try
                 miconexion.Open()
@@ -867,6 +892,26 @@ WHERE p.cod LIKE @buscarTexto OR p.nombre LIKE @buscarTexto"
             Try
                 miconexion.Open()
                 Dim comando As New MySqlCommand("select cod,nombre,cantidad from producto where cantidad <=5;", miconexion)
+                Dim llamada As New MySqlDataAdapter(comando)
+                Dim dt As New DataSet
+                llamada.Fill(dt, "r")
+                miconexion.Close()
+                Return dt
+
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+
+        End Function
+        Public Function dataset_clientes() As DataSet
+
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("select * from cliente;", miconexion)
                 Dim llamada As New MySqlDataAdapter(comando)
                 Dim dt As New DataSet
                 llamada.Fill(dt, "r")

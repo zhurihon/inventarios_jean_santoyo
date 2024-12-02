@@ -28,7 +28,7 @@ CREATE TABLE `detalleventa` (
   `idventa` int DEFAULT NULL,
   `cantidad` double DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `detalleventa` (
 
 LOCK TABLES `detalleventa` WRITE;
 /*!40000 ALTER TABLE `detalleventa` DISABLE KEYS */;
-INSERT INTO `detalleventa` VALUES (9,'H1',45,1),(10,'H1',46,1);
+INSERT INTO `detalleventa` VALUES (9,'H1',45,1),(10,'H1',46,1),(11,'H1',47,50),(12,'H1',48,1),(13,'H1',49,3),(14,'H1',50,3),(15,'H1',51,5),(16,'H1',52,4),(17,'H1',53,2),(18,'H1',54,3),(19,'H1',55,1),(20,'H1',56,9),(21,'H1',57,1),(22,'H1',58,1),(23,'H1',59,6),(24,'H1',60,5),(25,'H1',61,5),(26,'H1',62,5),(27,'H1',62,4),(28,'H1',63,4),(29,'H1',64,4),(30,'H1',66,3),(31,'H1',67,3),(32,'H1',68,1),(33,'H1',69,5),(34,'H1',70,3),(35,'H1',71,1),(36,'H1',71,4),(37,'H1',72,3),(38,'H1',73,3),(39,'H1',74,1),(40,'H1',75,6),(41,'H1',75,5),(42,'H1',75,2),(43,'H1',76,4),(44,'H1',77,33),(45,'H1',78,2),(46,'H1',78,1),(47,'H1',78,1),(48,'H1',79,2),(49,'H1',79,1),(50,'H1',79,1),(51,'H1',80,2),(52,'H1',80,1),(53,'H1',80,1),(54,'H1',82,2),(55,'H1',83,1),(56,'H1',84,1),(57,'H1',85,1),(58,'H1',86,4),(59,'H1',87,2);
 /*!40000 ALTER TABLE `detalleventa` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-28 11:54:12
+-- Dump completed on 2024-12-02 13:27:14

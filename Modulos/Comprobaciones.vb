@@ -3,6 +3,15 @@ Imports System.Text.RegularExpressions
 
 Module Comprobaciones
 
+    Public Function txtmaxymin(txt As String, maxlong As Integer, minlong As Integer) As Boolean
+        If txt.Length <= maxlong And txt.Length >= minlong Then
+            Return 1
+        Else
+            Return 0
+        End If
+    End Function
+
+
 
 
     Public Function txtmax(txt As String, maxlong As Integer) As Boolean

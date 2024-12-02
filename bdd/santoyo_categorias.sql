@@ -35,7 +35,7 @@ CREATE TABLE `categorias` (
 
 LOCK TABLES `categorias` WRITE;
 /*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
-INSERT INTO `categorias` VALUES ('Aceites',1),('Equipaje',1),('Herramienta',2),('Otros',1),('Repuesto',1);
+INSERT INTO `categorias` VALUES ('Aceites',1),('Equipaje',1),('Herramienta',2),('Otros',1),('Repuesto',2);
 /*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-28 11:54:12
+-- Dump completed on 2024-12-02 13:27:14

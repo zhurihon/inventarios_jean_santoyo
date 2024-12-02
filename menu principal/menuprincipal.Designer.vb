@@ -41,6 +41,10 @@ Partial Class menuprincipal
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,7 +56,7 @@ Partial Class menuprincipal
         Me.btn_compras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_compras.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_compras.ForeColor = System.Drawing.Color.Black
-        Me.btn_compras.Location = New System.Drawing.Point(12, 87)
+        Me.btn_compras.Location = New System.Drawing.Point(12, 123)
         Me.btn_compras.Name = "btn_compras"
         Me.btn_compras.Size = New System.Drawing.Size(129, 33)
         Me.btn_compras.TabIndex = 0
@@ -68,6 +72,7 @@ Partial Class menuprincipal
         Me.Panel1.AutoSize = True
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.Panel1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Panel1.ForeColor = System.Drawing.Color.White
         Me.Panel1.Location = New System.Drawing.Point(141, 25)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(594, 542)
@@ -80,7 +85,7 @@ Partial Class menuprincipal
         Me.btn_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_ventas.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_ventas.ForeColor = System.Drawing.Color.Black
-        Me.btn_ventas.Location = New System.Drawing.Point(12, 126)
+        Me.btn_ventas.Location = New System.Drawing.Point(12, 162)
         Me.btn_ventas.Name = "btn_ventas"
         Me.btn_ventas.Size = New System.Drawing.Size(129, 33)
         Me.btn_ventas.TabIndex = 8
@@ -95,7 +100,7 @@ Partial Class menuprincipal
         Me.btn_productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_productos.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_productos.ForeColor = System.Drawing.Color.Black
-        Me.btn_productos.Location = New System.Drawing.Point(12, 165)
+        Me.btn_productos.Location = New System.Drawing.Point(12, 201)
         Me.btn_productos.Name = "btn_productos"
         Me.btn_productos.Size = New System.Drawing.Size(129, 33)
         Me.btn_productos.TabIndex = 9
@@ -110,7 +115,7 @@ Partial Class menuprincipal
         Me.btn_proveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_proveedores.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_proveedores.ForeColor = System.Drawing.Color.Black
-        Me.btn_proveedores.Location = New System.Drawing.Point(12, 243)
+        Me.btn_proveedores.Location = New System.Drawing.Point(12, 279)
         Me.btn_proveedores.Name = "btn_proveedores"
         Me.btn_proveedores.Size = New System.Drawing.Size(129, 33)
         Me.btn_proveedores.TabIndex = 10
@@ -125,7 +130,7 @@ Partial Class menuprincipal
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(12, 282)
+        Me.Button2.Location = New System.Drawing.Point(12, 318)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(129, 33)
         Me.Button2.TabIndex = 13
@@ -190,7 +195,7 @@ Partial Class menuprincipal
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(12, 204)
+        Me.Button3.Location = New System.Drawing.Point(12, 240)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(129, 33)
         Me.Button3.TabIndex = 16
@@ -212,7 +217,7 @@ Partial Class menuprincipal
         '
         Me.Panel4.BackColor = System.Drawing.Color.DimGray
         Me.Panel4.ForeColor = System.Drawing.Color.DimGray
-        Me.Panel4.Location = New System.Drawing.Point(0, 87)
+        Me.Panel4.Location = New System.Drawing.Point(0, 123)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(22, 33)
         Me.Panel4.TabIndex = 18
@@ -221,7 +226,7 @@ Partial Class menuprincipal
         '
         Me.Panel7.BackColor = System.Drawing.Color.DimGray
         Me.Panel7.ForeColor = System.Drawing.Color.DimGray
-        Me.Panel7.Location = New System.Drawing.Point(0, 126)
+        Me.Panel7.Location = New System.Drawing.Point(0, 162)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(22, 33)
         Me.Panel7.TabIndex = 19
@@ -230,7 +235,7 @@ Partial Class menuprincipal
         '
         Me.Panel8.BackColor = System.Drawing.Color.DimGray
         Me.Panel8.ForeColor = System.Drawing.Color.DimGray
-        Me.Panel8.Location = New System.Drawing.Point(0, 282)
+        Me.Panel8.Location = New System.Drawing.Point(0, 318)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(22, 33)
         Me.Panel8.TabIndex = 19
@@ -239,7 +244,7 @@ Partial Class menuprincipal
         '
         Me.Panel9.BackColor = System.Drawing.Color.DimGray
         Me.Panel9.ForeColor = System.Drawing.Color.DimGray
-        Me.Panel9.Location = New System.Drawing.Point(0, 243)
+        Me.Panel9.Location = New System.Drawing.Point(0, 279)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(22, 33)
         Me.Panel9.TabIndex = 20
@@ -248,7 +253,7 @@ Partial Class menuprincipal
         '
         Me.Panel10.BackColor = System.Drawing.Color.DimGray
         Me.Panel10.ForeColor = System.Drawing.Color.DimGray
-        Me.Panel10.Location = New System.Drawing.Point(0, 204)
+        Me.Panel10.Location = New System.Drawing.Point(0, 240)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(22, 33)
         Me.Panel10.TabIndex = 21
@@ -257,10 +262,58 @@ Partial Class menuprincipal
         '
         Me.Panel11.BackColor = System.Drawing.Color.DimGray
         Me.Panel11.ForeColor = System.Drawing.Color.DimGray
-        Me.Panel11.Location = New System.Drawing.Point(0, 165)
+        Me.Panel11.Location = New System.Drawing.Point(0, 201)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(22, 33)
         Me.Panel11.TabIndex = 22
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(12, 357)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(129, 33)
+        Me.Button1.TabIndex = 23
+        Me.Button1.Text = "Usuarios"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Panel12
+        '
+        Me.Panel12.BackColor = System.Drawing.Color.DimGray
+        Me.Panel12.ForeColor = System.Drawing.Color.DimGray
+        Me.Panel12.Location = New System.Drawing.Point(0, 357)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(22, 33)
+        Me.Panel12.TabIndex = 24
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.Black
+        Me.Button4.Location = New System.Drawing.Point(12, 84)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(129, 33)
+        Me.Button4.TabIndex = 25
+        Me.Button4.Text = "Clientes"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Panel13
+        '
+        Me.Panel13.BackColor = System.Drawing.Color.DimGray
+        Me.Panel13.ForeColor = System.Drawing.Color.DimGray
+        Me.Panel13.Location = New System.Drawing.Point(0, 84)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(22, 33)
+        Me.Panel13.TabIndex = 26
         '
         'menuprincipal
         '
@@ -268,6 +321,10 @@ Partial Class menuprincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(735, 566)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Panel13)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Panel12)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btn_proveedores)
@@ -284,6 +341,7 @@ Partial Class menuprincipal
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.Cursor = System.Windows.Forms.Cursors.Default
+        Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimumSize = New System.Drawing.Size(735, 566)
@@ -315,4 +373,8 @@ Partial Class menuprincipal
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Panel11 As Panel
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Panel13 As Panel
 End Class

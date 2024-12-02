@@ -43,3 +43,5 @@ C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.pdb
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.FormInputCantidad.resources
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\bin\Debug\Reporte.xlsx
+C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.factura.resources
+C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.clientes.resources

@@ -22,7 +22,7 @@ Partial Class Cuadro_de_Ventas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tabla = New System.Windows.Forms.DataGridView()
         Me.cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -35,10 +35,10 @@ Partial Class Cuadro_de_Ventas
         Me.txt_total = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ticket = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ccod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cnombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cprecio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ccantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtMontoServicio = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
@@ -204,15 +204,15 @@ Partial Class Cuadro_de_Ventas
         Me.ticket.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ticket.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.ticket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ticket.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ticket.DefaultCellStyle = DataGridViewCellStyle2
+        Me.ticket.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ccod, Me.cnombre, Me.cprecio, Me.ccantidad})
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ticket.DefaultCellStyle = DataGridViewCellStyle1
         Me.ticket.Location = New System.Drawing.Point(6, 19)
         Me.ticket.MultiSelect = False
         Me.ticket.Name = "ticket"
@@ -222,50 +222,50 @@ Partial Class Cuadro_de_Ventas
         Me.ticket.Size = New System.Drawing.Size(197, 239)
         Me.ticket.TabIndex = 9
         '
-        'DataGridViewTextBoxColumn1
+        'ccod
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "cod"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Código"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.ccod.DataPropertyName = "cod"
+        Me.ccod.HeaderText = "Código"
+        Me.ccod.Name = "ccod"
+        Me.ccod.ReadOnly = True
+        Me.ccod.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ccod.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'DataGridViewTextBoxColumn2
+        'cnombre
         '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "nombre"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.cnombre.DataPropertyName = "nombre"
+        Me.cnombre.HeaderText = "Nombre"
+        Me.cnombre.Name = "cnombre"
+        Me.cnombre.ReadOnly = True
+        Me.cnombre.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.cnombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'DataGridViewTextBoxColumn3
+        'cprecio
         '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "precio"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Precio"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.cprecio.DataPropertyName = "precio"
+        Me.cprecio.HeaderText = "Precio"
+        Me.cprecio.Name = "cprecio"
+        Me.cprecio.ReadOnly = True
+        Me.cprecio.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.cprecio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'DataGridViewTextBoxColumn4
+        'ccantidad
         '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "cantidad"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Cantidad"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.ccantidad.DataPropertyName = "cantidad"
+        Me.ccantidad.HeaderText = "Cantidad"
+        Me.ccantidad.Name = "ccantidad"
+        Me.ccantidad.ReadOnly = True
+        Me.ccantidad.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ccantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'txtMontoServicio
         '
         Me.txtMontoServicio.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.txtMontoServicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMontoServicio.ForeColor = System.Drawing.Color.White
-        Me.txtMontoServicio.Location = New System.Drawing.Point(467, 198)
+        Me.txtMontoServicio.Location = New System.Drawing.Point(443, 198)
         Me.txtMontoServicio.Name = "txtMontoServicio"
-        Me.txtMontoServicio.Size = New System.Drawing.Size(94, 26)
+        Me.txtMontoServicio.Size = New System.Drawing.Size(118, 26)
         Me.txtMontoServicio.TabIndex = 37
         '
         'Label7
@@ -273,7 +273,7 @@ Partial Class Cuadro_de_Ventas
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(391, 201)
+        Me.Label7.Location = New System.Drawing.Point(367, 204)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(70, 20)
         Me.Label7.TabIndex = 36
@@ -309,7 +309,7 @@ Partial Class Cuadro_de_Ventas
         Me.btn_modificar.ForeColor = System.Drawing.Color.White
         Me.btn_modificar.Location = New System.Drawing.Point(443, 228)
         Me.btn_modificar.Name = "btn_modificar"
-        Me.btn_modificar.Size = New System.Drawing.Size(120, 30)
+        Me.btn_modificar.Size = New System.Drawing.Size(118, 30)
         Me.btn_modificar.TabIndex = 29
         Me.btn_modificar.Text = "Facturar"
         Me.btn_modificar.UseVisualStyleBackColor = False
@@ -460,10 +460,6 @@ Partial Class Cuadro_de_Ventas
     Friend WithEvents txtCantidad As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents ticket As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents txtMontoServicio As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtDescripcion As TextBox
@@ -472,4 +468,8 @@ Partial Class Cuadro_de_Ventas
     Friend WithEvents Label6 As Label
     Friend WithEvents txt_total As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents ccod As DataGridViewTextBoxColumn
+    Friend WithEvents cnombre As DataGridViewTextBoxColumn
+    Friend WithEvents cprecio As DataGridViewTextBoxColumn
+    Friend WithEvents ccantidad As DataGridViewTextBoxColumn
 End Class

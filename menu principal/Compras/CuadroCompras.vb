@@ -5,7 +5,7 @@
         If Comprobaciones.txtnumero(txtValorComprado.Text) And Comprobaciones.txtnumero(txtIngresar.Text) Then
 
             If lbTotal.BackColor = Color.Red Then
-                lbTotal.BackColor = Color.White
+                lbTotal.BackColor = Color.FromArgb(75, 7, 12)
                 btn_modificar.Enabled = 1
             End If
             lbTotal.Text = txtValorComprado.Text * txtIngresar.Text
@@ -22,7 +22,7 @@
         If Comprobaciones.txtnumero(txtValorComprado.Text) And Comprobaciones.txtnumero(txtIngresar.Text) Then
 
             If lbTotal.BackColor = Color.Red Then
-                lbTotal.BackColor = Color.White
+                lbTotal.BackColor = Color.FromArgb(75, 7, 12)
                 btn_modificar.Enabled = 1
             End If
             lbTotal.Text = txtValorComprado.Text * txtIngresar.Text

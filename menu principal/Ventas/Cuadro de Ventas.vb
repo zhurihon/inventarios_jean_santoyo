@@ -1,4 +1,6 @@
-﻿Public Class Cuadro_de_Ventas
+﻿Imports System.Drawing.Printing
+
+Public Class Cuadro_de_Ventas
 
 
 
@@ -15,7 +17,8 @@
 
 
 
-
+    Public PrintLine As Integer = 0
+    Public Contador As Integer = 0
 
 
 
@@ -138,15 +141,18 @@
         Next
         MsgBox(cb_clientes.Text)
         controller.sql.Facturacion(miDataSet, CInt(cb_clientes.Text), servicio, txtDescripcion.Text, total)
-
-
-
-
-
+        factura.factura_Load(ticket, CDbl(txt_total.Text), txtDescripcion.Text, CDbl(txtMontoServicio.Text), cb_clientes.SelectedValue.ToString)
 
 
 
 
 
     End Sub
+
+
+
+
+
+
+
 End Class

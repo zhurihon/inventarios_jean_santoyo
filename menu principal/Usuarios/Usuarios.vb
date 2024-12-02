@@ -5,7 +5,7 @@ Public Class usuarios
 
     End Sub
 
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
+    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -16,12 +16,12 @@ Public Class usuarios
 
     End Sub
 
-    Private Sub Btnactualizar_Click(sender As Object, e As EventArgs) Handles Btnactualizar.Click
+    Private Sub Btnactualizar_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Usuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Public Sub Usuarios_Load()
+        tabla_usuarios.DataSource = controller.sql.consulta_usuarios.Tables(0)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)

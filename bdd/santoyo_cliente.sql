@@ -26,6 +26,8 @@ CREATE TABLE `cliente` (
   `id` int NOT NULL,
   `Nombre` varchar(64) DEFAULT NULL,
   `Telefono` varchar(45) DEFAULT NULL,
+  `Direccion` varchar(45) DEFAULT NULL,
+  `Mail` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -36,7 +38,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (44587114,'Maria rojas','029145856984'),(458872326,'Juan jose lopez','0412228766');
+INSERT INTO `cliente` VALUES (31265030,'jesu gutierasddd','04265845698','guanta plc bna','jgtrrz@gmail.com'),(44587114,'Maria rojas','029145856984',NULL,NULL),(458872326,'Juan jose lopez','0412228766',NULL,NULL);
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-28 11:54:11
+-- Dump completed on 2024-12-02 13:27:13

@@ -21,6 +21,7 @@ Public Class menuprincipal
     Public ventana_inventario As Panel = Inventario.Panel1
     Public ventana_alertar As Panel = alertas.Alerta
     Public ventana_reporte As Panel = Report.Panel1
+    Public ventana_clientes As Panel = clientes.Panel1
 
 
     Public Function ocultar_paneles()
@@ -36,6 +37,8 @@ Public Class menuprincipal
 
         ventana_alertar.Visible = 0
         ventana_reporte.Visible = 0
+        ventana_clientes.Visible = 0
+
     End Function
 
     Private Sub menuprincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -55,6 +58,8 @@ Public Class menuprincipal
 
         Me.Controls.Add(ventana_reporte)
 
+        Me.Controls.Add(ventana_clientes)
+
         Me.ControlBox = False
         Me.Text = ""
 
@@ -62,6 +67,7 @@ Public Class menuprincipal
 
         'ventana_alertar.Visible = 1
         'alertas.load_alertas()
+
 
     End Sub
 
@@ -209,8 +215,8 @@ Public Class menuprincipal
 
     Private Sub btn_proveedores_Click(sender As Object, e As EventArgs) Handles btn_proveedores.Click
         ocultar_paneles()
-        'ventana_proveedor.Visible = 1
-        'proveedor.mostrar_proveedores()
+        ventana_proveedor.Visible = 1
+        proveedor.mostrar_proveedores()
     End Sub
 
 
@@ -275,5 +281,17 @@ Public Class menuprincipal
         ocultar_paneles()
         ventana_reporte.Visible = 1
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ocultar_paneles()
+        ventana_usuarios.Visible = 1
+        usuarios.Usuarios_Load()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        ocultar_paneles()
+        ventana_clientes.Visible = 1
+        clientes.clientes_Load()
     End Sub
 End Class

@@ -124,6 +124,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="menu principal\cliente\clientes.Designer.vb">
+      <DependentUpon>clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\cliente\clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="menu principal\Compras\CuadroCompras.Designer.vb">
       <DependentUpon>CuadroCompras.vb</DependentUpon>
     </Compile>
@@ -208,6 +214,12 @@
     <Compile Include="menu principal\Ventas\dialog\FormInputCantidad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="menu principal\Ventas\factura\factura.Designer.vb">
+      <DependentUpon>factura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Ventas\factura\factura.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Comprobaciones.vb" />
     <Compile Include="Modulos\Generador de código.vb" />
     <Compile Include="Modulos\reportes.vb" />
@@ -231,6 +243,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\cliente\clientes.resx">
+      <DependentUpon>clientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menu principal\Compras\CuadroCompras.resx">
       <DependentUpon>CuadroCompras.vb</DependentUpon>
@@ -273,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menu principal\Ventas\dialog\FormInputCantidad.resx">
       <DependentUpon>FormInputCantidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Ventas\factura\factura.resx">
+      <DependentUpon>factura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

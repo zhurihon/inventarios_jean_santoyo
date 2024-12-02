@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class proveedor
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class clientes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,17 +20,14 @@ Partial Class proveedor
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.descripcion = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.direccion = New System.Windows.Forms.TextBox()
         Me.tlfno = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btn_modificar = New System.Windows.Forms.Button()
-        Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.btn_nuevo_prov = New System.Windows.Forms.Button()
         Me.mail = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -39,10 +36,10 @@ Partial Class proveedor
         Me.Código = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.tabla_proveedores = New System.Windows.Forms.DataGridView()
+        Me.tabla_clientes = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.tabla_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tabla_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -52,24 +49,20 @@ Partial Class proveedor
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Controls.Add(Me.GroupBox1)
-        Me.Panel1.Controls.Add(Me.tabla_proveedores)
+        Me.Panel1.Controls.Add(Me.tabla_clientes)
         Me.Panel1.Cursor = System.Windows.Forms.Cursors.Default
         Me.Panel1.Location = New System.Drawing.Point(141, 50)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(578, 477)
-        Me.Panel1.TabIndex = 11
+        Me.Panel1.TabIndex = 12
         Me.Panel1.Visible = False
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.GroupBox1.Controls.Add(Me.descripcion)
-        Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.direccion)
         Me.GroupBox1.Controls.Add(Me.tlfno)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.btn_modificar)
-        Me.GroupBox1.Controls.Add(Me.btn_eliminar)
         Me.GroupBox1.Controls.Add(Me.btn_nuevo_prov)
         Me.GroupBox1.Controls.Add(Me.mail)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -82,29 +75,10 @@ Partial Class proveedor
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(572, 212)
+        Me.GroupBox1.Size = New System.Drawing.Size(572, 133)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "AGREGAR PROVEEDOR"
-        '
-        'descripcion
-        '
-        Me.descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.descripcion.Location = New System.Drawing.Point(329, 86)
-        Me.descripcion.Multiline = True
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.Size = New System.Drawing.Size(219, 112)
-        Me.descripcion.TabIndex = 37
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(326, 67)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(124, 20)
-        Me.Label5.TabIndex = 36
-        Me.Label5.Text = "DESCRIPCIÓN:"
         '
         'direccion
         '
@@ -134,43 +108,17 @@ Partial Class proveedor
         Me.Label2.TabIndex = 30
         Me.Label2.Text = "DIRECCIÓN:"
         '
-        'btn_modificar
-        '
-        Me.btn_modificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.btn_modificar.Enabled = False
-        Me.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_modificar.Location = New System.Drawing.Point(164, 127)
-        Me.btn_modificar.Name = "btn_modificar"
-        Me.btn_modificar.Size = New System.Drawing.Size(120, 30)
-        Me.btn_modificar.TabIndex = 29
-        Me.btn_modificar.Text = "MODIFICAR"
-        Me.btn_modificar.UseVisualStyleBackColor = False
-        '
-        'btn_eliminar
-        '
-        Me.btn_eliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.btn_eliminar.Enabled = False
-        Me.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_eliminar.Location = New System.Drawing.Point(15, 127)
-        Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(120, 30)
-        Me.btn_eliminar.TabIndex = 28
-        Me.btn_eliminar.Text = "INACTIVAR"
-        Me.btn_eliminar.UseVisualStyleBackColor = False
-        '
         'btn_nuevo_prov
         '
         Me.btn_nuevo_prov.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.btn_nuevo_prov.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_nuevo_prov.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_nuevo_prov.ForeColor = System.Drawing.Color.White
-        Me.btn_nuevo_prov.Location = New System.Drawing.Point(15, 163)
+        Me.btn_nuevo_prov.Location = New System.Drawing.Point(327, 86)
         Me.btn_nuevo_prov.Name = "btn_nuevo_prov"
-        Me.btn_nuevo_prov.Size = New System.Drawing.Size(269, 35)
+        Me.btn_nuevo_prov.Size = New System.Drawing.Size(221, 26)
         Me.btn_nuevo_prov.TabIndex = 27
-        Me.btn_nuevo_prov.Text = "REGISTRA NUEVO PROVEEDOR"
+        Me.btn_nuevo_prov.Text = "REGISTRA CLIENTE"
         Me.btn_nuevo_prov.UseVisualStyleBackColor = False
         '
         'mail
@@ -238,55 +186,54 @@ Partial Class proveedor
         Me.Label3.TabIndex = 21
         Me.Label3.Text = "NÚMERO:"
         '
-        'tabla_proveedores
+        'tabla_clientes
         '
-        Me.tabla_proveedores.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.tabla_clientes.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tabla_proveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.tabla_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.tabla_proveedores.Location = New System.Drawing.Point(3, 221)
-        Me.tabla_proveedores.MultiSelect = False
-        Me.tabla_proveedores.Name = "tabla_proveedores"
-        Me.tabla_proveedores.ReadOnly = True
-        Me.tabla_proveedores.RowHeadersVisible = False
-        Me.tabla_proveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.tabla_proveedores.Size = New System.Drawing.Size(572, 244)
-        Me.tabla_proveedores.TabIndex = 8
-        Me.tabla_proveedores.TabStop = False
+        Me.tabla_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.tabla_clientes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.tabla_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tabla_clientes.Location = New System.Drawing.Point(3, 142)
+        Me.tabla_clientes.MultiSelect = False
+        Me.tabla_clientes.Name = "tabla_clientes"
+        Me.tabla_clientes.ReadOnly = True
+        Me.tabla_clientes.RowHeadersVisible = False
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.tabla_clientes.RowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.tabla_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.tabla_clientes.Size = New System.Drawing.Size(572, 323)
+        Me.tabla_clientes.TabIndex = 8
+        Me.tabla_clientes.TabStop = False
         '
-        'proveedor
+        'clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(719, 527)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "proveedor"
-        Me.Text = "proveedor"
+        Me.Name = "clientes"
+        Me.Text = "clientes"
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.tabla_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tabla_clientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents tabla_proveedores As DataGridView
-    Friend WithEvents btn_modificar As Button
-    Friend WithEvents btn_eliminar As Button
+    Friend WithEvents direccion As TextBox
+    Friend WithEvents tlfno As TextBox
+    Friend WithEvents Label2 As Label
     Friend WithEvents btn_nuevo_prov As Button
+    Friend WithEvents mail As TextBox
+    Friend WithEvents Label7 As Label
     Friend WithEvents id As TextBox
     Friend WithEvents nombre As TextBox
     Friend WithEvents Código As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents tlfno As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents descripcion As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents direccion As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents mail As TextBox
-    Friend WithEvents Label7 As Label
+    Friend WithEvents tabla_clientes As DataGridView
 End Class

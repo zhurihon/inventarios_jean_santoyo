@@ -77,4 +77,8 @@ Public Class Form1
     Private Sub Panel3_Click(sender As Object, e As EventArgs)
         Application.Exit()
     End Sub
+
+    Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
+
+    End Sub
 End Class
