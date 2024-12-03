@@ -48,10 +48,12 @@ Partial Class CuadroCompras
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.tabla, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -63,7 +65,7 @@ Partial Class CuadroCompras
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.tabla)
         Me.Panel1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Panel1.ForeColor = System.Drawing.Color.White
+        Me.Panel1.ForeColor = System.Drawing.Color.Black
         Me.Panel1.Location = New System.Drawing.Point(141, 50)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(578, 477)
@@ -72,17 +74,10 @@ Partial Class CuadroCompras
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.txtIngresar)
-        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Controls.Add(Me.cbxProveedores)
-        Me.GroupBox1.Controls.Add(Me.btn_modificar)
-        Me.GroupBox1.Controls.Add(Me.txtValorComprado)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.lbTotal)
         Me.GroupBox1.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.GroupBox1.ForeColor = System.Drawing.Color.DarkGray
         Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(572, 219)
@@ -94,9 +89,9 @@ Partial Class CuadroCompras
         '
         Me.txtIngresar.BackColor = System.Drawing.Color.White
         Me.txtIngresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIngresar.Location = New System.Drawing.Point(414, 116)
+        Me.txtIngresar.Location = New System.Drawing.Point(138, 101)
         Me.txtIngresar.Name = "txtIngresar"
-        Me.txtIngresar.Size = New System.Drawing.Size(112, 26)
+        Me.txtIngresar.Size = New System.Drawing.Size(153, 26)
         Me.txtIngresar.TabIndex = 31
         Me.txtIngresar.Text = "0"
         '
@@ -104,7 +99,7 @@ Partial Class CuadroCompras
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(280, 58)
+        Me.Label8.Location = New System.Drawing.Point(4, 43)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(116, 20)
         Me.Label8.TabIndex = 37
@@ -121,6 +116,7 @@ Partial Class CuadroCompras
         Me.GroupBox2.Controls.Add(Me.txtCantidad)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(1, 15)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(259, 187)
@@ -132,6 +128,7 @@ Partial Class CuadroCompras
         '
         Me.txtPrecio.BackColor = System.Drawing.Color.White
         Me.txtPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPrecio.ForeColor = System.Drawing.Color.Black
         Me.txtPrecio.Location = New System.Drawing.Point(149, 149)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.ReadOnly = True
@@ -173,6 +170,7 @@ Partial Class CuadroCompras
         '
         Me.id.Enabled = False
         Me.id.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.id.ForeColor = System.Drawing.Color.Black
         Me.id.Location = New System.Drawing.Point(8, 34)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(114, 26)
@@ -183,6 +181,7 @@ Partial Class CuadroCompras
         '
         Me.txtnombre.BackColor = System.Drawing.Color.White
         Me.txtnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnombre.ForeColor = System.Drawing.Color.Black
         Me.txtnombre.Location = New System.Drawing.Point(8, 82)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.ReadOnly = True
@@ -194,6 +193,7 @@ Partial Class CuadroCompras
         '
         Me.txtCantidad.BackColor = System.Drawing.Color.White
         Me.txtCantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCantidad.ForeColor = System.Drawing.Color.Black
         Me.txtCantidad.Location = New System.Drawing.Point(149, 119)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.ReadOnly = True
@@ -213,10 +213,11 @@ Partial Class CuadroCompras
         '
         'cbxProveedores
         '
+        Me.cbxProveedores.ForeColor = System.Drawing.Color.Black
         Me.cbxProveedores.FormattingEnabled = True
-        Me.cbxProveedores.Location = New System.Drawing.Point(414, 58)
+        Me.cbxProveedores.Location = New System.Drawing.Point(138, 43)
         Me.cbxProveedores.Name = "cbxProveedores"
-        Me.cbxProveedores.Size = New System.Drawing.Size(112, 21)
+        Me.cbxProveedores.Size = New System.Drawing.Size(153, 21)
         Me.cbxProveedores.TabIndex = 36
         '
         'btn_modificar
@@ -226,7 +227,7 @@ Partial Class CuadroCompras
         Me.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_modificar.ForeColor = System.Drawing.Color.Black
-        Me.btn_modificar.Location = New System.Drawing.Point(443, 172)
+        Me.btn_modificar.Location = New System.Drawing.Point(171, 149)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(120, 30)
         Me.btn_modificar.TabIndex = 29
@@ -237,9 +238,9 @@ Partial Class CuadroCompras
         '
         Me.txtValorComprado.BackColor = System.Drawing.Color.White
         Me.txtValorComprado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtValorComprado.Location = New System.Drawing.Point(414, 84)
+        Me.txtValorComprado.Location = New System.Drawing.Point(138, 69)
         Me.txtValorComprado.Name = "txtValorComprado"
-        Me.txtValorComprado.Size = New System.Drawing.Size(112, 26)
+        Me.txtValorComprado.Size = New System.Drawing.Size(153, 26)
         Me.txtValorComprado.TabIndex = 35
         Me.txtValorComprado.Text = "0"
         '
@@ -247,37 +248,37 @@ Partial Class CuadroCompras
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(280, 31)
+        Me.Label6.Location = New System.Drawing.Point(4, 16)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(122, 20)
+        Me.Label6.Size = New System.Drawing.Size(63, 20)
         Me.Label6.TabIndex = 32
-        Me.Label6.Text = "Total ingresado:"
+        Me.Label6.Text = "TOTAL:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(280, 87)
+        Me.Label7.Location = New System.Drawing.Point(4, 72)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(105, 20)
+        Me.Label7.Size = New System.Drawing.Size(74, 20)
         Me.Label7.TabIndex = 34
-        Me.Label7.Text = "PRECIO(c/u):"
+        Me.Label7.Text = "PRECIO:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(280, 119)
+        Me.Label3.Location = New System.Drawing.Point(4, 104)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(139, 20)
+        Me.Label3.Size = New System.Drawing.Size(91, 20)
         Me.Label3.TabIndex = 30
-        Me.Label3.Text = "INGRESAR(unid):"
+        Me.Label3.Text = "CANTIDAD"
         '
         'lbTotal
         '
         Me.lbTotal.AutoSize = True
         Me.lbTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbTotal.Location = New System.Drawing.Point(416, 31)
+        Me.lbTotal.Location = New System.Drawing.Point(140, 16)
         Me.lbTotal.Name = "lbTotal"
         Me.lbTotal.Size = New System.Drawing.Size(18, 20)
         Me.lbTotal.TabIndex = 33
@@ -338,6 +339,26 @@ Partial Class CuadroCompras
         Me.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.txtIngresar)
+        Me.GroupBox3.Controls.Add(Me.btn_modificar)
+        Me.GroupBox3.Controls.Add(Me.Label8)
+        Me.GroupBox3.Controls.Add(Me.Label6)
+        Me.GroupBox3.Controls.Add(Me.lbTotal)
+        Me.GroupBox3.Controls.Add(Me.cbxProveedores)
+        Me.GroupBox3.Controls.Add(Me.Label3)
+        Me.GroupBox3.Controls.Add(Me.txtValorComprado)
+        Me.GroupBox3.Controls.Add(Me.Label7)
+        Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox3.ForeColor = System.Drawing.Color.White
+        Me.GroupBox3.Location = New System.Drawing.Point(266, 15)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(297, 187)
+        Me.GroupBox3.TabIndex = 33
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "COMPRAR"
+        '
         'CuadroCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -345,14 +366,16 @@ Partial Class CuadroCompras
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(719, 527)
         Me.Controls.Add(Me.Panel1)
+        Me.ForeColor = System.Drawing.Color.White
         Me.Name = "CuadroCompras"
         Me.Text = "CuadroCompras"
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.tabla, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -382,4 +405,5 @@ Partial Class CuadroCompras
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents cbxProveedores As ComboBox
+    Friend WithEvents GroupBox3 As GroupBox
 End Class

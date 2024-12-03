@@ -139,6 +139,10 @@
         startY += 20
         e.Graphics.DrawString(total.ToString, FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
 
+        startY += 20
+        e.Graphics.DrawString("Total + iva", FuenteNegrita, Brushes.Black, e.MarginBounds.Left, startY)
+
+        e.Graphics.DrawString(total + (total * 16 / 100), FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
 
 
         ''''''''''''''''el data gri

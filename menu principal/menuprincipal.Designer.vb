@@ -24,7 +24,6 @@ Partial Class menuprincipal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(menuprincipal))
         Me.btn_compras = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btn_ventas = New System.Windows.Forms.Button()
         Me.btn_productos = New System.Windows.Forms.Button()
         Me.btn_proveedores = New System.Windows.Forms.Button()
@@ -45,6 +44,7 @@ Partial Class menuprincipal
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -63,20 +63,6 @@ Partial Class menuprincipal
         Me.btn_compras.Text = "Compras"
         Me.btn_compras.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btn_compras.UseVisualStyleBackColor = False
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.AutoSize = True
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.Panel1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Panel1.ForeColor = System.Drawing.Color.White
-        Me.Panel1.Location = New System.Drawing.Point(141, 25)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(594, 542)
-        Me.Panel1.TabIndex = 7
         '
         'btn_ventas
         '
@@ -315,6 +301,20 @@ Partial Class menuprincipal
         Me.Panel13.Size = New System.Drawing.Size(22, 33)
         Me.Panel13.TabIndex = 26
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.AutoSize = True
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.Panel1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Panel1.ForeColor = System.Drawing.Color.White
+        Me.Panel1.Location = New System.Drawing.Point(141, 25)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(594, 542)
+        Me.Panel1.TabIndex = 7
+        '
         'menuprincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -356,7 +356,6 @@ Partial Class menuprincipal
     End Sub
 
     Friend WithEvents btn_compras As Button
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents btn_ventas As Button
     Friend WithEvents btn_productos As Button
     Friend WithEvents btn_proveedores As Button
@@ -377,4 +376,5 @@ Partial Class menuprincipal
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Button4 As Button
     Friend WithEvents Panel13 As Panel
+    Friend WithEvents Panel1 As Panel
 End Class

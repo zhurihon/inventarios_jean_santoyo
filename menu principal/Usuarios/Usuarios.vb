@@ -36,6 +36,52 @@ Public Class usuarios
         tabla_usuarios.DataSource = menuprincipal.mostrar_usuarios().Tables(0)
     End Sub
 
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
 
+        If Comprobaciones.txtmaxymin(txtuser.Text, 16, 8) Then
+            txtuser.BackColor = Color.FromArgb(75, 7, 12)
+
+            If Comprobaciones.txtmaxymin(txtnombre.Text, 32, 4) Then
+                txtnombre.BackColor = Color.FromArgb(75, 7, 12)
+
+                If Comprobaciones.txtmaxymin(txtpass.Text, 16, 8) Then
+                    txtpass.BackColor = Color.FromArgb(75, 7, 12)
+
+                    If cb_cargo.SelectedIndex <> -1 Then
+                        cb_cargo.BackColor = Color.FromArgb(75, 7, 12)
+
+                        controller.sql.registrar_usuario(txtuser.Text, txtnombre.Text, txtpass.Text, cb_cargo.Text)
+                        tabla_usuarios.DataSource = controller.sql.consulta_usuarios.Tables(0)
+
+                        txtnombre.Clear()
+                        txtpass.Clear()
+                        txtuser.Clear()
+                        cb_cargo.SelectedIndex = -1
+
+
+                    Else
+                        cb_cargo.BackColor = Color.Red
+
+                    End If
+
+                Else
+                    txtpass.BackColor = Color.Red
+
+
+                End If
+
+
+            Else
+                    txtnombre.BackColor = Color.Red
+            End If
+
+        Else
+            txtuser.BackColor = Color.Red
+        End If
+
+
+
+
+    End Sub
 End Class

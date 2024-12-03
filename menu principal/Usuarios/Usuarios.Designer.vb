@@ -28,6 +28,7 @@ Partial Class usuarios
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cb_cargo = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtpass = New System.Windows.Forms.TextBox()
         Me.txtuser = New System.Windows.Forms.TextBox()
@@ -35,7 +36,6 @@ Partial Class usuarios
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.tabla_usuarios = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.tabla_usuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -74,7 +74,7 @@ Partial Class usuarios
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.cb_cargo)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtpass)
         Me.GroupBox1.Controls.Add(Me.txtuser)
@@ -91,6 +91,19 @@ Partial Class usuarios
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "AGREGAR USUARIO"
+        '
+        'cb_cargo
+        '
+        Me.cb_cargo.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.cb_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cb_cargo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cb_cargo.ForeColor = System.Drawing.Color.White
+        Me.cb_cargo.FormattingEnabled = True
+        Me.cb_cargo.Items.AddRange(New Object() {"empleado", "gerente", "jefe"})
+        Me.cb_cargo.Location = New System.Drawing.Point(302, 56)
+        Me.cb_cargo.Name = "cb_cargo"
+        Me.cb_cargo.Size = New System.Drawing.Size(100, 21)
+        Me.cb_cargo.TabIndex = 9
         '
         'Label7
         '
@@ -156,7 +169,7 @@ Partial Class usuarios
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -185,19 +198,6 @@ Partial Class usuarios
         Me.Panel1.Size = New System.Drawing.Size(578, 477)
         Me.Panel1.TabIndex = 10
         Me.Panel1.Visible = False
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.ForeColor = System.Drawing.Color.White
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"empleado", "gerente", "jefe"})
-        Me.ComboBox1.Location = New System.Drawing.Point(302, 56)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox1.TabIndex = 9
         '
         'usuarios
         '
@@ -229,5 +229,5 @@ Partial Class usuarios
     Friend WithEvents tabla_usuarios As DataGridView
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cb_cargo As ComboBox
 End Class

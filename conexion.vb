@@ -162,6 +162,29 @@ Module conexion
             End Try
         End Function
 
+
+        Public Function registrar_usuario(usuario As String, nombre As String, clave As String, cargo As String) As Boolean
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("INSERT INTO usuario (usuario, nombre, clave, cargo) VALUES (@usuario, @nombre, @clave, @cargo)", miconexion)
+                comando.Parameters.AddWithValue("@usuario", usuario)
+                comando.Parameters.AddWithValue("@nombre", nombre)
+                comando.Parameters.AddWithValue("@clave", clave)
+                comando.Parameters.AddWithValue("@cargo", cargo)
+
+                Dim filas_afectadas As Integer = comando.ExecuteNonQuery()
+
+                Return filas_afectadas > 0
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+                Return False
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
+
         Public Function actualizar_producto(pk As String, cod As String, nombre As String, precio As Single, tipo As String, proveedor As String, marca As String, color As String) As Boolean
             Try
                 miconexion.Open()
