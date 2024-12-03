@@ -4,6 +4,12 @@ Imports OfficeOpenXml.Style
 Imports System.Diagnostics
 Imports System.IO
 
+Imports Spire.Xls
+Imports Aspose.Cells
+
+Imports IronXL
+
+
 Module reportes
 
 
@@ -13,6 +19,8 @@ Module reportes
 
 
 
+        Dim fileNameWithoutExtension As String
+        Dim directoryPath As String
 
         Dim saveFileDialog As New SaveFileDialog()
         Dim filePath As String
@@ -25,6 +33,8 @@ Module reportes
         If saveFileDialog.ShowDialog() = DialogResult.OK Then
             ' Obtener la ruta del archivo seleccionado
             filePath = saveFileDialog.FileName
+            directoryPath = Path.GetDirectoryName(filePath)
+            fileNameWithoutExtension = Path.GetFileNameWithoutExtension(filePath)
 
             ' Escribir contenido al archivo
             Try
@@ -56,14 +66,46 @@ Module reportes
             worksheet.Cells(startRow, 1).LoadFromDataTable(dataTable, True)
 
             ' Construir el nombre del archivo
-            Dim fileName As String = tipo & " " & DateTime.Now.ToString("yyyy-MM-dd") & ".xlsx"
+            'Dim fileName As String = tipo & " " & DateTime.Now.ToString("yyyy-MM-dd") & ".xlsx"
             'Dim filePath As String = Path.Combine(reportesPath, fileName)
+
+
+
 
             ' Guardar el archivo en la carpeta "reportes"
             package.SaveAs(New FileInfo(filePath))
-            Process.Start(filePath)
+
+
+
+            'Process.Start(filePath)
+
+            Dim workbook As New Workbook(filePath)
+            'MsgBox(directoryPath & "\" & fileNameWithoutExtension & ".pdf")
+            ' Guardar como PDF
+
+
+            Dim sheet As Worksheet = workbook.Worksheets(0)
+
+            ' Ocultar encabezados de filas y columnas
+
+            sheet.PageSetup.PrintHeadings = False
+
+
+
+
+            workbook.Save(directoryPath & "\" & fileNameWithoutExtension & ".pdf", SaveFormat.Pdf)
+
+            Process.Start(directoryPath & "\" & fileNameWithoutExtension & ".pdf")
         End Using
     End Sub
+
+
+
+
+
+
+
+
 
     Public Sub fexcelEXMAPLE(dat As DataSet, tipo As String)
 
