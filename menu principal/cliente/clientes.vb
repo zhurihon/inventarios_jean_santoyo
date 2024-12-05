@@ -30,7 +30,7 @@
                                 direccion.Clear()
                                 mail.Clear()
 
-                                tabla_clientes.DataSource = controller.sql.dataset_clientes()
+                                tabla_clientes.DataSource = controller.sql.dataset_clientes().Tables(0)
 
                             End If
 
@@ -63,5 +63,13 @@
 
     Public Sub clientes_Load()
         tabla_clientes.DataSource = controller.sql.dataset_clientes.Tables(0)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        id.Clear()
+        nombre.Clear()
+        tlfno.Clear()
+        direccion.Clear()
+        mail.Clear()
     End Sub
 End Class

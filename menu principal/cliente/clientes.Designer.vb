@@ -22,7 +22,7 @@ Partial Class clientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.direccion = New System.Windows.Forms.TextBox()
@@ -37,6 +37,7 @@ Partial Class clientes
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tabla_clientes = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.tabla_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +61,7 @@ Partial Class clientes
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.direccion)
         Me.GroupBox1.Controls.Add(Me.tlfno)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -82,8 +84,9 @@ Partial Class clientes
         '
         'direccion
         '
-        Me.direccion.BackColor = System.Drawing.Color.White
+        Me.direccion.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.direccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.direccion.ForeColor = System.Drawing.Color.White
         Me.direccion.Location = New System.Drawing.Point(14, 86)
         Me.direccion.Name = "direccion"
         Me.direccion.Size = New System.Drawing.Size(139, 26)
@@ -91,8 +94,9 @@ Partial Class clientes
         '
         'tlfno
         '
-        Me.tlfno.BackColor = System.Drawing.Color.White
+        Me.tlfno.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.tlfno.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tlfno.ForeColor = System.Drawing.Color.White
         Me.tlfno.Location = New System.Drawing.Point(326, 35)
         Me.tlfno.Name = "tlfno"
         Me.tlfno.Size = New System.Drawing.Size(222, 26)
@@ -102,6 +106,7 @@ Partial Class clientes
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(11, 63)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(103, 20)
@@ -114,7 +119,7 @@ Partial Class clientes
         Me.btn_nuevo_prov.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_nuevo_prov.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_nuevo_prov.ForeColor = System.Drawing.Color.White
-        Me.btn_nuevo_prov.Location = New System.Drawing.Point(327, 86)
+        Me.btn_nuevo_prov.Location = New System.Drawing.Point(327, 67)
         Me.btn_nuevo_prov.Name = "btn_nuevo_prov"
         Me.btn_nuevo_prov.Size = New System.Drawing.Size(221, 26)
         Me.btn_nuevo_prov.TabIndex = 27
@@ -123,7 +128,9 @@ Partial Class clientes
         '
         'mail
         '
+        Me.mail.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.mail.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mail.ForeColor = System.Drawing.Color.White
         Me.mail.Location = New System.Drawing.Point(163, 86)
         Me.mail.Name = "mail"
         Me.mail.Size = New System.Drawing.Size(157, 26)
@@ -133,6 +140,7 @@ Partial Class clientes
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(160, 67)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(62, 20)
@@ -141,7 +149,9 @@ Partial Class clientes
         '
         'id
         '
+        Me.id.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.id.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.id.ForeColor = System.Drawing.Color.White
         Me.id.Location = New System.Drawing.Point(14, 34)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(139, 26)
@@ -149,8 +159,9 @@ Partial Class clientes
         '
         'nombre
         '
-        Me.nombre.BackColor = System.Drawing.Color.White
+        Me.nombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nombre.ForeColor = System.Drawing.Color.White
         Me.nombre.Location = New System.Drawing.Point(162, 35)
         Me.nombre.Name = "nombre"
         Me.nombre.Size = New System.Drawing.Size(158, 26)
@@ -160,6 +171,7 @@ Partial Class clientes
         '
         Me.Código.AutoSize = True
         Me.Código.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Código.ForeColor = System.Drawing.Color.White
         Me.Código.Location = New System.Drawing.Point(11, 16)
         Me.Código.Name = "Código"
         Me.Código.Size = New System.Drawing.Size(142, 20)
@@ -170,6 +182,7 @@ Partial Class clientes
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(159, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(83, 20)
@@ -180,6 +193,7 @@ Partial Class clientes
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(323, 13)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(84, 20)
@@ -194,17 +208,31 @@ Partial Class clientes
         Me.tabla_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.tabla_clientes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.tabla_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tabla_clientes.GridColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.tabla_clientes.Location = New System.Drawing.Point(3, 142)
         Me.tabla_clientes.MultiSelect = False
         Me.tabla_clientes.Name = "tabla_clientes"
         Me.tabla_clientes.ReadOnly = True
         Me.tabla_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.tabla_clientes.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.tabla_clientes.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.tabla_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.tabla_clientes.Size = New System.Drawing.Size(572, 323)
         Me.tabla_clientes.TabIndex = 8
         Me.tabla_clientes.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(327, 99)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(111, 26)
+        Me.Button1.TabIndex = 36
+        Me.Button1.Text = "BORRAR"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'clientes
         '
@@ -236,4 +264,5 @@ Partial Class clientes
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents tabla_clientes As DataGridView
+    Friend WithEvents Button1 As Button
 End Class
