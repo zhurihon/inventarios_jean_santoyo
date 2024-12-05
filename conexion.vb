@@ -97,6 +97,36 @@ Module conexion
             Return datos_recebidos
         End Function
 
+        Public Function consulta_productos_Indexid(id As String) As DataSet
+
+            Try
+
+                miconexion.Open()
+                Dim cmd As New MySqlCommand("SELECT * FROM santoyo.producto WHERE cod LIKE @busqueda", miconexion)
+                cmd.Parameters.AddWithValue("@busqueda", "%" & id & "%")
+
+                Dim llamada As New MySqlDataAdapter(cmd)
+
+                Dim datos_recebidos As New DataSet
+
+                llamada.Fill(datos_recebidos, "prod")
+
+                miconexion.Close()
+
+                Return datos_recebidos
+
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+
+
+
+        End Function
+
 
         Public Function consulta_cliente() As DataSet
             miconexion.Open()

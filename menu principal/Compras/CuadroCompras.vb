@@ -71,7 +71,7 @@
 
     Private Sub tabla_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tabla.CellClick
         If e.RowIndex >= 0 Then
-
+            id_mode = 0
             Dim row As DataGridViewRow = tabla.Rows(e.RowIndex)
             tabla.Rows(e.RowIndex).Selected = True
 
@@ -120,4 +120,40 @@
     Private Sub CuadroCompras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+
+
+
+    Private Sub id_TextChanged(sender As Object, e As EventArgs) Handles id.TextChanged
+
+        If id_mode Then
+
+
+
+        End If
+
+    End Sub
+
+    Private id_mode As Boolean = 0
+
+    Private Sub id_Click(sender As Object, e As EventArgs) Handles id.Click
+        id_mode = 1
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+
+        If txtBuscar.Text = "" Then
+            tabla.DataSource = controller.sql.consulta_productos().Tables(0)
+        Else
+            tabla.DataSource = controller.sql.consulta_productos_Indexid(txtBuscar.Text).Tables(0)
+        End If
+
+
+    End Sub
+
+
+
+
+
+
 End Class
