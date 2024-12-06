@@ -22,7 +22,7 @@ Partial Class clientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.direccion = New System.Windows.Forms.TextBox()
@@ -37,7 +37,6 @@ Partial Class clientes
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tabla_clientes = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.tabla_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +60,6 @@ Partial Class clientes
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.direccion)
         Me.GroupBox1.Controls.Add(Me.tlfno)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -119,7 +117,7 @@ Partial Class clientes
         Me.btn_nuevo_prov.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_nuevo_prov.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_nuevo_prov.ForeColor = System.Drawing.Color.White
-        Me.btn_nuevo_prov.Location = New System.Drawing.Point(327, 67)
+        Me.btn_nuevo_prov.Location = New System.Drawing.Point(326, 86)
         Me.btn_nuevo_prov.Name = "btn_nuevo_prov"
         Me.btn_nuevo_prov.Size = New System.Drawing.Size(221, 26)
         Me.btn_nuevo_prov.TabIndex = 27
@@ -214,25 +212,12 @@ Partial Class clientes
         Me.tabla_clientes.Name = "tabla_clientes"
         Me.tabla_clientes.ReadOnly = True
         Me.tabla_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.tabla_clientes.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.tabla_clientes.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.tabla_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.tabla_clientes.Size = New System.Drawing.Size(572, 323)
         Me.tabla_clientes.TabIndex = 8
         Me.tabla_clientes.TabStop = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(327, 99)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(111, 26)
-        Me.Button1.TabIndex = 36
-        Me.Button1.Text = "BORRAR"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'clientes
         '
@@ -264,5 +249,4 @@ Partial Class clientes
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents tabla_clientes As DataGridView
-    Friend WithEvents Button1 As Button
 End Class

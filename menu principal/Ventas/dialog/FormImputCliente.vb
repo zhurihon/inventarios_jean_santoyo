@@ -47,4 +47,18 @@
         Me.DialogResult = DialogResult.Cancel ' Establecer el resultado del diálogo como Cancel
         Me.Close() ' Cerrar el formulario
     End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+
+
+        If txtBuscar.Text = "" Then
+            tabla.DataSource = controller.sql.consulta_cliente().Tables(0)
+        Else
+            tabla.DataSource = controller.sql.buscar_clientetxt(txtBuscar.Text).Tables(0)
+        End If
+    End Sub
+
+    Private Sub tabla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles tabla.CellContentClick
+
+    End Sub
 End Class

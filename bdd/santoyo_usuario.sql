@@ -37,7 +37,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('a','a','a','empleado'),('Cayler','1234','cayler','empleado'),('jesu','123','jesu','jefe');
+INSERT INTO `usuario` VALUES ('a','a','a','empleado'),('Cayler','1234','cayler','empleado'),('jesu','123','jesu','jefe'),('jmendoza','123456789','jorge mendoza',''),('lmarcano','123456789','luis marcano','gerente');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-02 13:27:14
+-- Dump completed on 2024-12-06 11:50:05

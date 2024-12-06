@@ -16,30 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `producto`
+-- Table structure for table `servicios`
 --
 
-DROP TABLE IF EXISTS `producto`;
+DROP TABLE IF EXISTS `servicios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `producto` (
-  `cod` varchar(16) NOT NULL,
-  `nombre` varchar(64) NOT NULL,
-  `cantidad` double DEFAULT '0',
-  `precio` float DEFAULT NULL,
-  `tipo` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`cod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `servicios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(45) DEFAULT NULL,
+  `precio` double DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `producto`
+-- Dumping data for table `servicios`
 --
 
-LOCK TABLES `producto` WRITE;
-/*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES ('Ac1','aceites gpt1',5,20,'Aceites'),('H1','Esmeril',65,12,'Herramienta'),('Rp1','compresor 5btu',70,50,'Repuesto');
-/*!40000 ALTER TABLE `producto` ENABLE KEYS */;
+LOCK TABLES `servicios` WRITE;
+/*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
+INSERT INTO `servicios` VALUES (1,'Identificación de fugas en el sistema',60),(2,'Evaluación del rendimiento del sistema.',500);
+/*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

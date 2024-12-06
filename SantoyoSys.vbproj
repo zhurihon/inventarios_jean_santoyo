@@ -199,6 +199,12 @@
     <Compile Include="menu principal\Reportes\Report.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="menu principal\Servicos\Servicios.Designer.vb">
+      <DependentUpon>Servicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Servicos\Servicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="menu principal\Usuarios\Usuarios.Designer.vb">
       <DependentUpon>Usuarios.vb</DependentUpon>
     </Compile>
@@ -215,6 +221,12 @@
       <DependentUpon>FormImputCliente.vb</DependentUpon>
     </Compile>
     <Compile Include="menu principal\Ventas\dialog\FormImputCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Ventas\dialog\FormImputServiciosComunes.Designer.vb">
+      <DependentUpon>FormImputServiciosComunes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Ventas\dialog\FormImputServiciosComunes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="menu principal\Ventas\dialog\FormInputCantidad.Designer.vb">
@@ -289,6 +301,9 @@
     <EmbeddedResource Include="menu principal\Reportes\Report.resx">
       <DependentUpon>Report.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Servicos\Servicios.resx">
+      <DependentUpon>Servicios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="menu principal\Usuarios\Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menu principal\Ventas\dialog\FormImputCliente.resx">
       <DependentUpon>FormImputCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Ventas\dialog\FormImputServiciosComunes.resx">
+      <DependentUpon>FormImputServiciosComunes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menu principal\Ventas\dialog\FormInputCantidad.resx">
       <DependentUpon>FormInputCantidad.vb</DependentUpon>

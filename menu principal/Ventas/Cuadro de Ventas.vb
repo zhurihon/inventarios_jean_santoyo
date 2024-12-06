@@ -12,6 +12,8 @@ Public Class Cuadro_de_Ventas
     Private servicio As Double = 0
     Private suplies As Double = 0
 
+    Private igtf As Double = 0
+
 
 
     Private tirrapCliente As Boolean = 0
@@ -120,12 +122,28 @@ Public Class Cuadro_de_Ventas
                 suplies += cantidad * row.Cells("precio").Value
 
                 txt_total.Text = suplies + servicio
+                total = suplies + servicio
                 ' Agregar una fila al DataGridView
                 ticket.Rows.Add(row.Cells("cod").Value.ToString, row.Cells("nombre").Value.ToString, row.Cells("precio").Value.ToString, cantidad)
+
+
+
 
             Else
                 MessageBox.Show("Operación cancelada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
+
+
+            igtf = 0
+
+            txtiva.Text = 16 * (total / 100)
+            If rbDivisa.Checked Then
+
+                txtigtf.Text = 3 * (total / 100)
+                igtf = 3 * (total / 100)
+            End If
+
+            txtmontopagar.Text = (16 * (total / 100)) + igtf + total
 
 
         End If
@@ -143,6 +161,15 @@ Public Class Cuadro_de_Ventas
             servicio = CDbl(txtMontoServicio.Text)
             total = servicio + suplies
             txt_total.Text = total
+            igtf = 0
+
+            txtiva.Text = 16 * (total / 100)
+            If rbDivisa.Checked Then
+
+                txtigtf.Text = 3 * (total / 100)
+            End If
+
+            txtmontopagar.Text = (16 * (total / 100)) + igtf + total
         Else
             servicio = 0
 
@@ -237,5 +264,52 @@ Public Class Cuadro_de_Ventas
         Else
             MessageBox.Show("Operación cancelada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim input As New FormImputServiciosComunes
+
+        If input.ShowDialog() = DialogResult.OK Then
+
+            txtDescripcion.Text = input.inputservicop
+            txtMontoServicio.Text = input.inputprecio
+
+        Else
+            MsgBox("operacion cancelada")
+        End If
+
+    End Sub
+
+    Private Sub rbDivisa_CheckedChanged(sender As Object, e As EventArgs) Handles rbDivisa.CheckedChanged
+
+
+        igtf = 0
+
+        txtiva.Text = 16 * (total / 100)
+
+        If rbDivisa.Checked Then
+
+            txtigtf.Text = 3 * (total / 100)
+
+            igtf = 3 * (total / 100)
+        End If
+
+        txtmontopagar.Text = (16 * (total / 100)) + igtf + total
+
+
+    End Sub
+
+    Private Sub rbVes_CheckedChanged(sender As Object, e As EventArgs) Handles rbVes.CheckedChanged
+        igtf = 0
+
+        txtiva.Text = 16 * (total / 100)
+        If rbDivisa.Checked Then
+
+            txtigtf.Text = 3 * (total / 100)
+
+            igtf = 3 * (total / 100)
+        End If
+
+        txtmontopagar.Text = (16 * (total / 100)) + igtf + total
     End Sub
 End Class

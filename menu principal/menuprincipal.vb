@@ -22,6 +22,7 @@ Public Class menuprincipal
     Public ventana_alertar As Panel = alertas.Alerta
     Public ventana_reporte As Panel = Report.Panel1
     Public ventana_clientes As Panel = clientes.Panel1
+    Public ventana_servicio As Panel = Servicios.Panel1
 
 
     Public Function ocultar_paneles()
@@ -38,6 +39,8 @@ Public Class menuprincipal
         ventana_alertar.Visible = 0
         ventana_reporte.Visible = 0
         ventana_clientes.Visible = 0
+
+        ventana_servicio.Visible = 0
 
     End Function
 
@@ -59,6 +62,8 @@ Public Class menuprincipal
         Me.Controls.Add(ventana_reporte)
 
         Me.Controls.Add(ventana_clientes)
+
+        Me.Controls.Add(ventana_servicio)
 
         Me.ControlBox = False
         Me.Text = ""
@@ -293,5 +298,11 @@ Public Class menuprincipal
         ocultar_paneles()
         ventana_clientes.Visible = 1
         clientes.clientes_Load()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        ocultar_paneles()
+        ventana_servicio.Visible = 1
+        Servicios.Servicios_Load()
     End Sub
 End Class
