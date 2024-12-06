@@ -207,6 +207,15 @@ Public Class Cuadro_de_Ventas
 
     End Sub
 
+
+    Private Sub vaciar()
+
+        rbDivisa.Checked = 0
+        rbVes.Checked = 0
+        txtCnombreView.Clear()
+        txtCidview.Clear()
+    End Sub
+
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Dim inputForm As New FormImputCliente()
 

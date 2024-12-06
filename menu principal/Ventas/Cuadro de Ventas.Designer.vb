@@ -56,6 +56,12 @@ Partial Class Cuadro_de_Ventas
         Me.Label8 = New System.Windows.Forms.Label()
         Me.rbDivisa = New System.Windows.Forms.RadioButton()
         Me.rbVes = New System.Windows.Forms.RadioButton()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         CType(Me.tabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -100,17 +106,23 @@ Partial Class Cuadro_de_Ventas
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.rbVes)
-        Me.GroupBox1.Controls.Add(Me.rbDivisa)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
-        Me.GroupBox1.Controls.Add(Me.txt_total)
-        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.rbDivisa)
         Me.GroupBox1.Controls.Add(Me.ticket)
         Me.GroupBox1.Controls.Add(Me.txtMontoServicio)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtDescripcion)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.btn_modificar)
+        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.txt_total)
+        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
@@ -123,29 +135,32 @@ Partial Class Cuadro_de_Ventas
         'txt_total
         '
         Me.txt_total.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.txt_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_total.ForeColor = System.Drawing.Color.White
-        Me.txt_total.Location = New System.Drawing.Point(423, 13)
+        Me.txt_total.Location = New System.Drawing.Point(103, 246)
+        Me.txt_total.Margin = New System.Windows.Forms.Padding(0)
         Me.txt_total.Name = "txt_total"
-        Me.txt_total.Size = New System.Drawing.Size(138, 35)
+        Me.txt_total.Size = New System.Drawing.Size(100, 20)
         Me.txt_total.TabIndex = 39
         Me.txt_total.Text = "0"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(217, 19)
+        Me.Label3.Location = New System.Drawing.Point(6, 249)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(200, 20)
+        Me.Label3.Size = New System.Drawing.Size(45, 13)
         Me.Label3.TabIndex = 38
-        Me.Label3.Text = "MONTO TOTAL A PAGAR:"
+        Me.Label3.Text = "TOTAL:"
         '
         'ticket
         '
-        Me.ticket.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.ticket.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ticket.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ticket.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.ticket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -159,12 +174,13 @@ Partial Class Cuadro_de_Ventas
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.ticket.DefaultCellStyle = DataGridViewCellStyle2
         Me.ticket.Location = New System.Drawing.Point(6, 19)
+        Me.ticket.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.ticket.MultiSelect = False
         Me.ticket.Name = "ticket"
         Me.ticket.ReadOnly = True
         Me.ticket.RowHeadersVisible = False
         Me.ticket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ticket.Size = New System.Drawing.Size(197, 295)
+        Me.ticket.Size = New System.Drawing.Size(197, 227)
         Me.ticket.TabIndex = 9
         '
         'ccod
@@ -205,20 +221,22 @@ Partial Class Cuadro_de_Ventas
         '
         'txtMontoServicio
         '
+        Me.txtMontoServicio.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtMontoServicio.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.txtMontoServicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMontoServicio.ForeColor = System.Drawing.Color.White
-        Me.txtMontoServicio.Location = New System.Drawing.Point(445, 252)
+        Me.txtMontoServicio.Location = New System.Drawing.Point(445, 203)
         Me.txtMontoServicio.Name = "txtMontoServicio"
         Me.txtMontoServicio.Size = New System.Drawing.Size(118, 26)
         Me.txtMontoServicio.TabIndex = 37
         '
         'Label7
         '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(287, 252)
+        Me.Label7.Location = New System.Drawing.Point(287, 203)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(152, 20)
         Me.Label7.TabIndex = 36
@@ -226,10 +244,11 @@ Partial Class Cuadro_de_Ventas
         '
         'txtDescripcion
         '
+        Me.txtDescripcion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.txtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcion.ForeColor = System.Drawing.Color.White
-        Me.txtDescripcion.Location = New System.Drawing.Point(219, 178)
+        Me.txtDescripcion.Location = New System.Drawing.Point(224, 132)
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(342, 68)
@@ -237,10 +256,11 @@ Partial Class Cuadro_de_Ventas
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(215, 155)
+        Me.Label2.Location = New System.Drawing.Point(220, 109)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(152, 20)
         Me.Label2.TabIndex = 34
@@ -248,11 +268,12 @@ Partial Class Cuadro_de_Ventas
         '
         'btn_modificar
         '
+        Me.btn_modificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_modificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_modificar.ForeColor = System.Drawing.Color.White
-        Me.btn_modificar.Location = New System.Drawing.Point(445, 284)
+        Me.btn_modificar.Location = New System.Drawing.Point(445, 235)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(118, 30)
         Me.btn_modificar.TabIndex = 29
@@ -381,6 +402,7 @@ Partial Class Cuadro_de_Ventas
         '
         'GroupBox3
         '
+        Me.GroupBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.GroupBox3.Controls.Add(Me.txtCidview)
         Me.GroupBox3.Controls.Add(Me.Label8)
@@ -388,7 +410,7 @@ Partial Class Cuadro_de_Ventas
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.Button1)
         Me.GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.GroupBox3.Location = New System.Drawing.Point(219, 54)
+        Me.GroupBox3.Location = New System.Drawing.Point(224, 10)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(342, 98)
         Me.GroupBox3.TabIndex = 33
@@ -441,8 +463,9 @@ Partial Class Cuadro_de_Ventas
         '
         'rbDivisa
         '
+        Me.rbDivisa.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbDivisa.AutoSize = True
-        Me.rbDivisa.Location = New System.Drawing.Point(232, 291)
+        Me.rbDivisa.Location = New System.Drawing.Point(301, 235)
         Me.rbDivisa.Name = "rbDivisa"
         Me.rbDivisa.Size = New System.Drawing.Size(54, 17)
         Me.rbDivisa.TabIndex = 40
@@ -451,13 +474,85 @@ Partial Class Cuadro_de_Ventas
         '
         'rbVes
         '
+        Me.rbVes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbVes.AutoSize = True
-        Me.rbVes.Location = New System.Drawing.Point(291, 291)
+        Me.rbVes.Location = New System.Drawing.Point(360, 235)
         Me.rbVes.Name = "rbVes"
         Me.rbVes.Size = New System.Drawing.Size(70, 17)
         Me.rbVes.TabIndex = 41
         Me.rbVes.Text = "Bolívares"
         Me.rbVes.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.White
+        Me.TextBox1.Location = New System.Drawing.Point(103, 263)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(0)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 43
+        Me.TextBox1.Text = "0"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(6, 266)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(27, 13)
+        Me.Label9.TabIndex = 42
+        Me.Label9.Text = "IVA:"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.ForeColor = System.Drawing.Color.White
+        Me.TextBox2.Location = New System.Drawing.Point(103, 282)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(0)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 45
+        Me.TextBox2.Text = "0"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(6, 285)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(34, 13)
+        Me.Label10.TabIndex = 44
+        Me.Label10.Text = "IGTF:"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.ForeColor = System.Drawing.Color.White
+        Me.TextBox3.Location = New System.Drawing.Point(103, 300)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox3.TabIndex = 47
+        Me.TextBox3.Text = "0"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(6, 300)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(95, 13)
+        Me.Label11.TabIndex = 46
+        Me.Label11.Text = "TOTAL A PAGAR:"
         '
         'Cuadro_de_Ventas
         '
@@ -514,4 +609,10 @@ Partial Class Cuadro_de_Ventas
     Friend WithEvents Label6 As Label
     Friend WithEvents rbVes As RadioButton
     Friend WithEvents rbDivisa As RadioButton
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label9 As Label
 End Class
