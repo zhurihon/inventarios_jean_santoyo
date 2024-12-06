@@ -980,6 +980,31 @@ WHERE p.cod LIKE @buscarTexto OR p.nombre LIKE @buscarTexto"
             End Try
 
         End Function
+
+
+
+        Public Function consulta_clienteId(id As String) As DataSet
+
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("select * from cliente where id= @id;", miconexion)
+                comando.Parameters.AddWithValue("@id", id)
+                Dim llamada As New MySqlDataAdapter(comando)
+                Dim dt As New DataSet
+                llamada.Fill(dt, "r")
+                miconexion.Close()
+                Return dt
+
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+
+        End Function
+
         Public Function dataset_VentasAnno() As DataSet
 
             Try

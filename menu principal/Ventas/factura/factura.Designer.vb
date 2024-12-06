@@ -48,10 +48,10 @@ Partial Class factura
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.tPrecio = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
+        Me.clienteDireccion = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
+        Me.clienteNumero = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
@@ -67,6 +67,8 @@ Partial Class factura
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.dgv_tabla = New System.Windows.Forms.DataGridView()
         Me.cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clienteDocumento = New System.Windows.Forms.Label()
+        Me.labelDireccion = New System.Windows.Forms.Label()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_tabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -74,7 +76,7 @@ Partial Class factura
         'fecha
         '
         Me.fecha.AutoSize = True
-        Me.fecha.Location = New System.Drawing.Point(526, 30)
+        Me.fecha.Location = New System.Drawing.Point(517, 50)
         Me.fecha.Margin = New System.Windows.Forms.Padding(0)
         Me.fecha.Name = "fecha"
         Me.fecha.Size = New System.Drawing.Size(34, 13)
@@ -84,17 +86,17 @@ Partial Class factura
         'ubicacion
         '
         Me.ubicacion.AutoSize = True
-        Me.ubicacion.Location = New System.Drawing.Point(207, 54)
+        Me.ubicacion.Location = New System.Drawing.Point(188, 50)
         Me.ubicacion.Margin = New System.Windows.Forms.Padding(0)
         Me.ubicacion.Name = "ubicacion"
-        Me.ubicacion.Size = New System.Drawing.Size(267, 13)
+        Me.ubicacion.Size = New System.Drawing.Size(181, 13)
         Me.ubicacion.TabIndex = 43
-        Me.ubicacion.Text = "Urb Boyaca iv Barcelona Anzoátegui Zona postal 6001"
+        Me.ubicacion.Text = "Urb Boyaca iv Barcelona Anzoátegui"
         '
         'rif
         '
         Me.rif.AutoSize = True
-        Me.rif.Location = New System.Drawing.Point(298, 83)
+        Me.rif.Location = New System.Drawing.Point(188, 72)
         Me.rif.Margin = New System.Windows.Forms.Padding(0)
         Me.rif.Name = "rif"
         Me.rif.Size = New System.Drawing.Size(118, 13)
@@ -104,7 +106,7 @@ Partial Class factura
         'titulo
         '
         Me.titulo.AutoSize = True
-        Me.titulo.Location = New System.Drawing.Point(298, 118)
+        Me.titulo.Location = New System.Drawing.Point(516, 30)
         Me.titulo.Margin = New System.Windows.Forms.Padding(0)
         Me.titulo.Name = "titulo"
         Me.titulo.Size = New System.Drawing.Size(43, 13)
@@ -114,7 +116,7 @@ Partial Class factura
         'nombre
         '
         Me.nombre.AutoSize = True
-        Me.nombre.Location = New System.Drawing.Point(287, 30)
+        Me.nombre.Location = New System.Drawing.Point(188, 30)
         Me.nombre.Margin = New System.Windows.Forms.Padding(0)
         Me.nombre.Name = "nombre"
         Me.nombre.Size = New System.Drawing.Size(150, 13)
@@ -146,7 +148,7 @@ Partial Class factura
         'cliente
         '
         Me.cliente.AutoSize = True
-        Me.cliente.Location = New System.Drawing.Point(522, 118)
+        Me.cliente.Location = New System.Drawing.Point(188, 100)
         Me.cliente.Margin = New System.Windows.Forms.Padding(0)
         Me.cliente.Name = "cliente"
         Me.cliente.Size = New System.Drawing.Size(39, 13)
@@ -316,22 +318,22 @@ Partial Class factura
         'tPrecio
         '
         Me.tPrecio.AutoSize = True
-        Me.tPrecio.Location = New System.Drawing.Point(522, 165)
+        Me.tPrecio.Location = New System.Drawing.Point(534, 165)
         Me.tPrecio.Margin = New System.Windows.Forms.Padding(0)
         Me.tPrecio.Name = "tPrecio"
         Me.tPrecio.Size = New System.Drawing.Size(37, 13)
         Me.tPrecio.TabIndex = 77
         Me.tPrecio.Text = "Precio"
         '
-        'Label22
+        'clienteDireccion
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(522, 364)
-        Me.Label22.Margin = New System.Windows.Forms.Padding(0)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(43, 13)
-        Me.Label22.TabIndex = 76
-        Me.Label22.Text = "Factura"
+        Me.clienteDireccion.AutoSize = True
+        Me.clienteDireccion.Location = New System.Drawing.Point(188, 143)
+        Me.clienteDireccion.Margin = New System.Windows.Forms.Padding(0)
+        Me.clienteDireccion.Name = "clienteDireccion"
+        Me.clienteDireccion.Size = New System.Drawing.Size(52, 13)
+        Me.clienteDireccion.TabIndex = 76
+        Me.clienteDireccion.Text = "Direccion"
         '
         'Label23
         '
@@ -353,15 +355,15 @@ Partial Class factura
         Me.Label24.TabIndex = 74
         Me.Label24.Text = "Factura"
         '
-        'Label25
+        'clienteNumero
         '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(522, 325)
-        Me.Label25.Margin = New System.Windows.Forms.Padding(0)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(43, 13)
-        Me.Label25.TabIndex = 73
-        Me.Label25.Text = "Factura"
+        Me.clienteNumero.AutoSize = True
+        Me.clienteNumero.Location = New System.Drawing.Point(412, 127)
+        Me.clienteNumero.Margin = New System.Windows.Forms.Padding(0)
+        Me.clienteNumero.Name = "clienteNumero"
+        Me.clienteNumero.Size = New System.Drawing.Size(52, 13)
+        Me.clienteNumero.TabIndex = 73
+        Me.clienteNumero.Text = "Teléfono:"
         '
         'Label26
         '
@@ -416,7 +418,7 @@ Partial Class factura
         'tDescripcion
         '
         Me.tDescripcion.AutoSize = True
-        Me.tDescripcion.Location = New System.Drawing.Point(175, 165)
+        Me.tDescripcion.Location = New System.Drawing.Point(191, 165)
         Me.tDescripcion.Margin = New System.Windows.Forms.Padding(0)
         Me.tDescripcion.Name = "tDescripcion"
         Me.tDescripcion.Size = New System.Drawing.Size(63, 13)
@@ -436,7 +438,7 @@ Partial Class factura
         'p4
         '
         Me.p4.AutoSize = True
-        Me.p4.Location = New System.Drawing.Point(517, 194)
+        Me.p4.Location = New System.Drawing.Point(534, 194)
         Me.p4.Margin = New System.Windows.Forms.Padding(0)
         Me.p4.Name = "p4"
         Me.p4.Size = New System.Drawing.Size(43, 13)
@@ -456,7 +458,7 @@ Partial Class factura
         'p2
         '
         Me.p2.AutoSize = True
-        Me.p2.Location = New System.Drawing.Point(175, 194)
+        Me.p2.Location = New System.Drawing.Point(191, 194)
         Me.p2.Margin = New System.Windows.Forms.Padding(0)
         Me.p2.Name = "p2"
         Me.p2.Size = New System.Drawing.Size(43, 13)
@@ -495,17 +497,39 @@ Partial Class factura
         Me.cod.HeaderText = "cod"
         Me.cod.Name = "cod"
         '
+        'clienteDocumento
+        '
+        Me.clienteDocumento.AutoSize = True
+        Me.clienteDocumento.Location = New System.Drawing.Point(412, 100)
+        Me.clienteDocumento.Margin = New System.Windows.Forms.Padding(0)
+        Me.clienteDocumento.Name = "clienteDocumento"
+        Me.clienteDocumento.Size = New System.Drawing.Size(62, 13)
+        Me.clienteDocumento.TabIndex = 79
+        Me.clienteDocumento.Text = "Documento"
+        '
+        'labelDireccion
+        '
+        Me.labelDireccion.AutoSize = True
+        Me.labelDireccion.Location = New System.Drawing.Point(188, 127)
+        Me.labelDireccion.Margin = New System.Windows.Forms.Padding(0)
+        Me.labelDireccion.Name = "labelDireccion"
+        Me.labelDireccion.Size = New System.Drawing.Size(55, 13)
+        Me.labelDireccion.TabIndex = 80
+        Me.labelDireccion.Text = "Direccion:"
+        '
         'factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 644)
+        Me.Controls.Add(Me.labelDireccion)
+        Me.Controls.Add(Me.clienteDocumento)
         Me.Controls.Add(Me.dgv_tabla)
         Me.Controls.Add(Me.tPrecio)
-        Me.Controls.Add(Me.Label22)
+        Me.Controls.Add(Me.clienteDireccion)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.Label24)
-        Me.Controls.Add(Me.Label25)
+        Me.Controls.Add(Me.clienteNumero)
         Me.Controls.Add(Me.Label26)
         Me.Controls.Add(Me.Label27)
         Me.Controls.Add(Me.Label28)
@@ -574,10 +598,10 @@ Partial Class factura
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents tPrecio As Label
-    Friend WithEvents Label22 As Label
+    Friend WithEvents clienteDireccion As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
-    Friend WithEvents Label25 As Label
+    Friend WithEvents clienteNumero As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Label27 As Label
     Friend WithEvents Label28 As Label
@@ -593,4 +617,6 @@ Partial Class factura
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
     Friend WithEvents dgv_tabla As DataGridView
     Friend WithEvents cod As DataGridViewTextBoxColumn
+    Friend WithEvents clienteDocumento As Label
+    Friend WithEvents labelDireccion As Label
 End Class

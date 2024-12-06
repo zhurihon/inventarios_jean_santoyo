@@ -70,5 +70,8 @@ SantoyoSys
 <member name="M:SantoyoSys.Productos.btn_back1_Click(System.Object,System.EventArgs)">
  '''''''''''''''''''''''''''''''''''
 </member>
+<member name="M:SantoyoSys.Cuadro_de_Ventas.Button1_Click(System.Object,System.EventArgs)">
+ ''''''''''
+</member>
 </members>
 </doc>

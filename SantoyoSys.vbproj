@@ -211,6 +211,12 @@
     <Compile Include="menu principal\Ventas\Cuadro de Ventas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="menu principal\Ventas\dialog\FormImputCliente.Designer.vb">
+      <DependentUpon>FormImputCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Ventas\dialog\FormImputCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="menu principal\Ventas\dialog\FormInputCantidad.Designer.vb">
       <DependentUpon>FormInputCantidad.vb</DependentUpon>
     </Compile>
@@ -288,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menu principal\Ventas\Cuadro de Ventas.resx">
       <DependentUpon>Cuadro de Ventas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Ventas\dialog\FormImputCliente.resx">
+      <DependentUpon>FormImputCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menu principal\Ventas\dialog\FormInputCantidad.resx">
       <DependentUpon>FormInputCantidad.vb</DependentUpon>

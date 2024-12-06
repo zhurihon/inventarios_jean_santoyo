@@ -8,7 +8,9 @@
     Private precioservicio As Integer = 0
     Private total As Double = 0
 
-    Public Sub factura_Load(dgv As DataGridView, montoTotal As Double, servicoINFO As String, servicioPRECIO As Double, scliente As String)
+    Private tipopago As Boolean = 0
+
+    Public Sub factura_Load(dgv As DataGridView, montoTotal As Double, servicoINFO As String, servicioPRECIO As Double, scliente As String, datoscliente As DataSet, divisa As Boolean)
         'PrintLine = 0
         'Contador = 0
 
@@ -16,10 +18,21 @@
         servicio = servicoINFO
         precioservicio = servicioPRECIO
         total = montoTotal
+
+
+        tipopago = divisa
+
+
         'dgv_tabla = dgv
         'dgv_tabla.DataSource = dgv.DataSource
 
-        cliente.Text = scliente
+        cliente.Text = "Cliente: " & scliente
+
+        clienteDocumento.Text = "Documento: " & datoscliente.Tables(0).Rows(0).Item("id").ToString
+        clienteNumero.Text = "Número: " & datoscliente.Tables(0).Rows(0).Item("Telefono").ToString
+
+        clienteDireccion.Text = datoscliente.Tables(0).Rows(0).Item("Direccion").ToString
+
 
         ' Limpiar el DataGridView2 antes de copiar
         dgv_tabla.Rows.Clear()
@@ -74,16 +87,30 @@
 
         e.Graphics.DrawString(Me.titulo.Text, FuenteTitulo, Brushes.Black, Me.titulo.Left, Me.titulo.Top)
 
-        e.Graphics.DrawString(Me.cliente.Text, FuenteTitulo, Brushes.Black, Me.cliente.Left, Me.cliente.Top)
+        e.Graphics.DrawString(Me.cliente.Text, FuenteNegrita, Brushes.Black, Me.cliente.Left, Me.cliente.Top)
+        e.Graphics.DrawString(Me.clienteDireccion.Text, FuenteNegrita, Brushes.Black, Me.clienteDireccion.Left, Me.clienteDireccion.Top)
+        e.Graphics.DrawString(Me.clienteDocumento.Text, FuenteNegrita, Brushes.Black, Me.clienteDocumento.Left, Me.clienteDocumento.Top)
+        e.Graphics.DrawString(Me.clienteNumero.Text, FuenteNegrita, Brushes.Black, Me.clienteNumero.Left, Me.clienteNumero.Top)
+
+
+        e.Graphics.DrawString(Me.labelDireccion.Text, FuenteNegrita, Brushes.Black, Me.labelDireccion.Left, Me.labelDireccion.Top)
 
 
         e.Graphics.DrawString(Me.Label3.Text, FuenteTitulo, Brushes.Black, Me.Label3.Left, Me.Label3.Top)
 
+        Dim backColor As Brush = New SolidBrush(Color.FromArgb(75, 7, 12)) ' Puedes cambiar el color según tus necesidades
 
-        e.Graphics.DrawString(Me.tCod.Text, FuenteTitulo, Brushes.Black, Me.tCod.Left, Me.tCod.Top)
-        e.Graphics.DrawString(Me.tDescripcion.Text, FuenteTitulo, Brushes.Black, Me.tDescripcion.Left, Me.tDescripcion.Top)
-        e.Graphics.DrawString(Me.tCantidad.Text, FuenteTitulo, Brushes.Black, Me.tCantidad.Left, Me.tCantidad.Top)
-        e.Graphics.DrawString(Me.tPrecio.Text, FuenteTitulo, Brushes.Black, Me.tPrecio.Left, Me.tPrecio.Top)
+        ' Definir el área del encabezado
+        Dim headerRect As New Rectangle(e.MarginBounds.Left, Me.tCod.Top - 2, e.MarginBounds.Width, 18) ' Ajusta la altura según sea necesario
+
+        ' Dibujar el rectángulo de fondo
+        e.Graphics.FillRectangle(backColor, headerRect)
+
+
+        e.Graphics.DrawString(Me.tCod.Text, FuenteTitulo, Brushes.White, e.MarginBounds.Left, Me.tCod.Top)
+        e.Graphics.DrawString(Me.tDescripcion.Text, FuenteTitulo, Brushes.White, Me.tDescripcion.Left, Me.tDescripcion.Top)
+        e.Graphics.DrawString(Me.tCantidad.Text, FuenteTitulo, Brushes.White, Me.tCantidad.Left, Me.tCantidad.Top)
+        e.Graphics.DrawString(Me.tPrecio.Text, FuenteTitulo, Brushes.White, Me.tPrecio.Left, Me.tPrecio.Top)
 
 
         e.Graphics.DrawString(DateTime.Today.ToString("d"), FuenteNegrita, Brushes.Black, Me.fecha.Left, Me.fecha.Top)
@@ -111,7 +138,7 @@
 
             If printLine < Me.dgv_tabla.Rows.Count - 1 Then
 
-                e.Graphics.DrawString(Me.dgv_tabla.Rows(printLine).Cells("ccod").Value.ToString, FuenteDetalles, Brushes.Black, Me.p1.Left, startY)
+                e.Graphics.DrawString(Me.dgv_tabla.Rows(printLine).Cells("ccod").Value.ToString, FuenteDetalles, Brushes.Black, e.MarginBounds.Left, startY)
                 e.Graphics.DrawString(Me.dgv_tabla.Rows(printLine).Cells("cnombre").Value.ToString, FuenteDetalles, Brushes.Black, Me.p2.Left, startY)
                 e.Graphics.DrawString(Me.dgv_tabla.Rows(printLine).Cells("ccantidad").Value.ToString, FuenteDetalles, Brushes.Black, Me.p3.Left, startY)
                 e.Graphics.DrawString(Me.dgv_tabla.Rows(printLine).Cells("cprecio").Value.ToString, FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
@@ -136,13 +163,31 @@
         e.Graphics.DrawLine(Pens.Black, e.MarginBounds.Left, startY, e.MarginBounds.Right, startY)
 
         e.Graphics.DrawString("Total", FuenteNegrita, Brushes.Black, e.MarginBounds.Left, startY)
-        startY += 20
         e.Graphics.DrawString(total.ToString, FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
 
         startY += 20
-        e.Graphics.DrawString("Total + iva", FuenteNegrita, Brushes.Black, e.MarginBounds.Left, startY)
+        e.Graphics.DrawString("Iva", FuenteNegrita, Brushes.Black, e.MarginBounds.Left, startY)
 
-        e.Graphics.DrawString(total + (total * 16 / 100), FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
+        e.Graphics.DrawString((total * 16 / 100), FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
+
+        If tipopago Then
+
+            startY += 20
+            e.Graphics.DrawString("IGTF", FuenteNegrita, Brushes.Black, e.MarginBounds.Left, startY)
+
+            e.Graphics.DrawString((total * 3 / 100), FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
+        End If
+
+        startY += 20
+        e.Graphics.DrawString("Total + impuestos", FuenteNegrita, Brushes.Black, e.MarginBounds.Left, startY)
+
+        If tipopago Then
+
+            e.Graphics.DrawString(total + (total * 16 / 100) + (total * 3 / 100), FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
+        Else
+
+            e.Graphics.DrawString(total + (total * 16 / 100), FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
+        End If
 
 
         ''''''''''''''''el data gri

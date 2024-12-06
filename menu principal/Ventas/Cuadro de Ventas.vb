@@ -22,6 +22,14 @@ Public Class Cuadro_de_Ventas
 
 
 
+    'datos cliente
+
+    Private sidcliente As String = ""
+    Private snombreCliente As String = ""
+
+
+    ''' ''''''''''
+
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
@@ -37,7 +45,6 @@ Public Class Cuadro_de_Ventas
     Public Sub load_ventas()
         tirrapCliente = 0
         tabla.DataSource = controller.sql.consulta_productos.Tables(0)
-        cb_clientes.DataSource = controller.sql.consulta_cliente.Tables(0)
         AnalizarDataGridView()
         analizarDgv_litros()
         tirrapCliente = 1
@@ -127,15 +134,6 @@ Public Class Cuadro_de_Ventas
     End Sub
 
 
-    Private Sub cb_clientes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_clientes.SelectedIndexChanged
-
-        If tirrapCliente Then
-            MsgBox("se selecionó el cliente " & cb_clientes.SelectedValue.ToString)
-        Else
-            tirrapCliente = True
-        End If
-
-    End Sub
 
 
 
@@ -187,20 +185,48 @@ Public Class Cuadro_de_Ventas
                 miDataTable.Rows.Add(dataRow)
             End If
         Next
-        MsgBox(cb_clientes.Text)
-        controller.sql.Facturacion(miDataSet, CInt(cb_clientes.Text), servicio, txtDescripcion.Text, total)
-        factura.factura_Load(ticket, CDbl(txt_total.Text), txtDescripcion.Text, CDbl(txtMontoServicio.Text), cb_clientes.SelectedValue.ToString)
 
 
-        AnalizarDataGridView()
+        If rbDivisa.Checked Or rbVes.Checked Then
+
+
+            controller.sql.Facturacion(miDataSet, CInt(sidcliente), servicio, txtDescripcion.Text, total)
+
+            Dim datos_cliente As DataSet = controller.sql.consulta_clienteId(sidcliente)
+
+            factura.factura_Load(ticket, CDbl(txt_total.Text), txtDescripcion.Text, CDbl(txtMontoServicio.Text), sidcliente, datos_cliente, rbDivisa.Checked)
+
+
+            AnalizarDataGridView()
+
+
+        End If
+
+
 
 
     End Sub
 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim inputForm As New FormImputCliente()
 
+        If inputForm.ShowDialog() = DialogResult.OK Then
+            Dim idclienteInput As String = inputForm.idcliente
+            Dim nombreclienteInput As String = inputForm.nombrecliente
+            sidcliente = idclienteInput
+            snombreCliente = nombreclienteInput
+            txtCidview.Text = sidcliente
+            txtCnombreView.Text = snombreCliente
+            ' MessageBox.Show("Cantidad registrada: " & idcliente, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            'suplies += cantidad * row.Cells("precio").Value
 
+            'txt_total.Text = suplies + servicio
+            ' Agregar una fila al DataGridView
+            'ticket.Rows.Add(row.Cells("cod").Value.ToString, row.Cells("nombre").Value.ToString, row.Cells("precio").Value.ToString, cantidad)
 
-
-
+        Else
+            MessageBox.Show("Operación cancelada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
 End Class

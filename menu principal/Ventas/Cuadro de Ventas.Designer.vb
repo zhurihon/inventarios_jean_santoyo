@@ -27,8 +27,6 @@ Partial Class Cuadro_de_Ventas
         Me.tabla = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cb_clientes = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_total = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ticket = New System.Windows.Forms.DataGridView()
@@ -50,11 +48,20 @@ Partial Class Cuadro_de_Ventas
         Me.id = New System.Windows.Forms.TextBox()
         Me.Código = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txtCnombreView = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtCidview = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.rbDivisa = New System.Windows.Forms.RadioButton()
+        Me.rbVes = New System.Windows.Forms.RadioButton()
         CType(Me.tabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ticket, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'tabla
@@ -64,7 +71,7 @@ Partial Class Cuadro_de_Ventas
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.tabla.Location = New System.Drawing.Point(3, 273)
+        Me.tabla.Location = New System.Drawing.Point(3, 329)
         Me.tabla.MultiSelect = False
         Me.tabla.Name = "tabla"
         Me.tabla.ReadOnly = True
@@ -72,7 +79,7 @@ Partial Class Cuadro_de_Ventas
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
         Me.tabla.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.tabla.Size = New System.Drawing.Size(572, 192)
+        Me.tabla.Size = New System.Drawing.Size(572, 136)
         Me.tabla.TabIndex = 8
         '
         'Panel1
@@ -93,8 +100,9 @@ Partial Class Cuadro_de_Ventas
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.GroupBox1.Controls.Add(Me.cb_clientes)
-        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.rbVes)
+        Me.GroupBox1.Controls.Add(Me.rbDivisa)
+        Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.txt_total)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.ticket)
@@ -107,35 +115,10 @@ Partial Class Cuadro_de_Ventas
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(572, 264)
+        Me.GroupBox1.Size = New System.Drawing.Size(572, 320)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "FORMULARIO DE SERVICIOS"
-        '
-        'cb_clientes
-        '
-        Me.cb_clientes.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.cb_clientes.DisplayMember = "id"
-        Me.cb_clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cb_clientes.ForeColor = System.Drawing.Color.White
-        Me.cb_clientes.FormattingEnabled = True
-        Me.cb_clientes.Location = New System.Drawing.Point(386, 68)
-        Me.cb_clientes.Name = "cb_clientes"
-        Me.cb_clientes.Size = New System.Drawing.Size(175, 21)
-        Me.cb_clientes.TabIndex = 41
-        Me.cb_clientes.Text = "Cliente"
-        Me.cb_clientes.ValueMember = "Nombre"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(217, 68)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(138, 20)
-        Me.Label6.TabIndex = 40
-        Me.Label6.Text = "Selecionar cliente:"
         '
         'txt_total
         '
@@ -181,7 +164,7 @@ Partial Class Cuadro_de_Ventas
         Me.ticket.ReadOnly = True
         Me.ticket.RowHeadersVisible = False
         Me.ticket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ticket.Size = New System.Drawing.Size(197, 239)
+        Me.ticket.Size = New System.Drawing.Size(197, 295)
         Me.ticket.TabIndex = 9
         '
         'ccod
@@ -225,7 +208,7 @@ Partial Class Cuadro_de_Ventas
         Me.txtMontoServicio.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.txtMontoServicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMontoServicio.ForeColor = System.Drawing.Color.White
-        Me.txtMontoServicio.Location = New System.Drawing.Point(443, 198)
+        Me.txtMontoServicio.Location = New System.Drawing.Point(445, 252)
         Me.txtMontoServicio.Name = "txtMontoServicio"
         Me.txtMontoServicio.Size = New System.Drawing.Size(118, 26)
         Me.txtMontoServicio.TabIndex = 37
@@ -235,18 +218,18 @@ Partial Class Cuadro_de_Ventas
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(367, 204)
+        Me.Label7.Location = New System.Drawing.Point(287, 252)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(70, 20)
+        Me.Label7.Size = New System.Drawing.Size(152, 20)
         Me.Label7.TabIndex = 36
-        Me.Label7.Text = "MONTO:"
+        Me.Label7.Text = "MONTO SERVICIO:"
         '
         'txtDescripcion
         '
         Me.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.txtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcion.ForeColor = System.Drawing.Color.White
-        Me.txtDescripcion.Location = New System.Drawing.Point(221, 127)
+        Me.txtDescripcion.Location = New System.Drawing.Point(219, 178)
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(342, 68)
@@ -257,7 +240,7 @@ Partial Class Cuadro_de_Ventas
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(217, 104)
+        Me.Label2.Location = New System.Drawing.Point(215, 155)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(152, 20)
         Me.Label2.TabIndex = 34
@@ -269,7 +252,7 @@ Partial Class Cuadro_de_Ventas
         Me.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_modificar.ForeColor = System.Drawing.Color.White
-        Me.btn_modificar.Location = New System.Drawing.Point(443, 228)
+        Me.btn_modificar.Location = New System.Drawing.Point(445, 284)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(118, 30)
         Me.btn_modificar.TabIndex = 29
@@ -383,6 +366,99 @@ Partial Class Cuadro_de_Ventas
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "NOMBRE:"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(136, 61)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(200, 31)
+        Me.Button1.TabIndex = 41
+        Me.Button1.Text = "SELECIONAR CLIENTE"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.GroupBox3.Controls.Add(Me.txtCidview)
+        Me.GroupBox3.Controls.Add(Me.Label8)
+        Me.GroupBox3.Controls.Add(Me.txtCnombreView)
+        Me.GroupBox3.Controls.Add(Me.Label6)
+        Me.GroupBox3.Controls.Add(Me.Button1)
+        Me.GroupBox3.ForeColor = System.Drawing.Color.White
+        Me.GroupBox3.Location = New System.Drawing.Point(219, 54)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(342, 98)
+        Me.GroupBox3.TabIndex = 33
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Cliente selecionado:"
+        '
+        'txtCnombreView
+        '
+        Me.txtCnombreView.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.txtCnombreView.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCnombreView.ForeColor = System.Drawing.Color.White
+        Me.txtCnombreView.Location = New System.Drawing.Point(124, 11)
+        Me.txtCnombreView.Name = "txtCnombreView"
+        Me.txtCnombreView.Size = New System.Drawing.Size(212, 26)
+        Me.txtCnombreView.TabIndex = 43
+        Me.txtCnombreView.Text = "No selecionado"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(6, 14)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(83, 20)
+        Me.Label6.TabIndex = 42
+        Me.Label6.Text = "NOMBRE:"
+        '
+        'txtCidview
+        '
+        Me.txtCidview.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.txtCidview.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCidview.ForeColor = System.Drawing.Color.White
+        Me.txtCidview.Location = New System.Drawing.Point(124, 36)
+        Me.txtCidview.Name = "txtCidview"
+        Me.txtCidview.Size = New System.Drawing.Size(212, 26)
+        Me.txtCidview.TabIndex = 45
+        Me.txtCidview.Text = "No selecionado"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(6, 40)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(112, 20)
+        Me.Label8.TabIndex = 44
+        Me.Label8.Text = "DOCUMENTO"
+        '
+        'rbDivisa
+        '
+        Me.rbDivisa.AutoSize = True
+        Me.rbDivisa.Location = New System.Drawing.Point(232, 291)
+        Me.rbDivisa.Name = "rbDivisa"
+        Me.rbDivisa.Size = New System.Drawing.Size(54, 17)
+        Me.rbDivisa.TabIndex = 40
+        Me.rbDivisa.Text = "Divisa"
+        Me.rbDivisa.UseVisualStyleBackColor = True
+        '
+        'rbVes
+        '
+        Me.rbVes.AutoSize = True
+        Me.rbVes.Location = New System.Drawing.Point(291, 291)
+        Me.rbVes.Name = "rbVes"
+        Me.rbVes.Size = New System.Drawing.Size(70, 17)
+        Me.rbVes.TabIndex = 41
+        Me.rbVes.Text = "Bolívares"
+        Me.rbVes.UseVisualStyleBackColor = True
+        '
         'Cuadro_de_Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -400,6 +476,8 @@ Partial Class Cuadro_de_Ventas
         CType(Me.ticket, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -422,12 +500,18 @@ Partial Class Cuadro_de_Ventas
     Friend WithEvents Label7 As Label
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents cb_clientes As ComboBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents txt_total As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents ccod As DataGridViewTextBoxColumn
     Friend WithEvents cnombre As DataGridViewTextBoxColumn
     Friend WithEvents cprecio As DataGridViewTextBoxColumn
     Friend WithEvents ccantidad As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents txtCidview As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtCnombreView As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents rbVes As RadioButton
+    Friend WithEvents rbDivisa As RadioButton
 End Class

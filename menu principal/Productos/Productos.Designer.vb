@@ -25,6 +25,7 @@ Partial Class Productos
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.tabla_productos = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
@@ -80,6 +81,8 @@ Partial Class Productos
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.tabla_productos.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.tabla_productos.RowHeadersVisible = False
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.tabla_productos.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.tabla_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.tabla_productos.Size = New System.Drawing.Size(572, 320)
         Me.tabla_productos.TabIndex = 8
