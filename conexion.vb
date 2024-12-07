@@ -1172,6 +1172,72 @@ WHERE p.cod LIKE @buscarTexto OR p.nombre LIKE @buscarTexto"
 
         End Function
 
+        Public Function consultaCantidadUsuarios() As Integer
+
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("SELECT COUNT(*) FROM usuario;", miconexion)
+                Dim llamada As New MySqlDataAdapter(comando)
+                Dim dt As New DataSet
+                llamada.Fill(dt, "r")
+                miconexion.Close()
+                Return dt.Tables(0).Rows(0).Item(0)
+
+            Catch ex As Exception
+                'MsgBox("Error: " & ex.Message)
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+
+        End Function
+
+
+
+
+        Public Function consultaCantidadProveedores() As Integer
+
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("SELECT COUNT(*) FROM proveedor;", miconexion)
+                Dim llamada As New MySqlDataAdapter(comando)
+                Dim dt As New DataSet
+                llamada.Fill(dt, "r")
+                miconexion.Close()
+                Return dt.Tables(0).Rows(0).Item(0)
+
+            Catch ex As Exception
+                'MsgBox("Error: " & ex.Message)
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+
+        End Function
+
+
+        Public Function consultaCantidadClientes() As Integer
+
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("SELECT COUNT(*) FROM cliente;", miconexion)
+                Dim llamada As New MySqlDataAdapter(comando)
+                Dim dt As New DataSet
+                llamada.Fill(dt, "r")
+                miconexion.Close()
+                Return dt.Tables(0).Rows(0).Item(0)
+
+            Catch ex As Exception
+                'MsgBox("Error: " & ex.Message)
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+
+        End Function
 
 
         Public Function consulta_valorMercancia() As Integer

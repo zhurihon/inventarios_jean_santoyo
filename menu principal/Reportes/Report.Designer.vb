@@ -23,10 +23,10 @@ Partial Class Report
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Código = New System.Windows.Forms.Label()
-        Me.btn_report = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cb_tipo = New System.Windows.Forms.ComboBox()
+        Me.btn_report = New System.Windows.Forms.Button()
+        Me.Código = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -45,6 +45,43 @@ Partial Class Report
         Me.Panel1.TabIndex = 12
         Me.Panel1.Visible = False
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.cb_tipo)
+        Me.GroupBox1.Controls.Add(Me.btn_report)
+        Me.GroupBox1.Controls.Add(Me.Código)
+        Me.GroupBox1.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(465, 85)
+        Me.GroupBox1.TabIndex = 3
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "AGREGAR PROVEEDOR"
+        '
+        'cb_tipo
+        '
+        Me.cb_tipo.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.cb_tipo.ForeColor = System.Drawing.Color.White
+        Me.cb_tipo.FormattingEnabled = True
+        Me.cb_tipo.Items.AddRange(New Object() {"Stock", "Stock bajo", "Ventas de hoy", "Ventas del mes", "Contactos de proveedores"})
+        Me.cb_tipo.Location = New System.Drawing.Point(123, 18)
+        Me.cb_tipo.Name = "cb_tipo"
+        Me.cb_tipo.Size = New System.Drawing.Size(121, 21)
+        Me.cb_tipo.TabIndex = 30
+        '
+        'btn_report
+        '
+        Me.btn_report.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.btn_report.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_report.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_report.ForeColor = System.Drawing.Color.White
+        Me.btn_report.Location = New System.Drawing.Point(273, 18)
+        Me.btn_report.Name = "btn_report"
+        Me.btn_report.Size = New System.Drawing.Size(186, 30)
+        Me.btn_report.TabIndex = 29
+        Me.btn_report.Text = "GENERAR REPORTE"
+        Me.btn_report.UseVisualStyleBackColor = False
+        '
         'Código
         '
         Me.Código.AutoSize = True
@@ -56,43 +93,6 @@ Partial Class Report
         Me.Código.Size = New System.Drawing.Size(111, 20)
         Me.Código.TabIndex = 20
         Me.Código.Text = "Tipo de report:"
-        '
-        'btn_report
-        '
-        Me.btn_report.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.btn_report.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_report.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_report.ForeColor = System.Drawing.Color.White
-        Me.btn_report.Location = New System.Drawing.Point(69, 71)
-        Me.btn_report.Name = "btn_report"
-        Me.btn_report.Size = New System.Drawing.Size(186, 30)
-        Me.btn_report.TabIndex = 29
-        Me.btn_report.Text = "GENERAR REPORTE"
-        Me.btn_report.UseVisualStyleBackColor = False
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.cb_tipo)
-        Me.GroupBox1.Controls.Add(Me.btn_report)
-        Me.GroupBox1.Controls.Add(Me.Código)
-        Me.GroupBox1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(261, 122)
-        Me.GroupBox1.TabIndex = 3
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "AGREGAR PROVEEDOR"
-        '
-        'cb_tipo
-        '
-        Me.cb_tipo.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.cb_tipo.ForeColor = System.Drawing.Color.White
-        Me.cb_tipo.FormattingEnabled = True
-        Me.cb_tipo.Items.AddRange(New Object() {"Stock"})
-        Me.cb_tipo.Location = New System.Drawing.Point(123, 18)
-        Me.cb_tipo.Name = "cb_tipo"
-        Me.cb_tipo.Size = New System.Drawing.Size(121, 21)
-        Me.cb_tipo.TabIndex = 30
         '
         'Report
         '

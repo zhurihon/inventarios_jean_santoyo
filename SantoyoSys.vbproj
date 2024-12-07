@@ -145,6 +145,12 @@
     <Compile Include="menu principal\Inicio\alertas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="menu principal\Inicio\iniciogerente.Designer.vb">
+      <DependentUpon>iniciogerente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Inicio\iniciogerente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="menu principal\inventario\Inventario.Designer.vb">
       <DependentUpon>Inventario.vb</DependentUpon>
     </Compile>
@@ -191,6 +197,12 @@
       <DependentUpon>proveedor.vb</DependentUpon>
     </Compile>
     <Compile Include="menu principal\proveedor\proveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\Reportes\config\parametors reports.Designer.vb">
+      <DependentUpon>parametors reports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\Reportes\config\parametors reports.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="menu principal\Reportes\Report.Designer.vb">
@@ -274,6 +286,9 @@
     <EmbeddedResource Include="menu principal\Inicio\alertas.resx">
       <DependentUpon>alertas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Inicio\iniciogerente.resx">
+      <DependentUpon>iniciogerente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="menu principal\inventario\Inventario.resx">
       <DependentUpon>Inventario.vb</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menu principal\proveedor\proveedor.resx">
       <DependentUpon>proveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\Reportes\config\parametors reports.resx">
+      <DependentUpon>parametors reports.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menu principal\Reportes\Report.resx">
       <DependentUpon>Report.vb</DependentUpon>

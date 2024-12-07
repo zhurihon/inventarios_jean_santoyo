@@ -12,8 +12,16 @@
 
         Select Case cb_tipo.Text
             Case "Stock"
-                reportes.fexcel2(controller.sql.consulta_productos, " Stock")
+                reportes.fexcel2(controller.sql.consulta_productos, "Stock")
                 'MsgBox(2)
+            Case "Ventas de hoy"
+                reportes.fexcel2(controller.sql.dataset_VentasHoy, "Ventas de hoy")
+            Case "Ventas del mes"
+                reportes.fexcel2(controller.sql.dataset_VentasMes, "Ventas del mes")
+            Case "Contactos de proveedores"
+                reportes.fexcel2(controller.sql.dataset_ContactoProveedores, "Contactos de proveedores")
+            Case "Stock bajo"
+                reportes.fexcel2(controller.sql.dataset_stock_bajo, "Stock bajo")
         End Select
 
 

@@ -50,3 +50,5 @@ C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\bin\Debug\Aspose.Cell
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.FormImputCliente.resources
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.FormImputServiciosComunes.resources
 C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.Servicios.resources
+C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.parametors_reports.resources
+C:\Users\Vivenes\Documents\GitHub\inventarios_jean_santoyo\obj\Debug\SantoyoSys.iniciogerente.resources

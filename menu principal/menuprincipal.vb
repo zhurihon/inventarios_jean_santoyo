@@ -23,7 +23,7 @@ Public Class menuprincipal
     Public ventana_reporte As Panel = Report.Panel1
     Public ventana_clientes As Panel = clientes.Panel1
     Public ventana_servicio As Panel = Servicios.Panel1
-
+    Public ventana_inicio As Panel = iniciogerente.Panel1
 
     Public Function ocultar_paneles()
         ventana_usuarios.Visible = 0
@@ -41,6 +41,8 @@ Public Class menuprincipal
         ventana_clientes.Visible = 0
 
         ventana_servicio.Visible = 0
+
+        ventana_inicio.Visible = 0
 
     End Function
 
@@ -65,11 +67,17 @@ Public Class menuprincipal
 
         Me.Controls.Add(ventana_servicio)
 
+        Me.Controls.Add(ventana_inicio)
+        iniciogerente.iniciogerente_Load()
+
+
         Me.ControlBox = False
         Me.Text = ""
 
         ocultar_paneles()
-
+        ventana_inicio.Visible = 1
+        Dim n As Integer() = controller.sql.stock_leve_normal()
+        MsgBox("Hay " & n(0) & " stock bajos")
         'ventana_alertar.Visible = 1
         'alertas.load_alertas()
 

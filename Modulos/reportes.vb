@@ -44,7 +44,10 @@ Module reportes
                 'MessageBox.Show("Archivo guardado exitosamente en: " & filePath)
             Catch ex As Exception
                 'MessageBox.Show("Error al guardar el archivo: " & ex.Message)
+                Return
             End Try
+        Else
+            Return
         End If
 
 
