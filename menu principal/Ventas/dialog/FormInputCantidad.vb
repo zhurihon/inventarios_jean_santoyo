@@ -8,7 +8,7 @@
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         ' Validar la entrada
         Dim cantidad As Decimal
-        If Decimal.TryParse(txtCantidad.Text, cantidad) Then
+        If Decimal.TryParse(txtCantidad.Text, cantidad) AndAlso txtCantidad.Text > 0 Then
             nCantidad = cantidad
             Me.DialogResult = DialogResult.OK ' Establecer el resultado del diálogo como OK
             Me.Close() ' Cerrar el formulario

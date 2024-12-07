@@ -117,15 +117,25 @@ Public Class Cuadro_de_Ventas
 
             If inputForm.ShowDialog() = DialogResult.OK Then
                 Dim cantidad As Decimal = inputForm.nCantidad
-                MessageBox.Show("Cantidad registrada: " & cantidad, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                suplies += cantidad * row.Cells("precio").Value
 
-                txt_total.Text = suplies + servicio
-                total = suplies + servicio
-                ' Agregar una fila al DataGridView
-                ticket.Rows.Add(row.Cells("cod").Value.ToString, row.Cells("nombre").Value.ToString, row.Cells("precio").Value.ToString, cantidad)
 
+                If cantidad > row.Cells("cantidad").Value.ToString And cantidad > 0 Then
+
+                    MsgBox("No se dispone de esta cantidad en el inventario")
+                Else
+                    row.Cells("cantidad").Value -= cantidad
+                    MessageBox.Show("Cantidad registrada: " & cantidad, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    suplies += cantidad * row.Cells("precio").Value
+
+                    txt_total.Text = suplies + servicio
+                    total = suplies + servicio
+                    ' Agregar una fila al DataGridView
+                    ticket.Rows.Add(row.Cells("cod").Value.ToString, row.Cells("nombre").Value.ToString, row.Cells("precio").Value.ToString, cantidad)
+
+
+                End If
 
 
 
@@ -214,17 +224,24 @@ Public Class Cuadro_de_Ventas
         Next
 
 
-        If rbDivisa.Checked Or rbVes.Checked Then
+        If comprobar_factura() Then
 
 
             controller.sql.Facturacion(miDataSet, CInt(sidcliente), servicio, txtDescripcion.Text, total)
 
             Dim datos_cliente As DataSet = controller.sql.consulta_clienteId(sidcliente)
 
+
+            'DEBITAR PRODUCTOS
+
+            debita_productos(ticket)
+
+            '
             factura.factura_Load(ticket, CDbl(txt_total.Text), txtDescripcion.Text, CDbl(txtMontoServicio.Text), sidcliente, datos_cliente, rbDivisa.Checked)
 
 
-            AnalizarDataGridView()
+            tabla.DataSource = controller.sql.consulta_productos.Tables(0)
+            vaciar()
 
 
         End If
@@ -235,13 +252,82 @@ Public Class Cuadro_de_Ventas
     End Sub
 
 
-    Private Sub vaciar()
+    Private Sub debita_productos(dataGridView As DataGridView)
+        ' Verificar si el DataGridView tiene filas
+        If dataGridView.Rows.Count = 0 Then
+            'MessageBox.Show("No hay filas para mostrar.")
+        Else
 
+            ' Recorrer cada fila del DataGridView
+            For Each fila As DataGridViewRow In dataGridView.Rows
+                ' Ignorar la fila nueva si AllowUser ToAddRows está habilitado
+                If Not fila.IsNewRow Then
+                    Dim valores As String = ""
+
+                    ' Recorrer cada celda de la fila
+                    For Each celda As DataGridViewCell In fila.Cells
+                        valores &= celda.Value.ToString() & " " ' Concatenar los valores de las celdas
+                    Next
+
+                    controller.sql.vender_STOCK(fila.Cells("ccod").Value, fila.Cells(3).Value)
+
+                    ' Mostrar los valores de la fila
+                    'MessageBox.Show(valores.Trim()) ' Mostrar en un MessageBox
+                End If
+            Next
+
+        End If
+
+
+    End Sub
+
+
+    Private Sub vaciar()
+        ticket.Rows.Clear() ' Esto eliminará todas las filas del DataGridView
+        ticket.DataSource = Nothing
         rbDivisa.Checked = 0
         rbVes.Checked = 0
         txtCnombreView.Clear()
         txtCidview.Clear()
+        snombreCliente = ""
+        txtDescripcion.Clear()
+        txtMontoServicio.Clear()
+        AnalizarDataGridView()
     End Sub
+
+    Public Function comprobar_factura() As Boolean
+        Dim s As String = ""
+        If Not Comprobaciones.txtnumero(txtMontoServicio.Text) Then
+
+            s += "el monto de servicio debe ser numérico" & vbCrLf
+        End If
+
+        If Not Comprobaciones.txtmaxymin(txtDescripcion.Text, 45, 4) Then
+            s += "la descripcion del servicio debe tener entre 4 y 45 caracteres" & vbCrLf
+        End If
+
+        If snombreCliente = "" Then
+
+            s += "Debe selecionar algún cliente" & vbCrLf
+        End If
+
+        If Not (rbDivisa.Checked Or rbVes.Checked) Then
+            s += "Debe selecionar el tipo de pago"
+        End If
+
+
+
+
+
+        If s = "" Then
+            Return 1
+        Else
+            MsgBox(s)
+        End If
+
+        Return 0
+    End Function
+
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Dim inputForm As New FormImputCliente()
@@ -311,5 +397,17 @@ Public Class Cuadro_de_Ventas
         End If
 
         txtmontopagar.Text = (16 * (total / 100)) + igtf + total
+    End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+
+
+        If txtBuscar.Text = "" Then
+            tabla.DataSource = controller.sql.consulta_productos.Tables(0)
+        Else
+            tabla.DataSource = controller.sql.buscar_productostxt(txtBuscar.Text).Tables(0)
+        End If
+
+
     End Sub
 End Class

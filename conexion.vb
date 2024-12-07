@@ -97,6 +97,40 @@ Module conexion
             Return datos_recebidos
         End Function
 
+        Public Function buscar_productostxt(txt As String) As DataSet
+            miconexion.Open()
+
+            Dim cmd As New MySqlCommand("SELECT * FROM producto where cod like @txt or nombre like @txt or tipo like @txt", miconexion)
+            cmd.Parameters.AddWithValue("@txt", "%" & txt & "%")
+
+            Dim llamada As New MySqlDataAdapter(cmd)
+
+            Dim datos_recebidos As New DataSet
+
+            llamada.Fill(datos_recebidos, "prod")
+
+            miconexion.Close()
+
+            Return datos_recebidos
+        End Function
+
+        Public Function buscar_facturastxt(txt As String) As DataSet
+            miconexion.Open()
+
+            Dim cmd As New MySqlCommand("SELECT * FROM ventas where id like @txt or cliente like @txt or fechaventa like @txt or descripcion like @txt", miconexion)
+            cmd.Parameters.AddWithValue("@txt", "%" & txt & "%")
+
+            Dim llamada As New MySqlDataAdapter(cmd)
+
+            Dim datos_recebidos As New DataSet
+
+            llamada.Fill(datos_recebidos, "prod")
+
+            miconexion.Close()
+
+            Return datos_recebidos
+        End Function
+
         Public Function consulta_productos_Indexid(id As String) As DataSet
 
             Try

@@ -65,7 +65,19 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        fbuscar()
+
+        Select Case cb_typo.Text
+            Case "Stock"
+                tabla.DataSource = controller.sql.buscar_productostxt(txtBuscador.Text).Tables(0)
+                AnalizarDataGridView()
+            Case "Facturas"
+                tabla.DataSource = controller.sql.buscar_facturastxt(txtBuscador.Text).Tables(0)
+
+        End Select
+
+
+
+
     End Sub
 
     Private Sub rb_inv_Click(sender As Object, e As EventArgs)

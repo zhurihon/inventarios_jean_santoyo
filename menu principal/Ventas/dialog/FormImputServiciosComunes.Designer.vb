@@ -110,6 +110,7 @@ Partial Class FormImputServiciosComunes
         '
         'tabla
         '
+        Me.tabla.AllowUserToAddRows = False
         Me.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window

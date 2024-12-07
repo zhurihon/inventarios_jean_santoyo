@@ -22,8 +22,8 @@ Partial Class Cuadro_de_Ventas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tabla = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -64,6 +64,8 @@ Partial Class Cuadro_de_Ventas
         Me.id = New System.Windows.Forms.TextBox()
         Me.Código = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         CType(Me.tabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -75,20 +77,21 @@ Partial Class Cuadro_de_Ventas
         '
         'tabla
         '
+        Me.tabla.AllowUserToAddRows = False
         Me.tabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.tabla.Location = New System.Drawing.Point(3, 329)
+        Me.tabla.Location = New System.Drawing.Point(3, 361)
         Me.tabla.MultiSelect = False
         Me.tabla.Name = "tabla"
         Me.tabla.ReadOnly = True
         Me.tabla.RowHeadersVisible = False
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.tabla.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.tabla.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.tabla.Size = New System.Drawing.Size(572, 136)
+        Me.tabla.Size = New System.Drawing.Size(572, 104)
         Me.tabla.TabIndex = 8
         '
         'Panel1
@@ -97,6 +100,8 @@ Partial Class Cuadro_de_Ventas
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.tabla)
         Me.Panel1.Cursor = System.Windows.Forms.Cursors.Default
@@ -352,14 +357,14 @@ Partial Class Cuadro_de_Ventas
         Me.ticket.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.ticket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ticket.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ccod, Me.cnombre, Me.cprecio, Me.ccantidad})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ticket.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ticket.DefaultCellStyle = DataGridViewCellStyle2
         Me.ticket.Location = New System.Drawing.Point(6, 19)
         Me.ticket.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.ticket.MultiSelect = False
@@ -585,6 +590,28 @@ Partial Class Cuadro_de_Ventas
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "NOMBRE:"
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(0, 332)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(77, 20)
+        Me.Label9.TabIndex = 26
+        Me.Label9.Text = "BUSCAR"
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.BackColor = System.Drawing.Color.White
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
+        Me.txtBuscar.Location = New System.Drawing.Point(83, 329)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(246, 26)
+        Me.txtBuscar.TabIndex = 25
+        Me.txtBuscar.TabStop = False
+        '
         'Cuadro_de_Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -597,6 +624,7 @@ Partial Class Cuadro_de_Ventas
         Me.Text = "Cuadro_de_Ventas"
         CType(Me.tabla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
@@ -650,4 +678,6 @@ Partial Class Cuadro_de_Ventas
     Friend WithEvents Button2 As Button
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtBuscar As TextBox
 End Class
