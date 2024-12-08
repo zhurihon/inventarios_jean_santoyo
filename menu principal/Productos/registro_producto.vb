@@ -106,7 +106,7 @@
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) 
 
 
         Dim resultado As DialogResult = MessageBox.Show("¿Está seguro de que desea modificar el producto '" & nombre.Text & "' a " & pk_cod & "?", "Confirmar modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -132,7 +132,7 @@
 
     End Sub
 
-    Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
+    Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) 
 
         Dim resultado As DialogResult = MessageBox.Show("¿Está seguro de que desea eliminar el producto " & pk_cod & "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 

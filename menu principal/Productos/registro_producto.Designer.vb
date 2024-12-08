@@ -23,8 +23,6 @@ Partial Class registro_producto
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btn_modificar = New System.Windows.Forms.Button()
-        Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.btn_nuevo_productos = New System.Windows.Forms.Button()
         Me.tipos = New System.Windows.Forms.ComboBox()
         Me.precio = New System.Windows.Forms.TextBox()
@@ -41,8 +39,6 @@ Partial Class registro_producto
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox1.Controls.Add(Me.btn_modificar)
-        Me.GroupBox1.Controls.Add(Me.btn_eliminar)
         Me.GroupBox1.Controls.Add(Me.btn_nuevo_productos)
         Me.GroupBox1.Controls.Add(Me.tipos)
         Me.GroupBox1.Controls.Add(Me.precio)
@@ -61,34 +57,6 @@ Partial Class registro_producto
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PRODUCTOS"
         Me.GroupBox1.Visible = False
-        '
-        'btn_modificar
-        '
-        Me.btn_modificar.BackColor = System.Drawing.Color.White
-        Me.btn_modificar.Enabled = False
-        Me.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_modificar.Font = New System.Drawing.Font("Lucida Fax", 12.0!)
-        Me.btn_modificar.ForeColor = System.Drawing.Color.Black
-        Me.btn_modificar.Location = New System.Drawing.Point(440, 43)
-        Me.btn_modificar.Name = "btn_modificar"
-        Me.btn_modificar.Size = New System.Drawing.Size(120, 30)
-        Me.btn_modificar.TabIndex = 14
-        Me.btn_modificar.Text = "MODIFICAR"
-        Me.btn_modificar.UseVisualStyleBackColor = False
-        '
-        'btn_eliminar
-        '
-        Me.btn_eliminar.BackColor = System.Drawing.Color.White
-        Me.btn_eliminar.Enabled = False
-        Me.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_eliminar.Font = New System.Drawing.Font("Lucida Fax", 12.0!)
-        Me.btn_eliminar.ForeColor = System.Drawing.Color.Black
-        Me.btn_eliminar.Location = New System.Drawing.Point(440, 77)
-        Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(120, 30)
-        Me.btn_eliminar.TabIndex = 13
-        Me.btn_eliminar.Text = "ELIMNAR"
-        Me.btn_eliminar.UseVisualStyleBackColor = False
         '
         'btn_nuevo_productos
         '
@@ -199,8 +167,6 @@ Partial Class registro_producto
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btn_modificar As Button
-    Friend WithEvents btn_eliminar As Button
     Friend WithEvents btn_nuevo_productos As Button
     Friend WithEvents tipos As ComboBox
     Friend WithEvents codigo As TextBox
