@@ -163,6 +163,18 @@
     <Compile Include="menu principal\menuprincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="menu principal\prestamos\dialog\FormInputPrestar.Designer.vb">
+      <DependentUpon>FormInputPrestar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\prestamos\dialog\FormInputPrestar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu principal\prestamos\prestamos.Designer.vb">
+      <DependentUpon>prestamos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menu principal\prestamos\prestamos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="menu principal\Productos\menu_productos.Designer.vb">
       <DependentUpon>menu_productos.vb</DependentUpon>
     </Compile>
@@ -294,6 +306,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="menu principal\menuprincipal.resx">
       <DependentUpon>menuprincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\prestamos\dialog\FormInputPrestar.resx">
+      <DependentUpon>FormInputPrestar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu principal\prestamos\prestamos.resx">
+      <DependentUpon>prestamos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menu principal\Productos\menu_productos.resx">
       <DependentUpon>menu_productos.vb</DependentUpon>

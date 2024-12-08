@@ -29,6 +29,9 @@ Partial Class menuprincipal
         Me.btn_proveedores = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -44,9 +47,8 @@ Partial Class menuprincipal
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -118,7 +120,7 @@ Partial Class menuprincipal
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(12, 357)
+        Me.Button2.Location = New System.Drawing.Point(12, 396)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(129, 33)
         Me.Button2.TabIndex = 13
@@ -139,6 +141,42 @@ Partial Class menuprincipal
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(738, 25)
         Me.Panel2.TabIndex = 14
+        '
+        'Panel6
+        '
+        Me.Panel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel6.AutoSize = True
+        Me.Panel6.BackColor = System.Drawing.Color.Transparent
+        Me.Panel6.BackgroundImage = CType(resources.GetObject("Panel6.BackgroundImage"), System.Drawing.Image)
+        Me.Panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel6.Location = New System.Drawing.Point(651, 3)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(29, 18)
+        Me.Panel6.TabIndex = 2
+        '
+        'Panel5
+        '
+        Me.Panel5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel5.AutoSize = True
+        Me.Panel5.BackColor = System.Drawing.Color.Transparent
+        Me.Panel5.BackgroundImage = CType(resources.GetObject("Panel5.BackgroundImage"), System.Drawing.Image)
+        Me.Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel5.Location = New System.Drawing.Point(677, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(29, 23)
+        Me.Panel5.TabIndex = 1
+        '
+        'Panel3
+        '
+        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.AutoSize = True
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.BackgroundImage = Global.SantoyoSys.My.Resources.Resources.icons8_x_50
+        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel3.Location = New System.Drawing.Point(706, -2)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(29, 25)
+        Me.Panel3.TabIndex = 0
         '
         'Button3
         '
@@ -177,7 +215,7 @@ Partial Class menuprincipal
         '
         Me.Panel8.BackColor = System.Drawing.Color.DimGray
         Me.Panel8.ForeColor = System.Drawing.Color.DimGray
-        Me.Panel8.Location = New System.Drawing.Point(0, 357)
+        Me.Panel8.Location = New System.Drawing.Point(0, 396)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(22, 33)
         Me.Panel8.TabIndex = 19
@@ -216,7 +254,7 @@ Partial Class menuprincipal
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(12, 396)
+        Me.Button1.Location = New System.Drawing.Point(12, 435)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(129, 33)
         Me.Button1.TabIndex = 23
@@ -228,7 +266,7 @@ Partial Class menuprincipal
         '
         Me.Panel12.BackColor = System.Drawing.Color.DimGray
         Me.Panel12.ForeColor = System.Drawing.Color.DimGray
-        Me.Panel12.Location = New System.Drawing.Point(0, 396)
+        Me.Panel12.Location = New System.Drawing.Point(0, 435)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(22, 33)
         Me.Panel12.TabIndex = 24
@@ -305,41 +343,29 @@ Partial Class menuprincipal
         Me.PictureBox1.TabIndex = 17
         Me.PictureBox1.TabStop = False
         '
-        'Panel6
+        'Button6
         '
-        Me.Panel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel6.AutoSize = True
-        Me.Panel6.BackColor = System.Drawing.Color.Transparent
-        Me.Panel6.BackgroundImage = CType(resources.GetObject("Panel6.BackgroundImage"), System.Drawing.Image)
-        Me.Panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Panel6.Location = New System.Drawing.Point(651, 3)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(29, 18)
-        Me.Panel6.TabIndex = 2
+        Me.Button6.BackColor = System.Drawing.Color.White
+        Me.Button6.FlatAppearance.BorderSize = 0
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Font = New System.Drawing.Font("Elephant", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.Color.Black
+        Me.Button6.Location = New System.Drawing.Point(12, 357)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(129, 33)
+        Me.Button6.TabIndex = 29
+        Me.Button6.Text = "Prestamos"
+        Me.Button6.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Button6.UseVisualStyleBackColor = False
         '
-        'Panel5
+        'Panel15
         '
-        Me.Panel5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel5.AutoSize = True
-        Me.Panel5.BackColor = System.Drawing.Color.Transparent
-        Me.Panel5.BackgroundImage = CType(resources.GetObject("Panel5.BackgroundImage"), System.Drawing.Image)
-        Me.Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel5.Location = New System.Drawing.Point(677, 0)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(29, 23)
-        Me.Panel5.TabIndex = 1
-        '
-        'Panel3
-        '
-        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.AutoSize = True
-        Me.Panel3.BackColor = System.Drawing.Color.Transparent
-        Me.Panel3.BackgroundImage = Global.SantoyoSys.My.Resources.Resources.icons8_x_50
-        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel3.Location = New System.Drawing.Point(706, -2)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(29, 25)
-        Me.Panel3.TabIndex = 0
+        Me.Panel15.BackColor = System.Drawing.Color.DimGray
+        Me.Panel15.ForeColor = System.Drawing.Color.DimGray
+        Me.Panel15.Location = New System.Drawing.Point(0, 357)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(22, 33)
+        Me.Panel15.TabIndex = 30
         '
         'menuprincipal
         '
@@ -347,6 +373,8 @@ Partial Class menuprincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(735, 566)
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.Panel15)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Panel14)
         Me.Controls.Add(Me.Button4)
@@ -407,4 +435,6 @@ Partial Class menuprincipal
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button5 As Button
     Friend WithEvents Panel14 As Panel
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Panel15 As Panel
 End Class

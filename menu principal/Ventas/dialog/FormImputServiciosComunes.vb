@@ -1,4 +1,4 @@
-﻿Public Class FormImputServiciosComunes
+﻿Public Class FormImputPrestar
 
     Public Property inputservicop As String
     Public Property inputprecio As Double

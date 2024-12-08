@@ -353,7 +353,7 @@ Public Class Cuadro_de_Ventas
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim input As New FormImputServiciosComunes
+        Dim input As New FormImputPrestar
 
         If input.ShowDialog() = DialogResult.OK Then
 

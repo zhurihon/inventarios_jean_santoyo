@@ -24,7 +24,7 @@ Public Class menuprincipal
     Public ventana_clientes As Panel = clientes.Panel1
     Public ventana_servicio As Panel = Servicios.Panel1
     Public ventana_inicio As Panel = iniciogerente.Panel1
-
+    Public ventana_prestamo As Panel = prestamos.Panel1
     Public Function ocultar_paneles()
         ventana_usuarios.Visible = 0
         Panel1.Visible = 0
@@ -43,6 +43,8 @@ Public Class menuprincipal
         ventana_servicio.Visible = 0
 
         ventana_inicio.Visible = 0
+
+        ventana_prestamo.Visible = 0
 
     End Function
 
@@ -70,6 +72,7 @@ Public Class menuprincipal
         Me.Controls.Add(ventana_inicio)
         iniciogerente.iniciogerente_Load()
 
+        Me.Controls.Add(ventana_prestamo)
 
         Me.ControlBox = False
         Me.Text = ""
@@ -312,5 +315,11 @@ Public Class menuprincipal
         ocultar_paneles()
         ventana_servicio.Visible = 1
         Servicios.Servicios_Load()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        ocultar_paneles()
+        ventana_prestamo.Visible = 1
+        prestamos.prestamos_Load()
     End Sub
 End Class

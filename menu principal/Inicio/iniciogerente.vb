@@ -1,7 +1,6 @@
 ﻿Public Class iniciogerente
     Public Sub iniciogerente_Load()
 
-
         lbStockBajo.Text = controller.sql.stock_leve_normal()(0)
         lbusers.Text = controller.sql.consultaCantidadUsuarios().ToString
         lbProveedores.Text = controller.sql.consultaCantidadProveedores.ToString

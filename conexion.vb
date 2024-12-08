@@ -1645,6 +1645,78 @@ ORDER BY total_ventas DESC;", miconexion)
 
 
 
+        Public Function dataset_herramientas() As DataSet
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("SELECT * FROM producto where tipo = 'Herramienta';", miconexion)
+                Dim llamada As New MySqlDataAdapter(comando)
+                Dim dt As New DataSet
+                llamada.Fill(dt, "VentasAnio")
+                Return dt
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+                Return Nothing
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
+
+        Public Function dataset_prestamos() As DataSet
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("SELECT * FROM prestamos", miconexion)
+                Dim llamada As New MySqlDataAdapter(comando)
+                Dim dt As New DataSet
+                llamada.Fill(dt, "pres")
+                Return dt
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+                Return Nothing
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
+        Public Function prestar_herramientas(cod As String, cantidad As Double, clienteid As String, fechaLimite As Date) As Boolean
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("INSERT INTO prestamos (codherramienta,cantidad,clienteid,fechalimite,fechaprestamo) VALUES (@codh,@cantidad,@cliente,@limite,@fprestamo)", miconexion)
+                comando.Parameters.AddWithValue("@codh", cod)
+                comando.Parameters.AddWithValue("@cantidad", cantidad)
+                comando.Parameters.AddWithValue("@cliente", clienteid)
+                comando.Parameters.AddWithValue("@limite", fechaLimite.ToString("yyyy-MM-dd"))
+                comando.Parameters.AddWithValue("@fprestamo", DateTime.Today.ToString("yyyy-MM-dd"))
+
+                Return comando.ExecuteNonQuery
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+                Return Nothing
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
+
+        Public Function prestamo_recibido(id As String) As Boolean
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("DELETE FROM prestamos where id = @id;", miconexion)
+                comando.Parameters.AddWithValue("@id", id)
+
+                Return comando.ExecuteNonQuery
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+                Return Nothing
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
 
 
 
