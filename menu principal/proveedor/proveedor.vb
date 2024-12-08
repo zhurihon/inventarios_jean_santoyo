@@ -179,4 +179,8 @@ Public Class proveedor
             descripcion.BackColor = Color.Red
         End If
     End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        tabla_proveedores.DataSource = controller.sql.dataset_ProveedoresTxt(txtBuscar.Text).Tables(0)
+    End Sub
 End Class

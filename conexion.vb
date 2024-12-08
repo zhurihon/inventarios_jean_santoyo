@@ -648,6 +648,34 @@ Module conexion
             End Try
         End Function
 
+        Public Function dataset_servicioTxt(txt As String) As DataSet
+            Try
+                miconexion.Open()
+                Dim cmd As New MySqlCommand("SELECT * FROM servicios where descripcion like @txt or id like @txt", miconexion)
+
+                cmd.Parameters.AddWithValue("@txt", "%" & txt & "%")
+
+                Dim llamada As New MySqlDataAdapter(cmd)
+
+                Dim datos_recebidos As New DataSet
+
+                llamada.Fill(datos_recebidos, "prod")
+
+                miconexion.Close()
+
+                Return datos_recebidos
+
+            Catch ex As Exception
+                ' Manejo de errores (puedes registrar el error o mostrar un mensaje)
+                MsgBox("Error: " & ex.Message)
+            Finally
+                ' Asegurarse de cerrar la conexión
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
+
 
 
         Public Function registrar_servicio(precio As Double, descripcion As String) As Boolean
@@ -1488,6 +1516,25 @@ ORDER BY total_ventas DESC;", miconexion)
             Try
                 miconexion.Open()
                 Dim comando As New MySqlCommand("SELECT Nombre, Numero, Direccion, Email FROM proveedor;", miconexion)
+                Dim llamada As New MySqlDataAdapter(comando)
+                Dim dt As New DataSet
+                llamada.Fill(dt, "ContactosProveedores")
+                Return dt
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+                Return Nothing
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
+
+        Public Function dataset_ProveedoresTxt(txt As String) As DataSet
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("SELECT * FROM proveedor WHERE Nombre like @txt or Identificacion like @txt;", miconexion)
+                comando.Parameters.AddWithValue("@txt", "%" & txt & "%")
                 Dim llamada As New MySqlDataAdapter(comando)
                 Dim dt As New DataSet
                 llamada.Fill(dt, "ContactosProveedores")

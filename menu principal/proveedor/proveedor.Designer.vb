@@ -40,6 +40,8 @@ Partial Class proveedor
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tabla_proveedores = New System.Windows.Forms.DataGridView()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.tabla_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,6 +53,8 @@ Partial Class proveedor
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.txtBuscar)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.tabla_proveedores)
         Me.Panel1.Cursor = System.Windows.Forms.Cursors.Default
@@ -245,15 +249,37 @@ Partial Class proveedor
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tabla_proveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.tabla_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.tabla_proveedores.Location = New System.Drawing.Point(3, 221)
+        Me.tabla_proveedores.Location = New System.Drawing.Point(3, 247)
         Me.tabla_proveedores.MultiSelect = False
         Me.tabla_proveedores.Name = "tabla_proveedores"
         Me.tabla_proveedores.ReadOnly = True
         Me.tabla_proveedores.RowHeadersVisible = False
         Me.tabla_proveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.tabla_proveedores.Size = New System.Drawing.Size(572, 244)
+        Me.tabla_proveedores.Size = New System.Drawing.Size(572, 218)
         Me.tabla_proveedores.TabIndex = 8
         Me.tabla_proveedores.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(3, 220)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(77, 20)
+        Me.Label4.TabIndex = 28
+        Me.Label4.Text = "BUSCAR"
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.BackColor = System.Drawing.Color.White
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
+        Me.txtBuscar.Location = New System.Drawing.Point(86, 217)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(246, 26)
+        Me.txtBuscar.TabIndex = 27
+        Me.txtBuscar.TabStop = False
         '
         'proveedor
         '
@@ -264,6 +290,7 @@ Partial Class proveedor
         Me.Name = "proveedor"
         Me.Text = "proveedor"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.tabla_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
@@ -289,4 +316,6 @@ Partial Class proveedor
     Friend WithEvents Label2 As Label
     Friend WithEvents mail As TextBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtBuscar As TextBox
 End Class

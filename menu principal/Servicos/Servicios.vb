@@ -30,5 +30,7 @@
 
     End Sub
 
-
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        tabla.DataSource = controller.sql.dataset_servicioTxt(txtBuscar.Text).Tables(0)
+    End Sub
 End Class

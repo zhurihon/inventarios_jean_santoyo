@@ -72,4 +72,8 @@
         direccion.Clear()
         mail.Clear()
     End Sub
+
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        tabla_clientes.DataSource = controller.sql.buscar_clientetxt(txtBuscar.Text).Tables(0)
+    End Sub
 End Class
