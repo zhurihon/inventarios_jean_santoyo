@@ -107,8 +107,8 @@ Public Class Productos
                     registro_producto.pk_cod = row.Cells("cod").Value.ToString()
 
                     registro_producto.btn_nuevo_productos.Text = "CANCELAR MODIFICACIÓN"
-                    registro_producto.btn_modificar.Enabled = 1
-                    registro_producto.btn_eliminar.Enabled = 1
+                    'registro_producto.btn_modificar.Enabled = 1
+                    'registro_producto.btn_eliminar.Enabled = 1
                 Case 2
                     'Marca
 
