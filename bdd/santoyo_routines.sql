@@ -251,14 +251,17 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `VentasMesUltimo`()
 BEGIN
-	SELECT 
-    COUNT(*) AS total_ventas,
-    SUM(cantidad) AS cantidad_total
-FROM 
-    ventas
-WHERE 
-    MONTH(fechaventa) = MONTH(CURRENT_DATE()) 
-    AND YEAR(fechaventa) = YEAR(CURRENT_DATE());
+    SELECT 
+        COUNT(*) AS total_ventas,
+        SUM(valor) AS cantidad_total,
+        cliente
+    FROM 
+        ventas
+    WHERE 
+        MONTH(fechaventa) = MONTH(CURRENT_DATE()) 
+        AND YEAR(fechaventa) = YEAR(CURRENT_DATE())
+    GROUP BY 
+        cliente;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -275,4 +278,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-06 21:46:15
+-- Dump completed on 2024-12-08 15:56:49

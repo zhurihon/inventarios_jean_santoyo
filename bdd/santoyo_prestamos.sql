@@ -16,26 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `inventario`
+-- Table structure for table `prestamos`
 --
 
-DROP TABLE IF EXISTS `inventario`;
+DROP TABLE IF EXISTS `prestamos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `inventario` (
-  `Id` varchar(45) NOT NULL,
-  `Nombre` varchar(45) NOT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `prestamos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `codherramienta` varchar(45) DEFAULT NULL,
+  `fechaprestamo` date DEFAULT NULL,
+  `fechalimite` date DEFAULT NULL,
+  `cantidad` int DEFAULT NULL,
+  `clienteid` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `inventario`
+-- Dumping data for table `prestamos`
 --
 
-LOCK TABLES `inventario` WRITE;
-/*!40000 ALTER TABLE `inventario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `inventario` ENABLE KEYS */;
+LOCK TABLES `prestamos` WRITE;
+/*!40000 ALTER TABLE `prestamos` DISABLE KEYS */;
+INSERT INTO `prestamos` VALUES (1,'H1','2024-12-08','2024-12-12',1,'441555566');
+/*!40000 ALTER TABLE `prestamos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
