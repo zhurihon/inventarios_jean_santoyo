@@ -67,8 +67,8 @@
                     s += vbNewLine & "Debe ser un número potisivo"
                 End If
                 MsgBox(s)
-                btn_modificar.Enabled = 0
-                btn_eliminar.Enabled = 0
+                'btn_modificar.Enabled = 0
+                'btn_eliminar.Enabled = 0
 
                 Productos.cargar_produtos(controller.sql.consulta_productos())
             End If
@@ -114,8 +114,8 @@
         ' Si el usuario selecciona "No", salir de la función
         If resultado = DialogResult.Yes Then
 
-            btn_modificar.Enabled = 0
-            btn_eliminar.Enabled = 0
+            'btn_modificar.Enabled = 0
+            'btn_eliminar.Enabled = 0
             btn_nuevo_productos.Enabled = 1
             controller.sql.actualizar_producto(pk_cod, codigo.Text, nombre.Text, CDbl(precio.Text), tipos.Text, proveedor.Text, "", "")
 
@@ -137,8 +137,8 @@
         Dim resultado As DialogResult = MessageBox.Show("¿Está seguro de que desea eliminar el producto " & pk_cod & "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If resultado = DialogResult.Yes Then
-            btn_modificar.Enabled = 0
-            btn_eliminar.Enabled = 0
+            'btn_modificar.Enabled = 0
+            'btn_eliminar.Enabled = 0
             controller.sql.eliminar_producto(pk_cod)
 
             codigo.Clear()
