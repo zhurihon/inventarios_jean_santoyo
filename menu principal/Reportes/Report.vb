@@ -30,9 +30,21 @@
                 inf.hasta = dtp_hasta.Value
 
                 inf.checkclienteproveedor = cb2.Checked
-                inf.clienteid = cbpc.ValueMember.ToString
+                inf.clienteid = cbpc.SelectedValue.ToString
                 tabla.DataSource = controller.sql.dataset_BusquedaVentas(inf).Tables(0)
                 reportes.fexcel2(controller.sql.dataset_BusquedaVentas(inf), "Ventas específicas")
+            Case "Compras por parametros"
+                Dim inf As New parametro
+                inf.checkdesde = cb_Desde.Checked
+                inf.desde = dtp_Desde.Value
+                inf.checkhasta = cb_Hasta.Checked
+                inf.hasta = dtp_hasta.Value
+
+                inf.checkclienteproveedor = cb2.Checked
+                inf.proveedorid = cbpc.SelectedValue.ToString
+                tabla.DataSource = controller.sql.dataset_BusquedaCompras(inf).Tables(0)
+                reportes.fexcel2(controller.sql.dataset_BusquedaCompras(inf), "compras específicas")
+
         End Select
 
 
@@ -56,6 +68,10 @@
                 cbpc.DataSource = controller.sql.dataset_clientes.Tables(0)
                 cbpc.DisplayMember = "Nombre"
                 cbpc.ValueMember = "id"
+            Case "Compras por parametros"
+                cbpc.DataSource = controller.sql.consulta_proveedores.Tables(0)
+                cbpc.DisplayMember = "Nombre"
+                cbpc.ValueMember = "Identificacion"
         End Select
 
 
@@ -80,12 +96,7 @@
         Public proveedorid As String
     End Class
 
-
-
-
-
-
-
-
-
+    Private Sub cbpc_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbpc.SelectedIndexChanged
+        'MsgBox(cbpc.SelectedValue)
+    End Sub
 End Class

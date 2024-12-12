@@ -1838,7 +1838,7 @@ ORDER BY total_ventas DESC;", miconexion)
         Public Function dataset_BusquedaVentas(parametros As Report.parametro) As DataSet
             Try
                 miconexion.Open()
-                MostrarDetallesParametro(parametros)
+                'MostrarDetallesParametro(parametros)
                 ' Construcción de la consulta SQL
                 Dim query As New String("SELECT * FROM ventas WHERE ")
                 Dim ant As Boolean = False
@@ -1909,8 +1909,72 @@ ORDER BY total_ventas DESC;", miconexion)
 
 
 
+        Public Function dataset_BusquedaCompras(parametros As Report.parametro) As DataSet
+            Try
+                miconexion.Open()
+                MostrarDetallesParametro(parametros)
 
+                ' Construcción de la consulta SQL
+                Dim query As String = "SELECT * FROM compra WHERE "
+                Dim ant As Boolean = False
 
+                ' Agregar condiciones según los parámetros
+                If parametros.checkdesde Then
+                    If ant Then
+                        query &= " AND "
+                    End If
+                    ant = True
+                    query &= " fecha >= @desde"
+                End If
+
+                If parametros.checkhasta Then
+                    If ant Then
+                        query &= " AND "
+                    End If
+                    ant = True
+                    query &= " fecha <= @hasta"
+                End If
+
+                If parametros.checkclienteproveedor Then
+                    If ant Then
+                        query &= " AND "
+                    End If
+                    ant = True
+                    query &= " idproveedor = @proveedorid"
+                End If
+
+                ' Crear el comando
+                MsgBox(query)
+                Dim comando As New MySqlCommand(query, miconexion)
+
+                ' Agregar parámetros
+                If parametros.checkdesde Then
+                    comando.Parameters.AddWithValue("@desde", parametros.desde)
+                End If
+
+                If parametros.checkhasta Then
+                    comando.Parameters.AddWithValue("@hasta", parametros.hasta)
+                End If
+
+                If parametros.checkclienteproveedor Then
+                    comando.Parameters.AddWithValue("@proveedorid", parametros.proveedorid)
+                End If
+
+                ' Ejecutar la consulta
+                Dim llamada As New MySqlDataAdapter(comando)
+                Dim dt As New DataSet
+                llamada.Fill(dt, "Compras")
+
+                Return dt
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+                Return Nothing
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
 
 
 

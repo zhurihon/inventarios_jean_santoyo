@@ -22,7 +22,7 @@ Partial Class Report
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Código = New System.Windows.Forms.Label()
         Me.btn_report = New System.Windows.Forms.Button()
@@ -217,8 +217,8 @@ Partial Class Report
         Me.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.tabla.Location = New System.Drawing.Point(6, 288)
         Me.tabla.Name = "tabla"
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.tabla.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.tabla.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.tabla.Size = New System.Drawing.Size(551, 174)
         Me.tabla.TabIndex = 41
         '
