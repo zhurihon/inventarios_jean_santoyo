@@ -10,7 +10,7 @@
 
     Private tipopago As Boolean = 0
 
-    Public Sub factura_Load(dgv As DataGridView, montoTotal As Double, servicoINFO As String, servicioPRECIO As Double, scliente As String, datoscliente As DataSet, divisa As Boolean)
+    Public Sub factura_Load(dgv As DataGridView, montoTotal As Double, servicoINFO As String, servicioPRECIO As Double, scliente As String, datoscliente As DataSet, divisa As Boolean, idfact As Integer)
         'PrintLine = 0
         'Contador = 0
 
@@ -27,7 +27,7 @@
         'dgv_tabla.DataSource = dgv.DataSource
 
         cliente.Text = "Cliente: " & scliente
-
+        idfactura.Text = idfact
         clienteDocumento.Text = "Documento: " & datoscliente.Tables(0).Rows(0).Item("id").ToString
         clienteNumero.Text = "Número: " & datoscliente.Tables(0).Rows(0).Item("Telefono").ToString
 
@@ -254,6 +254,8 @@
 
         Dim dt As New DataSet
         Dim FuenteTitulo As New Font("Microsoft Sans Serif", 10)
+
+        Dim FuenteFactura As New Font("Microsoft Sans Serif", 10, FontStyle.Underline)
         Dim FuenteSubtitulo As New Font("Microsoft Sans Serif", 9)
         Dim FuenteNegrita As New Font("Microsoft Sans Serif", 9, FontStyle.Bold)
         Dim FuenteDetalles As New Font("Microsoft Sans Serif", 9)
@@ -270,6 +272,7 @@
         e.Graphics.DrawString(Me.clienteNumero.Text, FuenteNegrita, Brushes.Black, Me.clienteNumero.Left, Me.clienteNumero.Top)
 
 
+        e.Graphics.DrawString(Me.idfactura.Text, FuenteFactura, Brushes.Red, Me.idfactura.Left, Me.idfactura.Top)
         e.Graphics.DrawString(Me.labelDireccion.Text, FuenteNegrita, Brushes.Black, Me.labelDireccion.Left, Me.labelDireccion.Top)
 
 

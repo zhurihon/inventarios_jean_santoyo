@@ -1682,37 +1682,37 @@ ORDER BY total_ventas DESC;", miconexion)
 
 
         Public Function Facturacion(suplies As DataSet,
-                                    cliente As Integer,
-                                    servicio As Double,
-                                    descripcion As String,
-                                    valor As Double
-                                    ) As Boolean
+                             cliente As Integer,
+                             servicio As Double,
+                             descripcion As String,
+                             valor As Double) As Long
+            Dim idventa As Long = 0 ' Variable para almacenar el ID de la venta
             Try
                 miconexion.Open()
 
-
-
-                Dim comandoVenta As New MySqlCommand("INSERT INTO santoyo.ventas (cliente,valor, fechaventa,descripcion) VALUES (@cliente, @valor, @fechaventa, @descripcion); SELECT LAST_INSERT_ID() AS NewID;", miconexion)
+                ' Comando para insertar la venta y obtener el ID
+                Dim comandoVenta As New MySqlCommand("INSERT INTO santoyo.ventas (cliente, valor, fechaventa, descripcion) VALUES (@cliente, @valor, @fechaventa, @descripcion); SELECT LAST_INSERT_ID();", miconexion)
                 comandoVenta.Parameters.AddWithValue("@cliente", cliente)
                 comandoVenta.Parameters.AddWithValue("@valor", valor)
                 comandoVenta.Parameters.AddWithValue("@fechaventa", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"))
                 comandoVenta.Parameters.AddWithValue("@descripcion", descripcion)
-                Dim idventa As Integer = Convert.ToInt32(comandoVenta.ExecuteScalar())
 
+                ' Ejecutar el comando y obtener el ID de la venta
+                idventa = Convert.ToInt64(comandoVenta.ExecuteScalar())
+
+                ' Insertar los detalles de la venta
                 For Each row As DataRow In suplies.Tables(0).Rows
-                    ' Recorrer cada columna de la fila
-
                     Dim comandoDetalle As New MySqlCommand("INSERT INTO detalleventa (idproducto, idventa, cantidad) VALUES (@idproducto, @idventa, @cantidad);", miconexion)
-                        comandoDetalle.Parameters.AddWithValue("@idproducto", row(0).ToString())
-                        comandoDetalle.Parameters.AddWithValue("@idventa", idventa)
-                        comandoDetalle.Parameters.AddWithValue("@cantidad", row(3))
-                        comandoDetalle.ExecuteNonQuery()
-                    Next
+                    comandoDetalle.Parameters.AddWithValue("@idproducto", row(0).ToString())
+                    comandoDetalle.Parameters.AddWithValue("@idventa", idventa)
+                    comandoDetalle.Parameters.AddWithValue("@cantidad", row(3))
+                    comandoDetalle.ExecuteNonQuery()
+                Next
 
-                Return 1
+                Return idventa ' Devolver el ID de la venta
             Catch ex As Exception
                 MsgBox("Error: " & ex.Message)
-                Return Nothing
+                Return -1 ' Devolver -1 en caso de error
             Finally
                 If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
                     miconexion.Close()
@@ -1806,6 +1806,111 @@ ORDER BY total_ventas DESC;", miconexion)
                 End If
             End Try
         End Function
+
+
+
+
+
+
+
+
+
+        Public Sub MostrarDetallesParametro(ByVal parametros As Report.parametro)
+            Try
+                Dim detalles As String = "Detalles del objeto parametro:" & Environment.NewLine
+                detalles &= "Tipo: " & parametros.tipo & Environment.NewLine
+                detalles &= "Check Desde: " & parametros.checkdesde.ToString() & Environment.NewLine
+                detalles &= "Desde: " & If(parametros.checkdesde, parametros.desde.ToString(), "No Aplicable") & Environment.NewLine
+                detalles &= "Check Hasta: " & parametros.checkhasta.ToString() & Environment.NewLine
+                detalles &= "Hasta: " & If(parametros.checkhasta, parametros.hasta.ToString(), "No Aplicable") & Environment.NewLine
+                detalles &= "Check Cliente: " & parametros.checkclienteproveedor.ToString() & Environment.NewLine
+                detalles &= "Cliente ID: " & If(parametros.checkclienteproveedor, parametros.clienteid, "No Aplicable") & Environment.NewLine
+                detalles &= "Proveedor ID: " & If(parametros.checkclienteproveedor, parametros.proveedorid, "No Aplicable") & Environment.NewLine
+
+                ' Mostrar los detalles en un MessageBox
+                MsgBox(detalles)
+            Catch ex As Exception
+                MsgBox("Error al mostrar detalles: " & ex.Message)
+            End Try
+        End Sub
+
+
+        Public Function dataset_BusquedaVentas(parametros As Report.parametro) As DataSet
+            Try
+                miconexion.Open()
+                MostrarDetallesParametro(parametros)
+                ' Construcción de la consulta SQL
+                Dim query As New String("SELECT * FROM ventas WHERE ")
+                Dim ant As Boolean = False
+                MsgBox(ant)
+                ' Agregar condiciones según los parámetros
+                MsgBox(parametros.checkdesde = True)
+                MsgBox(parametros.checkdesde)
+
+                If parametros.checkdesde = True Then
+                    If ant = True Then
+                        query += " and "
+                    End If
+                    ant = 1
+                    query += " fechaventa >= @desde"
+                End If
+
+                If parametros.checkhasta = True Then
+                    If ant = True Then
+                        query += " and "
+                    End If
+                    ant = 1
+                    query += (" fechaventa <= @hasta")
+                End If
+
+                If parametros.checkclienteproveedor = True Then
+                    If ant = 1 Then
+                        query += " and "
+                    End If
+                    ant = 1
+                    query += "  cliente = @clienteid"
+                End If
+
+                ' Crear el comando
+                MsgBox(query)
+                Dim comando As New MySqlCommand(query.ToString(), miconexion)
+
+                ' Agregar parámetros
+                If parametros.checkdesde Then
+                    comando.Parameters.AddWithValue("@desde", parametros.desde)
+                End If
+
+                If parametros.checkhasta Then
+                    comando.Parameters.AddWithValue("@hasta", parametros.hasta)
+                End If
+
+                If parametros.checkclienteproveedor Then
+                    comando.Parameters.AddWithValue("@clienteid", parametros.clienteid)
+                End If
+
+                ' Ejecutar la consulta
+                Dim llamada As New MySqlDataAdapter(comando)
+                Dim dt As New DataSet
+                llamada.Fill(dt, "Ventas")
+
+                Return dt
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+                Return Nothing
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
+
+
+
+
+
+
+
+
 
 
 

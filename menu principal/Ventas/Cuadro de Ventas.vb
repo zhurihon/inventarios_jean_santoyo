@@ -226,8 +226,7 @@ Public Class Cuadro_de_Ventas
 
         If comprobar_factura() Then
 
-
-            controller.sql.Facturacion(miDataSet, CInt(sidcliente), servicio, txtDescripcion.Text, total)
+            Dim idfactura As Integer = controller.sql.Facturacion(miDataSet, CInt(sidcliente), servicio, txtDescripcion.Text, total)
 
             Dim datos_cliente As DataSet = controller.sql.consulta_clienteId(sidcliente)
 
@@ -237,7 +236,7 @@ Public Class Cuadro_de_Ventas
             debita_productos(ticket)
 
             '
-            factura.factura_Load(ticket, CDbl(txt_total.Text), txtDescripcion.Text, CDbl(txtMontoServicio.Text), sidcliente, datos_cliente, rbDivisa.Checked)
+            factura.factura_Load(ticket, CDbl(txt_total.Text), txtDescripcion.Text, CDbl(txtMontoServicio.Text), sidcliente, datos_cliente, rbDivisa.Checked, idfactura)
 
 
             tabla.DataSource = controller.sql.consulta_productos.Tables(0)

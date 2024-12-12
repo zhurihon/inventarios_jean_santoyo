@@ -22,8 +22,10 @@ Partial Class Servicios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -31,8 +33,6 @@ Partial Class Servicios
         Me.txtprecio = New System.Windows.Forms.TextBox()
         Me.Código = New System.Windows.Forms.Label()
         Me.tabla = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.tabla, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,6 +55,28 @@ Partial Class Servicios
         Me.Panel1.TabIndex = 12
         Me.Panel1.Visible = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(3, 145)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(77, 20)
+        Me.Label2.TabIndex = 28
+        Me.Label2.Text = "BUSCAR"
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.BackColor = System.Drawing.Color.White
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
+        Me.txtBuscar.Location = New System.Drawing.Point(86, 142)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(246, 26)
+        Me.txtBuscar.TabIndex = 27
+        Me.txtBuscar.TabStop = False
+        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
@@ -70,7 +92,7 @@ Partial Class Servicios
         Me.GroupBox1.Size = New System.Drawing.Size(572, 137)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "AGREGAR PROVEEDOR"
+        Me.GroupBox1.Text = "Servicios"
         '
         'txtdescripcion
         '
@@ -118,9 +140,9 @@ Partial Class Servicios
         Me.Código.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Código.Location = New System.Drawing.Point(11, 16)
         Me.Código.Name = "Código"
-        Me.Código.Size = New System.Drawing.Size(142, 20)
+        Me.Código.Size = New System.Drawing.Size(70, 20)
         Me.Código.TabIndex = 20
-        Me.Código.Text = "IDENTIFICACIÓN:"
+        Me.Código.Text = "PRECIO"
         '
         'tabla
         '
@@ -134,34 +156,12 @@ Partial Class Servicios
         Me.tabla.Name = "tabla"
         Me.tabla.ReadOnly = True
         Me.tabla.RowHeadersVisible = False
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.tabla.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.tabla.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.tabla.Size = New System.Drawing.Size(572, 291)
         Me.tabla.TabIndex = 8
         Me.tabla.TabStop = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(3, 145)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 20)
-        Me.Label2.TabIndex = 28
-        Me.Label2.Text = "BUSCAR"
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.BackColor = System.Drawing.Color.White
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
-        Me.txtBuscar.Location = New System.Drawing.Point(86, 142)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(246, 26)
-        Me.txtBuscar.TabIndex = 27
-        Me.txtBuscar.TabStop = False
         '
         'Servicios
         '
