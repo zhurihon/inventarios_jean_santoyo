@@ -1842,10 +1842,10 @@ ORDER BY total_ventas DESC;", miconexion)
                 ' Construcción de la consulta SQL
                 Dim query As New String("SELECT * FROM ventas WHERE ")
                 Dim ant As Boolean = False
-                MsgBox(ant)
+                'MsgBox(ant)
                 ' Agregar condiciones según los parámetros
-                MsgBox(parametros.checkdesde = True)
-                MsgBox(parametros.checkdesde)
+                'MsgBox(parametros.checkdesde = True)
+                'MsgBox(parametros.checkdesde)
 
                 If parametros.checkdesde = True Then
                     If ant = True Then

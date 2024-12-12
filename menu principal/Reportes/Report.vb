@@ -32,7 +32,7 @@
                 inf.checkclienteproveedor = cb2.Checked
                 inf.clienteid = cbpc.ValueMember.ToString
                 tabla.DataSource = controller.sql.dataset_BusquedaVentas(inf).Tables(0)
-                'reportes.fexcel2(controller.sql.dataset_stock_bajo, "Stock bajo")
+                reportes.fexcel2(controller.sql.dataset_BusquedaVentas(inf), "Ventas específicas")
         End Select
 
 
