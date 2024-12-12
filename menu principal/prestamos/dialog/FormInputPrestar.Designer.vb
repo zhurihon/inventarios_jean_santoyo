@@ -34,6 +34,16 @@ Partial Class FormInputPrestar
         Me.txtCnombre = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dtpLimite = New System.Windows.Forms.DateTimePicker()
+        Me.txtinicial = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtdiario = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lbtotal = New System.Windows.Forms.Label()
+        Me.lbshowdias = New System.Windows.Forms.Label()
+        Me.rbVes = New System.Windows.Forms.RadioButton()
+        Me.rbDivisa = New System.Windows.Forms.RadioButton()
         Me.SuspendLayout()
         '
         'txtHcod
@@ -64,7 +74,7 @@ Partial Class FormInputPrestar
         Me.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.White
-        Me.btnCancelar.Location = New System.Drawing.Point(16, 352)
+        Me.btnCancelar.Location = New System.Drawing.Point(14, 422)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(110, 28)
         Me.btnCancelar.TabIndex = 19
@@ -78,12 +88,12 @@ Partial Class FormInputPrestar
         Me.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrar.ForeColor = System.Drawing.Color.White
-        Me.btnRegistrar.Location = New System.Drawing.Point(132, 352)
+        Me.btnRegistrar.Location = New System.Drawing.Point(130, 422)
         Me.btnRegistrar.Name = "btnRegistrar"
         Me.btnRegistrar.Size = New System.Drawing.Size(200, 28)
         Me.btnRegistrar.TabIndex = 20
         Me.btnRegistrar.TabStop = False
-        Me.btnRegistrar.Text = "Registrar préstamo"
+        Me.btnRegistrar.Text = "ALQUILAR"
         Me.btnRegistrar.UseVisualStyleBackColor = False
         '
         'Label1
@@ -94,9 +104,9 @@ Partial Class FormInputPrestar
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(59, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(241, 24)
+        Me.Label1.Size = New System.Drawing.Size(244, 24)
         Me.Label1.TabIndex = 17
-        Me.Label1.Text = "PRESTAR HERRAMIENTA"
+        Me.Label1.Text = "ALQUILAR HERRAMIENTA"
         '
         'Button1
         '
@@ -172,17 +182,145 @@ Partial Class FormInputPrestar
         '
         'dtpLimite
         '
-        Me.dtpLimite.Location = New System.Drawing.Point(84, 247)
+        Me.dtpLimite.CustomFormat = "ddddd, dd MMMMM yyyy - hh:mm"
+        Me.dtpLimite.Location = New System.Drawing.Point(69, 247)
+        Me.dtpLimite.MinDate = New Date(2024, 12, 12, 0, 0, 0, 0)
         Me.dtpLimite.Name = "dtpLimite"
-        Me.dtpLimite.Size = New System.Drawing.Size(200, 20)
+        Me.dtpLimite.Size = New System.Drawing.Size(226, 20)
         Me.dtpLimite.TabIndex = 36
+        Me.dtpLimite.Value = New Date(2024, 12, 12, 0, 0, 0, 0)
+        '
+        'txtinicial
+        '
+        Me.txtinicial.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.txtinicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtinicial.ForeColor = System.Drawing.Color.White
+        Me.txtinicial.Location = New System.Drawing.Point(69, 305)
+        Me.txtinicial.Name = "txtinicial"
+        Me.txtinicial.Size = New System.Drawing.Size(76, 24)
+        Me.txtinicial.TabIndex = 38
+        Me.txtinicial.Text = "0"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.White
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(12, 277)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(51, 20)
+        Me.Label5.TabIndex = 37
+        Me.Label5.Text = "Costo"
+        '
+        'txtdiario
+        '
+        Me.txtdiario.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.txtdiario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdiario.ForeColor = System.Drawing.Color.White
+        Me.txtdiario.Location = New System.Drawing.Point(206, 305)
+        Me.txtdiario.Name = "txtdiario"
+        Me.txtdiario.Size = New System.Drawing.Size(89, 24)
+        Me.txtdiario.TabIndex = 39
+        Me.txtdiario.Text = "0"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(12, 307)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(49, 20)
+        Me.Label6.TabIndex = 40
+        Me.Label6.Text = "Inicial"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(151, 307)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(50, 20)
+        Me.Label7.TabIndex = 41
+        Me.Label7.Text = "Diario"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(74, 348)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(48, 20)
+        Me.Label8.TabIndex = 42
+        Me.Label8.Text = "Total:"
+        '
+        'lbtotal
+        '
+        Me.lbtotal.AutoSize = True
+        Me.lbtotal.BackColor = System.Drawing.Color.Transparent
+        Me.lbtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbtotal.ForeColor = System.Drawing.Color.White
+        Me.lbtotal.Location = New System.Drawing.Point(130, 349)
+        Me.lbtotal.Name = "lbtotal"
+        Me.lbtotal.Size = New System.Drawing.Size(26, 29)
+        Me.lbtotal.TabIndex = 43
+        Me.lbtotal.Text = "0"
+        '
+        'lbshowdias
+        '
+        Me.lbshowdias.AutoSize = True
+        Me.lbshowdias.BackColor = System.Drawing.Color.Transparent
+        Me.lbshowdias.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbshowdias.ForeColor = System.Drawing.Color.White
+        Me.lbshowdias.Location = New System.Drawing.Point(65, 277)
+        Me.lbshowdias.Name = "lbshowdias"
+        Me.lbshowdias.Size = New System.Drawing.Size(0, 20)
+        Me.lbshowdias.TabIndex = 44
+        '
+        'rbVes
+        '
+        Me.rbVes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.rbVes.AutoSize = True
+        Me.rbVes.Location = New System.Drawing.Point(75, 381)
+        Me.rbVes.Name = "rbVes"
+        Me.rbVes.Size = New System.Drawing.Size(70, 17)
+        Me.rbVes.TabIndex = 46
+        Me.rbVes.Text = "Bolívares"
+        Me.rbVes.UseVisualStyleBackColor = True
+        '
+        'rbDivisa
+        '
+        Me.rbDivisa.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.rbDivisa.AutoSize = True
+        Me.rbDivisa.Location = New System.Drawing.Point(16, 381)
+        Me.rbDivisa.Name = "rbDivisa"
+        Me.rbDivisa.Size = New System.Drawing.Size(54, 17)
+        Me.rbDivisa.TabIndex = 45
+        Me.rbDivisa.Text = "Divisa"
+        Me.rbDivisa.UseVisualStyleBackColor = True
         '
         'FormInputPrestar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(344, 399)
+        Me.ClientSize = New System.Drawing.Size(344, 462)
+        Me.Controls.Add(Me.rbVes)
+        Me.Controls.Add(Me.rbDivisa)
+        Me.Controls.Add(Me.lbshowdias)
+        Me.Controls.Add(Me.lbtotal)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.txtdiario)
+        Me.Controls.Add(Me.txtinicial)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.dtpLimite)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtCid)
@@ -193,12 +331,12 @@ Partial Class FormInputPrestar
         Me.Controls.Add(Me.txtHcod)
         Me.Controls.Add(Me.txtHnombre)
         Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.btnRegistrar)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnRegistrar)
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "FormInputPrestar"
-        Me.Text = "FormImputPrestar"
+        Me.Text = "Alquiler de herramientas"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -215,4 +353,14 @@ Partial Class FormInputPrestar
     Friend WithEvents txtCnombre As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents dtpLimite As DateTimePicker
+    Friend WithEvents txtinicial As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtdiario As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents lbtotal As Label
+    Friend WithEvents lbshowdias As Label
+    Friend WithEvents rbVes As RadioButton
+    Friend WithEvents rbDivisa As RadioButton
 End Class

@@ -69,6 +69,8 @@ Partial Class factura
         Me.cod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clienteDocumento = New System.Windows.Forms.Label()
         Me.labelDireccion = New System.Windows.Forms.Label()
+        Me.PrintDocument2 = New System.Drawing.Printing.PrintDocument()
+        Me.idfactura = New System.Windows.Forms.Label()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_tabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -106,7 +108,7 @@ Partial Class factura
         'titulo
         '
         Me.titulo.AutoSize = True
-        Me.titulo.Location = New System.Drawing.Point(516, 30)
+        Me.titulo.Location = New System.Drawing.Point(517, 9)
         Me.titulo.Margin = New System.Windows.Forms.Padding(0)
         Me.titulo.Name = "titulo"
         Me.titulo.Size = New System.Drawing.Size(43, 13)
@@ -517,11 +519,25 @@ Partial Class factura
         Me.labelDireccion.TabIndex = 80
         Me.labelDireccion.Text = "Direccion:"
         '
+        'PrintDocument2
+        '
+        '
+        'idfactura
+        '
+        Me.idfactura.AutoSize = True
+        Me.idfactura.Location = New System.Drawing.Point(517, 30)
+        Me.idfactura.Margin = New System.Windows.Forms.Padding(0)
+        Me.idfactura.Name = "idfactura"
+        Me.idfactura.Size = New System.Drawing.Size(43, 13)
+        Me.idfactura.TabIndex = 81
+        Me.idfactura.Text = "Factura"
+        '
         'factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 644)
+        Me.Controls.Add(Me.idfactura)
         Me.Controls.Add(Me.labelDireccion)
         Me.Controls.Add(Me.clienteDocumento)
         Me.Controls.Add(Me.dgv_tabla)
@@ -619,4 +635,6 @@ Partial Class factura
     Friend WithEvents cod As DataGridViewTextBoxColumn
     Friend WithEvents clienteDocumento As Label
     Friend WithEvents labelDireccion As Label
+    Friend WithEvents PrintDocument2 As Printing.PrintDocument
+    Friend WithEvents idfactura As Label
 End Class

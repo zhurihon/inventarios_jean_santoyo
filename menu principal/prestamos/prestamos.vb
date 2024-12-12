@@ -56,8 +56,8 @@
         If e.RowIndex >= 0 Then
 
             Dim row As DataGridViewRow = tabla_prestamos.Rows(e.RowIndex)
-            id = CInt(row.Cells("id").Value)
-            Dim dias As Integer = DiasHastaFecha(row.Cells("fechalimite").Value.ToString)
+            id = CInt(row.Cells(0).Value)
+            Dim dias As Integer = DiasHastaFecha(row.Cells(3).Value.ToString)
 
             If dias > 0 Then
                 lbDias.Text = "Días restantes"
@@ -105,5 +105,9 @@
             prestamos_update()
             id = -1
         End If
+    End Sub
+
+    Private Sub prestamos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

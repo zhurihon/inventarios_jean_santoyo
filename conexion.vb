@@ -162,6 +162,37 @@ Module conexion
         End Function
 
 
+        Public Function InfoProductoId(id As String) As DataSet
+
+            Try
+
+                miconexion.Open()
+                Dim cmd As New MySqlCommand("SELECT * FROM santoyo.producto WHERE cod = @busqueda", miconexion)
+                cmd.Parameters.AddWithValue("@busqueda", id)
+
+                Dim llamada As New MySqlDataAdapter(cmd)
+
+                Dim datos_recebidos As New DataSet
+
+                llamada.Fill(datos_recebidos, "prod")
+
+                miconexion.Close()
+
+                Return datos_recebidos
+
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+
+
+
+        End Function
+
+
         Public Function consulta_cliente() As DataSet
             miconexion.Open()
 
@@ -1727,20 +1758,31 @@ ORDER BY total_ventas DESC;", miconexion)
                 End If
             End Try
         End Function
-        Public Function prestar_herramientas(cod As String, cantidad As Double, clienteid As String, fechaLimite As Date) As Boolean
+        Public Function prestar_herramientas(cod As String, cantidad As Double, clienteid As String, fechaLimite As Date, Cinicial As Double, Cdiario As Double, dias As Integer) As Long
+            Dim idPrestamo As Long = 0 ' Variable para almacenar el ID del préstamo
             Try
                 miconexion.Open()
-                Dim comando As New MySqlCommand("INSERT INTO prestamos (codherramienta,cantidad,clienteid,fechalimite,fechaprestamo) VALUES (@codh,@cantidad,@cliente,@limite,@fprestamo)", miconexion)
+                Dim comando As New MySqlCommand("INSERT INTO prestamos (codherramienta,cantidad,clienteid,fechalimite,fechaprestamo,inicial,diario,dias) VALUES (@codh,@cantidad,@cliente,@limite,@fprestamo,@inicial,@diario,@dias)", miconexion)
                 comando.Parameters.AddWithValue("@codh", cod)
                 comando.Parameters.AddWithValue("@cantidad", cantidad)
                 comando.Parameters.AddWithValue("@cliente", clienteid)
                 comando.Parameters.AddWithValue("@limite", fechaLimite.ToString("yyyy-MM-dd"))
                 comando.Parameters.AddWithValue("@fprestamo", DateTime.Today.ToString("yyyy-MM-dd"))
+                comando.Parameters.AddWithValue("@inicial", Cinicial)
+                comando.Parameters.AddWithValue("@diario", Cdiario)
+                comando.Parameters.AddWithValue("@dias", dias)
 
-                Return comando.ExecuteNonQuery
+                ' Ejecutar la inserción
+                comando.ExecuteNonQuery()
+
+                ' Obtener el ID del último registro insertado
+                Dim idComando As New MySqlCommand("SELECT LAST_INSERT_ID()", miconexion)
+                idPrestamo = Convert.ToInt64(idComando.ExecuteScalar())
+
+                Return idPrestamo ' Devolver el ID del préstamo
             Catch ex As Exception
                 MsgBox("Error: " & ex.Message)
-                Return Nothing
+                Return -1 ' Devolver -1 en caso de error
             Finally
                 If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
                     miconexion.Close()

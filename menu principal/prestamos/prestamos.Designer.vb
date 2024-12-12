@@ -28,13 +28,20 @@ Partial Class prestamos
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtdias = New System.Windows.Forms.TextBox()
+        Me.lbDias = New System.Windows.Forms.Label()
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tabla_prestamos = New System.Windows.Forms.DataGridView()
         Me.tabla_herramienta = New System.Windows.Forms.DataGridView()
-        Me.lbDias = New System.Windows.Forms.Label()
-        Me.txtdias = New System.Windows.Forms.TextBox()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -82,7 +89,7 @@ Partial Class prestamos
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(127, 100)
         Me.Label4.TabIndex = 31
-        Me.Label4.Text = "Para prestar una" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "herramienta" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "selecione una y" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "luego rellene el" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "formulario"
+        Me.Label4.Text = "Para alquilar una" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "herramienta" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "selecione una y" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "luego rellene el" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "formulario"
         '
         'GroupBox1
         '
@@ -97,7 +104,25 @@ Partial Class prestamos
         Me.GroupBox1.Size = New System.Drawing.Size(167, 209)
         Me.GroupBox1.TabIndex = 22
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "INFORMACIÓN PRESTAMOS"
+        Me.GroupBox1.Text = "ALQUILERES"
+        '
+        'txtdias
+        '
+        Me.txtdias.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdias.Location = New System.Drawing.Point(15, 39)
+        Me.txtdias.Name = "txtdias"
+        Me.txtdias.Size = New System.Drawing.Size(146, 26)
+        Me.txtdias.TabIndex = 33
+        '
+        'lbDias
+        '
+        Me.lbDias.AutoSize = True
+        Me.lbDias.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbDias.Location = New System.Drawing.Point(11, 16)
+        Me.lbDias.Name = "lbDias"
+        Me.lbDias.Size = New System.Drawing.Size(117, 20)
+        Me.lbDias.TabIndex = 32
+        Me.lbDias.Text = "Días de retraso"
         '
         'btn_eliminar
         '
@@ -119,9 +144,10 @@ Partial Class prestamos
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(3, 246)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(458, 20)
+        Me.Label2.Size = New System.Drawing.Size(463, 20)
         Me.Label2.TabIndex = 21
-        Me.Label2.Text = "PRESTAR HERRAMIENTAS                                                            "
+        Me.Label2.Text = "ALQUILAR HERRAMIENTAS                                                            " &
+    ""
         '
         'Label1
         '
@@ -131,18 +157,19 @@ Partial Class prestamos
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(3, 11)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(455, 20)
+        Me.Label1.Size = New System.Drawing.Size(456, 20)
         Me.Label1.TabIndex = 20
-        Me.Label1.Text = "HERRAMIENTEAS PRESTADAS                                                   "
+        Me.Label1.Text = "HERRAMIENTEAS ALQUILADAS                                                  "
         '
         'tabla_prestamos
         '
         Me.tabla_prestamos.AllowUserToAddRows = False
-        Me.tabla_prestamos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.tabla_prestamos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tabla_prestamos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.tabla_prestamos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.tabla_prestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tabla_prestamos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
         Me.tabla_prestamos.Location = New System.Drawing.Point(180, 34)
         Me.tabla_prestamos.MultiSelect = False
         Me.tabla_prestamos.Name = "tabla_prestamos"
@@ -175,23 +202,54 @@ Partial Class prestamos
         Me.tabla_herramienta.TabIndex = 8
         Me.tabla_herramienta.TabStop = False
         '
-        'lbDias
+        'Column1
         '
-        Me.lbDias.AutoSize = True
-        Me.lbDias.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbDias.Location = New System.Drawing.Point(11, 16)
-        Me.lbDias.Name = "lbDias"
-        Me.lbDias.Size = New System.Drawing.Size(117, 20)
-        Me.lbDias.TabIndex = 32
-        Me.lbDias.Text = "Días de retraso"
+        Me.Column1.DataPropertyName = "id"
+        Me.Column1.HeaderText = "código"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
         '
-        'txtdias
+        'Column2
         '
-        Me.txtdias.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdias.Location = New System.Drawing.Point(15, 39)
-        Me.txtdias.Name = "txtdias"
-        Me.txtdias.Size = New System.Drawing.Size(146, 26)
-        Me.txtdias.TabIndex = 33
+        Me.Column2.DataPropertyName = "codherramienta"
+        Me.Column2.HeaderText = "Herramienta"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.DataPropertyName = "fechaprestamo"
+        Me.Column3.HeaderText = "Retirado"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "fechalimite"
+        Me.Column4.HeaderText = "Límite"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "clienteid"
+        Me.Column5.HeaderText = "Cliente"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.DataPropertyName = "‌inicial"
+        Me.Column6.HeaderText = "Inicial"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
+        'Column7
+        '
+        Me.Column7.DataPropertyName = "diario"
+        Me.Column7.HeaderText = "diario"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
         '
         'prestamos
         '
@@ -224,4 +282,11 @@ Partial Class prestamos
     Friend WithEvents Label4 As Label
     Friend WithEvents lbDias As Label
     Friend WithEvents txtdias As TextBox
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
 End Class

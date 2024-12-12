@@ -354,7 +354,7 @@ Partial Class menuprincipal
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(129, 33)
         Me.Button6.TabIndex = 29
-        Me.Button6.Text = "Prestamos"
+        Me.Button6.Text = "Alquileres"
         Me.Button6.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.Button6.UseVisualStyleBackColor = False
         '
