@@ -234,7 +234,7 @@ Module conexion
 
 
 
-        Public Function registrar_cliente(id As Integer, nombre As String, telefono As String, direccion As String, mail As String) As Boolean
+        Public Function registrar_cliente(id As String, nombre As String, telefono As String, direccion As String, mail As String) As Boolean
             Try
                 miconexion.Open()
                 Dim comando As New MySqlCommand("INSERT INTO cliente (id, Nombre, Telefono, Direccion, Mail) VALUES (@id, @nombre, @telefono, @direccion, @mail)", miconexion)
@@ -1682,7 +1682,7 @@ ORDER BY total_ventas DESC;", miconexion)
 
 
         Public Function Facturacion(suplies As DataSet,
-                             cliente As Integer,
+                             cliente As String,
                              servicio As Double,
                              descripcion As String,
                              valor As Double) As Long

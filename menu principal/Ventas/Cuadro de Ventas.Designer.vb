@@ -26,6 +26,8 @@ Partial Class Cuadro_de_Ventas
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tabla = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -64,8 +66,6 @@ Partial Class Cuadro_de_Ventas
         Me.id = New System.Windows.Forms.TextBox()
         Me.Código = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         CType(Me.tabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -111,6 +111,28 @@ Partial Class Cuadro_de_Ventas
         Me.Panel1.TabIndex = 12
         Me.Panel1.Visible = False
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(0, 332)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(77, 20)
+        Me.Label9.TabIndex = 26
+        Me.Label9.Text = "BUSCAR"
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.BackColor = System.Drawing.Color.White
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
+        Me.txtBuscar.Location = New System.Drawing.Point(83, 329)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(246, 26)
+        Me.txtBuscar.TabIndex = 25
+        Me.txtBuscar.TabStop = False
+        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
@@ -148,9 +170,9 @@ Partial Class Cuadro_de_Ventas
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.White
-        Me.GroupBox4.Location = New System.Drawing.Point(224, 108)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 123)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(342, 171)
+        Me.GroupBox4.Size = New System.Drawing.Size(342, 148)
         Me.GroupBox4.TabIndex = 48
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Servicio"
@@ -174,7 +196,7 @@ Partial Class Cuadro_de_Ventas
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(6, 41)
+        Me.Label2.Location = New System.Drawing.Point(6, 22)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(96, 20)
         Me.Label2.TabIndex = 34
@@ -186,7 +208,7 @@ Partial Class Cuadro_de_Ventas
         Me.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.txtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcion.ForeColor = System.Drawing.Color.White
-        Me.txtDescripcion.Location = New System.Drawing.Point(10, 64)
+        Me.txtDescripcion.Location = New System.Drawing.Point(10, 47)
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(326, 68)
@@ -198,7 +220,7 @@ Partial Class Cuadro_de_Ventas
         Me.txtMontoServicio.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.txtMontoServicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMontoServicio.ForeColor = System.Drawing.Color.White
-        Me.txtMontoServicio.Location = New System.Drawing.Point(218, 136)
+        Me.txtMontoServicio.Location = New System.Drawing.Point(218, 121)
         Me.txtMontoServicio.Name = "txtMontoServicio"
         Me.txtMontoServicio.Size = New System.Drawing.Size(118, 26)
         Me.txtMontoServicio.TabIndex = 37
@@ -209,7 +231,7 @@ Partial Class Cuadro_de_Ventas
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(6, 139)
+        Me.Label7.Location = New System.Drawing.Point(6, 121)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(152, 20)
         Me.Label7.TabIndex = 36
@@ -220,7 +242,7 @@ Partial Class Cuadro_de_Ventas
         Me.txtmontopagar.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.txtmontopagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtmontopagar.ForeColor = System.Drawing.Color.White
-        Me.txtmontopagar.Location = New System.Drawing.Point(103, 300)
+        Me.txtmontopagar.Location = New System.Drawing.Point(466, 300)
         Me.txtmontopagar.Name = "txtmontopagar"
         Me.txtmontopagar.Size = New System.Drawing.Size(100, 20)
         Me.txtmontopagar.TabIndex = 47
@@ -231,7 +253,7 @@ Partial Class Cuadro_de_Ventas
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(6, 300)
+        Me.Label11.Location = New System.Drawing.Point(369, 300)
         Me.Label11.Margin = New System.Windows.Forms.Padding(0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(95, 13)
@@ -245,7 +267,7 @@ Partial Class Cuadro_de_Ventas
         Me.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_modificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_modificar.ForeColor = System.Drawing.Color.White
-        Me.btn_modificar.Location = New System.Drawing.Point(448, 282)
+        Me.btn_modificar.Location = New System.Drawing.Point(230, 282)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(118, 30)
         Me.btn_modificar.TabIndex = 29
@@ -256,7 +278,7 @@ Partial Class Cuadro_de_Ventas
         '
         Me.rbVes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbVes.AutoSize = True
-        Me.rbVes.Location = New System.Drawing.Point(283, 290)
+        Me.rbVes.Location = New System.Drawing.Point(65, 290)
         Me.rbVes.Name = "rbVes"
         Me.rbVes.Size = New System.Drawing.Size(70, 17)
         Me.rbVes.TabIndex = 41
@@ -273,7 +295,7 @@ Partial Class Cuadro_de_Ventas
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.Button1)
         Me.GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.GroupBox3.Location = New System.Drawing.Point(224, 10)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 19)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(342, 98)
         Me.GroupBox3.TabIndex = 33
@@ -341,7 +363,7 @@ Partial Class Cuadro_de_Ventas
         '
         Me.rbDivisa.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rbDivisa.AutoSize = True
-        Me.rbDivisa.Location = New System.Drawing.Point(224, 290)
+        Me.rbDivisa.Location = New System.Drawing.Point(6, 290)
         Me.rbDivisa.Name = "rbDivisa"
         Me.rbDivisa.Size = New System.Drawing.Size(54, 17)
         Me.rbDivisa.TabIndex = 40
@@ -365,7 +387,7 @@ Partial Class Cuadro_de_Ventas
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.ticket.DefaultCellStyle = DataGridViewCellStyle2
-        Me.ticket.Location = New System.Drawing.Point(6, 19)
+        Me.ticket.Location = New System.Drawing.Point(369, 19)
         Me.ticket.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.ticket.MultiSelect = False
         Me.ticket.Name = "ticket"
@@ -416,7 +438,7 @@ Partial Class Cuadro_de_Ventas
         Me.txtigtf.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.txtigtf.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtigtf.ForeColor = System.Drawing.Color.White
-        Me.txtigtf.Location = New System.Drawing.Point(103, 282)
+        Me.txtigtf.Location = New System.Drawing.Point(466, 282)
         Me.txtigtf.Margin = New System.Windows.Forms.Padding(0)
         Me.txtigtf.Name = "txtigtf"
         Me.txtigtf.Size = New System.Drawing.Size(100, 20)
@@ -428,7 +450,7 @@ Partial Class Cuadro_de_Ventas
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(6, 285)
+        Me.Label10.Location = New System.Drawing.Point(369, 285)
         Me.Label10.Margin = New System.Windows.Forms.Padding(0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(34, 13)
@@ -440,7 +462,7 @@ Partial Class Cuadro_de_Ventas
         Me.txtiva.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.txtiva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtiva.ForeColor = System.Drawing.Color.White
-        Me.txtiva.Location = New System.Drawing.Point(103, 263)
+        Me.txtiva.Location = New System.Drawing.Point(466, 263)
         Me.txtiva.Margin = New System.Windows.Forms.Padding(0)
         Me.txtiva.Name = "txtiva"
         Me.txtiva.Size = New System.Drawing.Size(100, 20)
@@ -452,7 +474,7 @@ Partial Class Cuadro_de_Ventas
         Me.lbiva.AutoSize = True
         Me.lbiva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbiva.ForeColor = System.Drawing.Color.White
-        Me.lbiva.Location = New System.Drawing.Point(6, 266)
+        Me.lbiva.Location = New System.Drawing.Point(369, 266)
         Me.lbiva.Margin = New System.Windows.Forms.Padding(0)
         Me.lbiva.Name = "lbiva"
         Me.lbiva.Size = New System.Drawing.Size(27, 13)
@@ -464,7 +486,7 @@ Partial Class Cuadro_de_Ventas
         Me.txt_total.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.txt_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_total.ForeColor = System.Drawing.Color.White
-        Me.txt_total.Location = New System.Drawing.Point(103, 246)
+        Me.txt_total.Location = New System.Drawing.Point(466, 246)
         Me.txt_total.Margin = New System.Windows.Forms.Padding(0)
         Me.txt_total.Name = "txt_total"
         Me.txt_total.Size = New System.Drawing.Size(100, 20)
@@ -476,7 +498,7 @@ Partial Class Cuadro_de_Ventas
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(6, 249)
+        Me.Label3.Location = New System.Drawing.Point(369, 249)
         Me.Label3.Margin = New System.Windows.Forms.Padding(0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 13)
@@ -589,28 +611,6 @@ Partial Class Cuadro_de_Ventas
         Me.Label1.Size = New System.Drawing.Size(83, 20)
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "NOMBRE:"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(0, 332)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(77, 20)
-        Me.Label9.TabIndex = 26
-        Me.Label9.Text = "BUSCAR"
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.BackColor = System.Drawing.Color.White
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
-        Me.txtBuscar.Location = New System.Drawing.Point(83, 329)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(246, 26)
-        Me.txtBuscar.TabIndex = 25
-        Me.txtBuscar.TabStop = False
         '
         'Cuadro_de_Ventas
         '

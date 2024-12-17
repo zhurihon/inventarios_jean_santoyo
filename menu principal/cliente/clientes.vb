@@ -22,15 +22,23 @@
 
                         If Comprobaciones.txtmail(mail.Text) And Comprobaciones.txtmaxymin(mail.Text, 32, 7) Then
                             mail.BackColor = vinotinto
-                            If controller.sql.registrar_cliente(CDbl(id.Text), nombre.Text, tlfno.Text, direccion.Text, mail.Text) Then
 
-                                id.Clear()
-                                nombre.Clear()
-                                tlfno.Clear()
-                                direccion.Clear()
-                                mail.Clear()
+                            If cbx_tid.SelectedIndex <> -1 Then
 
-                                tabla_clientes.DataSource = controller.sql.dataset_clientes().Tables(0)
+                                cbx_tid.BackColor = Color.White
+                                If controller.sql.registrar_cliente(cbx_tid.Text & id.Text, nombre.Text, tlfno.Text, direccion.Text, mail.Text) Then
+
+                                    id.Clear()
+                                    nombre.Clear()
+                                    tlfno.Clear()
+                                    direccion.Clear()
+                                    mail.Clear()
+
+                                    tabla_clientes.DataSource = controller.sql.dataset_clientes().Tables(0)
+
+                                End If
+                            Else
+                                cbx_tid.BackColor = Color.Red
 
                             End If
 
@@ -63,6 +71,7 @@
 
     Public Sub clientes_Load()
         tabla_clientes.DataSource = controller.sql.dataset_clientes.Tables(0)
+        cbx_tid.SelectedIndex = -1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) 
@@ -75,5 +84,9 @@
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         tabla_clientes.DataSource = controller.sql.buscar_clientetxt(txtBuscar.Text).Tables(0)
+    End Sub
+
+    Private Sub clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

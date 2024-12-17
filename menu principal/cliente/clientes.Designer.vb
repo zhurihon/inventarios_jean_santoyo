@@ -22,8 +22,10 @@ Partial Class clientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.direccion = New System.Windows.Forms.TextBox()
         Me.tlfno = New System.Windows.Forms.TextBox()
@@ -37,8 +39,7 @@ Partial Class clientes
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tabla_clientes = New System.Windows.Forms.DataGridView()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.cbx_tid = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.tabla_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,9 +62,33 @@ Partial Class clientes
         Me.Panel1.TabIndex = 12
         Me.Panel1.Visible = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.White
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(3, 141)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(77, 20)
+        Me.Label4.TabIndex = 28
+        Me.Label4.Text = "BUSCAR"
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.BackColor = System.Drawing.Color.White
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
+        Me.txtBuscar.Location = New System.Drawing.Point(86, 138)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(246, 26)
+        Me.txtBuscar.TabIndex = 27
+        Me.txtBuscar.TabStop = False
+        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.cbx_tid)
         Me.GroupBox1.Controls.Add(Me.direccion)
         Me.GroupBox1.Controls.Add(Me.tlfno)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -82,7 +107,7 @@ Partial Class clientes
         Me.GroupBox1.Size = New System.Drawing.Size(572, 133)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "AGREGAR PROVEEDOR"
+        Me.GroupBox1.Text = "REGISTRAR CLIENTES"
         '
         'direccion
         '
@@ -154,9 +179,9 @@ Partial Class clientes
         Me.id.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
         Me.id.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.id.ForeColor = System.Drawing.Color.White
-        Me.id.Location = New System.Drawing.Point(14, 34)
+        Me.id.Location = New System.Drawing.Point(63, 34)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(139, 26)
+        Me.id.Size = New System.Drawing.Size(90, 26)
         Me.id.TabIndex = 23
         '
         'nombre
@@ -216,35 +241,25 @@ Partial Class clientes
         Me.tabla_clientes.Name = "tabla_clientes"
         Me.tabla_clientes.ReadOnly = True
         Me.tabla_clientes.RowHeadersVisible = False
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.tabla_clientes.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.tabla_clientes.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.tabla_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.tabla_clientes.Size = New System.Drawing.Size(572, 297)
         Me.tabla_clientes.TabIndex = 8
         Me.tabla_clientes.TabStop = False
         '
-        'Label4
+        'cbx_tid
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.White
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(3, 141)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(77, 20)
-        Me.Label4.TabIndex = 28
-        Me.Label4.Text = "BUSCAR"
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.BackColor = System.Drawing.Color.White
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
-        Me.txtBuscar.Location = New System.Drawing.Point(86, 138)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(246, 26)
-        Me.txtBuscar.TabIndex = 27
-        Me.txtBuscar.TabStop = False
+        Me.cbx_tid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_tid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbx_tid.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbx_tid.FormattingEnabled = True
+        Me.cbx_tid.Items.AddRange(New Object() {"v-", "j-", "g-"})
+        Me.cbx_tid.Location = New System.Drawing.Point(16, 35)
+        Me.cbx_tid.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbx_tid.Name = "cbx_tid"
+        Me.cbx_tid.Size = New System.Drawing.Size(41, 24)
+        Me.cbx_tid.TabIndex = 36
         '
         'clientes
         '
@@ -279,4 +294,5 @@ Partial Class clientes
     Friend WithEvents tabla_clientes As DataGridView
     Friend WithEvents Label4 As Label
     Friend WithEvents txtBuscar As TextBox
+    Friend WithEvents cbx_tid As ComboBox
 End Class

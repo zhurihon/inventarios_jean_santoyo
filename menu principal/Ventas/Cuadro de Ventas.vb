@@ -226,7 +226,7 @@ Public Class Cuadro_de_Ventas
 
         If comprobar_factura() Then
 
-            Dim idfactura As Integer = controller.sql.Facturacion(miDataSet, CInt(sidcliente), servicio, txtDescripcion.Text, total)
+            Dim idfactura As Integer = controller.sql.Facturacion(miDataSet, sidcliente, servicio, txtDescripcion.Text, total)
 
             Dim datos_cliente As DataSet = controller.sql.consulta_clienteId(sidcliente)
 
@@ -236,7 +236,7 @@ Public Class Cuadro_de_Ventas
             debita_productos(ticket)
 
             '
-            factura.factura_Load(ticket, CDbl(txt_total.Text), txtDescripcion.Text, CDbl(txtMontoServicio.Text), sidcliente, datos_cliente, rbDivisa.Checked, idfactura)
+            factura.factura_Load(ticket, txt_total.Text, txtDescripcion.Text, CDbl(txtMontoServicio.Text), sidcliente, datos_cliente, rbDivisa.Checked, idfactura)
 
 
             tabla.DataSource = controller.sql.consulta_productos.Tables(0)
@@ -393,6 +393,8 @@ Public Class Cuadro_de_Ventas
             txtigtf.Text = 3 * (total / 100)
 
             igtf = 3 * (total / 100)
+        Else
+            txtigtf.Text = 0
         End If
 
         txtmontopagar.Text = (16 * (total / 100)) + igtf + total

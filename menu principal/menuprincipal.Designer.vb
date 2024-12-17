@@ -189,7 +189,7 @@ Partial Class menuprincipal
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(129, 33)
         Me.Button3.TabIndex = 16
-        Me.Button3.Text = "Inventario"
+        Me.Button3.Text = "Historial"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.Button3.UseVisualStyleBackColor = False
         '

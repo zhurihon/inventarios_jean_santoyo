@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cliente` (
-  `id` int NOT NULL,
+  `id` varchar(16) NOT NULL,
   `Nombre` varchar(64) DEFAULT NULL,
   `Telefono` varchar(45) DEFAULT NULL,
   `Direccion` varchar(45) DEFAULT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (31265030,'jesu gutierasddd','04265845698','guanta plc bna','jgtrrz@gmail.com'),(32569658,'Luis Marcano','041258698562','plc','lm@gmail.com'),(44587114,'Maria rojas','029145856984','iuy',NULL),(45874125,'beltran m','041256989541','plc','jdasm@gmail.com'),(441555566,'juan peres','041256954896','plc','juanp@gmil.com'),(458872326,'Juan jose lopez','0412228766','yuiytg',NULL);
+INSERT INTO `cliente` VALUES ('31265030','jesu gutierasddd','04265845698','guanta plc bna','jgtrrz@gmail.com'),('32569658','Luis Marcano','041258698562','plc','lm@gmail.com'),('441555566','juan peres','041256954896','plc','juanp@gmil.com'),('44587114','Maria rojas','029145856984','iuy',NULL),('45841123','jose jose','5956941256','españa','eljosejose@gmail.com'),('45874125','beltran m','041256989541','plc','jdasm@gmail.com'),('458872326','Juan jose lopez','0412228766','yuiytg',NULL),('j-14546698','juan juan','01452698745','plc','juan@maiñ.com');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-12 15:01:02
+-- Dump completed on 2024-12-17 19:11:46
