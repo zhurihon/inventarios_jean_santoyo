@@ -14,26 +14,12 @@ Public Class Form1
 
 
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles txtcontrasena.TextChanged
-
-    End Sub
-
     Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.TextChanged
         Dim Usuario As String = txtUsuario.Text
 
 
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-
-
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
 
@@ -48,9 +34,8 @@ Public Class Form1
     End Sub
 
     Private Sub btn_compras_Click(sender As Object, e As EventArgs) Handles btn_login.Click
-        Dim sql As New bdd
 
-        sql.login(txtUsuario.Text, txtcontrasena.Text)
+        controller.sql.login(txtUsuario.Text, txtcontrasena.Text)
 
     End Sub
 
@@ -78,7 +63,4 @@ Public Class Form1
         Application.Exit()
     End Sub
 
-    Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
-
-    End Sub
 End Class

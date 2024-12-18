@@ -6,6 +6,9 @@ Module conexion
         'Dim datos_servidor As String = "server=localhost; user id=root; password=25032003"
         Dim datos_servidor As String = "server=localhost; user id=root; password=30p1drd3; database =santoyo"
 
+        Public userbdd As String = ""
+        Public cargobdd As String = ""
+
         Public miconexion As MySqlConnection = New MySqlConnection(datos_servidor)
 
         Public Sub login(name, pass)
@@ -21,20 +24,14 @@ Module conexion
                 MsgBox("los datos están incorrectos, inténtelo de nuevo")
                 miconexion.Close()
             Else
-
-                For Each roww As DataRow In datos_recebidos.Tables("usuario").Rows
-                    'MsgBox("Bienvenido," & roww("usuario"))
-
-                    Form1.Hide()
-
-
-                    menuprincipal.Show()
-                    miconexion.Close()
-
-                Next
-
-
                 miconexion.Close()
+                cargobdd = datos_recebidos.Tables(0).Rows(0).Item("cargo").ToString
+
+                userbdd = datos_recebidos.Tables(0).Rows(0).Item("usuario").ToString
+                MsgBox(cargobdd & " " & userbdd)
+                Form1.Hide()
+                menuprincipal.Show()
+
 
             End If
 

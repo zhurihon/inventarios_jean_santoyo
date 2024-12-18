@@ -56,10 +56,11 @@ Module Comprobaciones
         Public mail As Boolean = 0
         Public nombre As Boolean = 0
         Public id As Boolean = 0
+        Public tid As Boolean = 0
         Public descripcion As Boolean = 0
         Public direccion As Boolean = 0
         Public Function comprobar() As Boolean
-            Return telefono And mail And nombre And id And descripcion And direccion
+            Return telefono And mail And nombre And id And descripcion And direccion And tid
         End Function
     End Class
 

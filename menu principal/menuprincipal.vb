@@ -230,17 +230,19 @@ Public Class menuprincipal
     End Sub
 
     Private Sub btn_proveedores_Click(sender As Object, e As EventArgs) Handles btn_proveedores.Click
+
         ocultar_paneles()
-        ventana_proveedor.Visible = 1
+            ventana_proveedor.Visible = 1
         proveedor.mostrar_proveedores()
     End Sub
 
 
     Private Sub btn_productos_Click(sender As Object, e As EventArgs) Handles btn_productos.Click
+
         ocultar_paneles()
-        ventana_producto.Visible = 1
-        Productos.cargar_produtos(mostrar_Productos())
-        Productos.load_panel()
+            ventana_producto.Visible = 1
+            Productos.cargar_produtos(mostrar_Productos())
+            Productos.load_panel()
 
     End Sub
 
@@ -259,15 +261,22 @@ Public Class menuprincipal
     End Sub
 
     Private Sub btn_ventas_Click(sender As Object, e As EventArgs) Handles btn_ventas.Click
-        ocultar_paneles()
-        ventana_ventas.Visible = 1
-        Cuadro_de_Ventas.load_ventas()
+
+        If controller.sql.cargobdd = "empleado" Then
+            MsgBox("No tiene acceso")
+        Else
+            ocultar_paneles()
+            ventana_ventas.Visible = 1
+            Cuadro_de_Ventas.load_ventas()
+        End If
     End Sub
 
     Private Sub btn_compras_Click(sender As Object, e As EventArgs) Handles btn_compras.Click
+
         ocultar_paneles()
-        ventana_compras.Visible = 1
+            ventana_compras.Visible = 1
         CuadroCompras.load_compras()
+
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
@@ -275,9 +284,10 @@ Public Class menuprincipal
     End Sub
 
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+
         ocultar_paneles()
-        ventana_inventario.Visible = 1
-        Inventario.load_inventario()
+            ventana_inventario.Visible = 1
+            Inventario.load_inventario()
 
     End Sub
 
@@ -294,15 +304,23 @@ Public Class menuprincipal
     End Sub
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-        ocultar_paneles()
-        ventana_reporte.Visible = 1
+
+            ocultar_paneles()
+            ventana_reporte.Visible = 1
 
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ocultar_paneles()
-        ventana_usuarios.Visible = 1
-        usuarios.Usuarios_Load()
+
+        If controller.sql.cargobdd = "jefe" Then
+
+            ocultar_paneles()
+            ventana_usuarios.Visible = 1
+            usuarios.Usuarios_Load()
+        Else
+            MsgBox("No tiene acceso")
+        End If
+
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -312,14 +330,18 @@ Public Class menuprincipal
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
         ocultar_paneles()
-        ventana_servicio.Visible = 1
+            ventana_servicio.Visible = 1
         Servicios.Servicios_Load()
+
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+
         ocultar_paneles()
-        ventana_prestamo.Visible = 1
-        prestamos.prestamos_Load()
+            ventana_prestamo.Visible = 1
+            prestamos.prestamos_Load()
+
     End Sub
 End Class

@@ -22,8 +22,10 @@ Partial Class CuadroCompras
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtIngresar = New System.Windows.Forms.TextBox()
@@ -49,8 +51,6 @@ Partial Class CuadroCompras
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -75,6 +75,28 @@ Partial Class CuadroCompras
         Me.Panel1.Size = New System.Drawing.Size(578, 477)
         Me.Panel1.TabIndex = 13
         Me.Panel1.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(3, 231)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(77, 20)
+        Me.Label2.TabIndex = 24
+        Me.Label2.Text = "BUSCAR"
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.BackColor = System.Drawing.Color.White
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
+        Me.txtBuscar.Location = New System.Drawing.Point(86, 228)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(246, 26)
+        Me.txtBuscar.TabIndex = 23
+        Me.txtBuscar.TabStop = False
         '
         'GroupBox1
         '
@@ -310,6 +332,7 @@ Partial Class CuadroCompras
         '
         'tabla
         '
+        Me.tabla.AllowUserToAddRows = False
         Me.tabla.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -321,8 +344,8 @@ Partial Class CuadroCompras
         Me.tabla.Name = "tabla"
         Me.tabla.ReadOnly = True
         Me.tabla.RowHeadersVisible = False
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.tabla.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.tabla.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.tabla.Size = New System.Drawing.Size(571, 208)
         Me.tabla.TabIndex = 8
@@ -362,28 +385,6 @@ Partial Class CuadroCompras
         Me.cantidad.ReadOnly = True
         Me.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.BackColor = System.Drawing.Color.White
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.ForeColor = System.Drawing.Color.Black
-        Me.txtBuscar.Location = New System.Drawing.Point(86, 228)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(246, 26)
-        Me.txtBuscar.TabIndex = 23
-        Me.txtBuscar.TabStop = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(3, 231)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 20)
-        Me.Label2.TabIndex = 24
-        Me.Label2.Text = "BUSCAR"
         '
         'CuadroCompras
         '

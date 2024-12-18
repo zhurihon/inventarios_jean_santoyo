@@ -43,6 +43,7 @@ Partial Class proveedor
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tabla_proveedores = New System.Windows.Forms.DataGridView()
+        Me.cbx_tid = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.tabla_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,7 +71,7 @@ Partial Class proveedor
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(3, 220)
+        Me.Label4.Location = New System.Drawing.Point(3, 219)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 20)
         Me.Label4.TabIndex = 28
@@ -81,7 +82,7 @@ Partial Class proveedor
         Me.txtBuscar.BackColor = System.Drawing.Color.White
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.ForeColor = System.Drawing.Color.Black
-        Me.txtBuscar.Location = New System.Drawing.Point(86, 217)
+        Me.txtBuscar.Location = New System.Drawing.Point(86, 216)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(246, 26)
         Me.txtBuscar.TabIndex = 27
@@ -90,6 +91,7 @@ Partial Class proveedor
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(12, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.cbx_tid)
         Me.GroupBox1.Controls.Add(Me.descripcion)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.direccion)
@@ -221,9 +223,9 @@ Partial Class proveedor
         'id
         '
         Me.id.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.id.Location = New System.Drawing.Point(14, 34)
+        Me.id.Location = New System.Drawing.Point(59, 34)
         Me.id.Name = "id"
-        Me.id.Size = New System.Drawing.Size(139, 26)
+        Me.id.Size = New System.Drawing.Size(94, 26)
         Me.id.TabIndex = 23
         '
         'nombre
@@ -267,6 +269,7 @@ Partial Class proveedor
         '
         'tabla_proveedores
         '
+        Me.tabla_proveedores.AllowUserToAddRows = False
         Me.tabla_proveedores.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -283,6 +286,19 @@ Partial Class proveedor
         Me.tabla_proveedores.Size = New System.Drawing.Size(572, 218)
         Me.tabla_proveedores.TabIndex = 8
         Me.tabla_proveedores.TabStop = False
+        '
+        'cbx_tid
+        '
+        Me.cbx_tid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbx_tid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbx_tid.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbx_tid.FormattingEnabled = True
+        Me.cbx_tid.Items.AddRange(New Object() {"v-", "j-", "g-"})
+        Me.cbx_tid.Location = New System.Drawing.Point(15, 34)
+        Me.cbx_tid.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbx_tid.Name = "cbx_tid"
+        Me.cbx_tid.Size = New System.Drawing.Size(41, 26)
+        Me.cbx_tid.TabIndex = 38
         '
         'proveedor
         '
@@ -321,4 +337,5 @@ Partial Class proveedor
     Friend WithEvents Label7 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txtBuscar As TextBox
+    Friend WithEvents cbx_tid As ComboBox
 End Class

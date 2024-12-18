@@ -8,6 +8,7 @@ Public Class proveedor
 
     Public Sub mostrar_proveedores()
         tabla_proveedores.DataSource = menuprincipal.mostrar_proveedores().Tables(0)
+        cbx_tid.SelectedIndex = -1
     End Sub
 
     Public Sub clear()
@@ -25,7 +26,7 @@ Public Class proveedor
         If btn_nuevo_prov.Text = "REGISTRA NUEVO PROVEEDOR" Then
             If control_proveedor.comprobar() Then
 
-                controller.sql.registrar_proveedor(id.Text, nombre.Text, tlfno.Text, direccion.Text, mail.Text, descripcion.Text)
+                controller.sql.registrar_proveedor(cbx_tid.Text & id.Text, nombre.Text, tlfno.Text, direccion.Text, mail.Text, descripcion.Text)
                 clear()
                 mostrar_proveedores()
             Else
@@ -57,7 +58,16 @@ Public Class proveedor
             Dim row As DataGridViewRow = tabla_proveedores.Rows(e.RowIndex)
             tabla_proveedores.Rows(e.RowIndex).Selected = True
 
-            id.Text = row.Cells("Identificacion").Value.ToString
+
+
+
+            Dim ids As String = row.Cells("Identificacion").Value.ToString
+            id.Text = ids.Substring(2)
+            cbx_tid.Text = ids.Substring(0, 2)
+
+
+
+
             nombre.Text = row.Cells("Nombre").Value.ToString
             tlfno.Text = row.Cells("Numero").Value.ToString
             direccion.Text = row.Cells("Direccion").Value.ToString
@@ -84,7 +94,7 @@ Public Class proveedor
     Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
 
 
-        controller.sql.eliminar_proveedor(id.Text)
+        controller.sql.eliminar_proveedor(cbx_tid.Text & id.Text)
 
         If btn_eliminar.Text = "inactivo" Then
             btn_eliminar.Text = "activo"
@@ -108,7 +118,7 @@ Public Class proveedor
         ' Si el usuario selecciona "No", salir de la función
         If resultado = DialogResult.Yes Then
 
-            controller.sql.actualizar_proveedor(pk, id.Text, nombre.Text, tlfno.Text, mail.Text, direccion.Text, descripcion.Text)
+            controller.sql.actualizar_proveedor(pk, cbx_tid.Text & id.Text, nombre.Text, tlfno.Text, mail.Text, direccion.Text, descripcion.Text)
 
             btn_eliminar.Enabled = 0
             btn_modificar.Enabled = 0
@@ -182,5 +192,9 @@ Public Class proveedor
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         tabla_proveedores.DataSource = controller.sql.dataset_ProveedoresTxt(txtBuscar.Text).Tables(0)
+    End Sub
+
+    Private Sub cbx_tid_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbx_tid.SelectedIndexChanged
+        control_proveedor.tid = 1
     End Sub
 End Class
