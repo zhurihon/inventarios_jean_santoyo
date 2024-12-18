@@ -730,6 +730,31 @@ Module conexion
         End Function
 
 
+        Public Function modificar_servicio(precio As Double, descripcion As String, pk As Int16) As Boolean
+            Try
+                miconexion.Open()
+
+                Dim cmd As New MySqlCommand("UPDATE servicios set precio = @precio , descripcion = @descripcion WHERE id = @id", miconexion)
+                cmd.Parameters.AddWithValue("@precio", precio)
+                cmd.Parameters.AddWithValue("@descripcion", descripcion)
+                cmd.Parameters.AddWithValue("@id", pk)
+                cmd.ExecuteNonQuery()
+
+                miconexion.Close()
+
+
+            Catch ex As Exception
+                ' Manejo de errores (puedes registrar el error o mostrar un mensaje)
+                MsgBox("Error: " & ex.Message)
+            Finally
+                ' Asegurarse de cerrar la conexión
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
+
+
 
 
         Public Function registrar_proveedor(id As String, nombre As String, numero As String, direccion As String, mail As String, descripcion As String) As Boolean
