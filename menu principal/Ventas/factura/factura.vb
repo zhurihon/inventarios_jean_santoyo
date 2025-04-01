@@ -1,4 +1,6 @@
-﻿Public Class factura
+﻿Imports System.Drawing.Drawing2D
+
+Public Class factura
 
 
     Dim printLine As Integer = 0
@@ -119,6 +121,44 @@
 
 
 
+
+    Public Sub facturAlquilerRECIBO_Load(info As alquilerclass)
+
+
+
+
+
+
+
+
+        Dim dtcliente As DataSet = controller.sql.consulta_clienteId(info.idCliente)
+        Dim dtprod As DataSet = controller.sql.InfoProductoId(info.codHerramienta)
+
+
+        servicio = "Alquiler " & info.cantidad & dtprod.Tables(0).Rows(0).Item("nombre")
+        precioservicio = info.inicial + (info.dias * info.costoDias) ' precio del alquiler
+        'total = 0 'total con días
+        cliente.Text = "Cliente: " & dtcliente.Tables(0).Rows(0).Item("Nombre")
+        clienteDocumento.Text = "Documento: " & dtcliente.Tables(0).Rows(0).Item("id").ToString
+        clienteNumero.Text = "Número: " & dtcliente.Tables(0).Rows(0).Item("Telefono").ToString
+        clienteDireccion.Text = dtcliente.Tables(0).Rows(0).Item("Direccion").ToString
+
+        total = info.inicial + (info.dias * info.costoDias)
+
+        idfactura.Text = info.idfactura
+
+        dgv_tabla.Rows.Clear()
+        dgv_tabla.Columns.Clear()
+
+        PrintDialog1.Document = PrintDocument2
+
+        PrintPreviewDialog1.Document = PrintDocument2
+        PrintPreviewDialog1.WindowState = FormWindowState.Maximized
+        PrintPreviewDialog1.ShowDialog()
+
+    End Sub
+
+
     Private Sub PrintDocument2_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument2.PrintPage
 
         Dim dt As New DataSet
@@ -236,6 +276,25 @@
 
             e.Graphics.DrawString(total + (total * 16 / 100), FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
         End If
+
+        startY += 20
+        e.Graphics.DrawString("Este comprobante indica la devolución de la o las herramientas el día " & DateTime.Now.ToString, FuenteNegrita, Brushes.Green, e.MarginBounds.Left, startY)
+
+
+
+
+
+        ' Establecer EL TEXTO DE RECIVIDO <3
+        Dim rojoTranslucido As Color = Color.FromArgb(128, 255, 0, 0)
+        Dim textoRecibido As String = "RECIBIDO"
+        Dim fuenteRotada As New Font("Microsoft Sans Serif", 50, FontStyle.Bold)
+        Dim estadoOriginal As GraphicsState = e.Graphics.Save()
+        e.Graphics.RotateTransform(45)
+        e.Graphics.DrawString(textoRecibido, fuenteRotada, New SolidBrush(rojoTranslucido), 200, -150)
+        e.Graphics.Restore(estadoOriginal)
+        '
+
+
 
 
         ''''''''''''''''el data gri

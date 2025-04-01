@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports SantoyoSys.factura
 
 Module conexion
     Public Class bdd
@@ -1811,6 +1812,43 @@ ORDER BY total_ventas DESC;", miconexion)
                 End If
             End Try
         End Function
+
+        Public Function obtener_prestamoPorId(idPrestamo As Integer) As alquilerclass
+            Dim alquiler As alquilerclass = Nothing ' Inicializar la variable de retorno
+            Try
+                miconexion.Open()
+                Dim comando As New MySqlCommand("SELECT * FROM prestamos WHERE id = @id", miconexion)
+                comando.Parameters.AddWithValue("@id", idPrestamo)
+
+                ' Ejecutar el comando y leer el resultado
+                Using reader As MySqlDataReader = comando.ExecuteReader()
+                    If reader.Read() Then
+                        ' Crear una nueva instancia de alquilerclass y llenar sus propiedades
+                        alquiler = New alquilerclass()
+                        alquiler.idfactura = Convert.ToInt32(reader("id")) ' Asumiendo que hay un campo "id" en la tabla
+                        alquiler.codHerramienta = reader("codherramienta").ToString()
+                        alquiler.idCliente = reader("clienteid").ToString()
+                        alquiler.cantidad = Convert.ToInt32(reader("cantidad"))
+                        alquiler.dias = Convert.ToInt32(reader("dias"))
+                        alquiler.inicial = Convert.ToDouble(reader("inicial"))
+                        alquiler.costoDias = Convert.ToDouble(reader("diario")) ' Asumiendo que "diario" es el costo diario
+                        alquiler.fechaRetiro = Convert.ToDateTime(reader("fechaprestamo")) ' Asumiendo que hay un campo "fechaprestamo"
+                        alquiler.fechaLimite = Convert.ToDateTime(reader("fechalimite"))
+                        'alquiler.tipopago = Convert.ToBoolean(reader("tipopago")) ' Asumiendo que hay un campo "tipopago"
+                    End If
+                End Using
+
+                Return alquiler ' Devolver el objeto alquiler o Nothing si no se encontró
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message)
+                Return Nothing ' Devolver Nothing en caso de error
+            Finally
+                If miconexion IsNot Nothing AndAlso miconexion.State = ConnectionState.Open Then
+                    miconexion.Close()
+                End If
+            End Try
+        End Function
+
 
         Public Function prestamo_recibido(id As String) As Boolean
             Try

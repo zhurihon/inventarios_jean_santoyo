@@ -1,4 +1,6 @@
-﻿Public Class prestamos
+﻿Imports SantoyoSys.factura
+
+Public Class prestamos
 
     Private id As Integer = -1
 
@@ -101,7 +103,11 @@
             MsgBox("selecione algún préstamo")
         Else
             'id eliminamos de los press
+
+            Dim comprobanteDeRecibo As alquilerclass = controller.sql.obtener_prestamoPorId(id)
+
             controller.sql.prestamo_recibido(id)
+            factura.facturAlquilerRECIBO_Load(comprobanteDeRecibo)
             prestamos_update()
             id = -1
         End If
