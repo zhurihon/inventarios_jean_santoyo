@@ -1853,6 +1853,28 @@ ORDER BY total_ventas DESC;", miconexion)
         Public Function prestamo_recibido(id As String) As Boolean
             Try
                 miconexion.Open()
+
+
+
+
+                Dim data As New MySqlCommand("SELECT codherramienta, cantidad FROM prestamos where id = @id;", miconexion)
+                data.Parameters.AddWithValue("@id", id)
+                Dim con As New MySqlDataAdapter(data)
+
+                Dim dt As New DataSet
+
+                con.Fill(dt, "dta")
+
+
+
+                Dim restore As New MySqlCommand("UPDATE producto SET cantidad = cantidad + @cantidad WHERE cod = @cod;", miconexion)
+                restore.Parameters.AddWithValue("@cod", dt.Tables(0).Rows(0).Item("codherramienta"))
+                restore.Parameters.AddWithValue("@cantidad", dt.Tables(0).Rows(0).Item("cantidad"))
+
+                restore.ExecuteNonQuery()
+
+
+
                 Dim comando As New MySqlCommand("DELETE FROM prestamos where id = @id;", miconexion)
                 comando.Parameters.AddWithValue("@id", id)
 

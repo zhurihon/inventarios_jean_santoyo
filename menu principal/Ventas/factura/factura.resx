@@ -121,7 +121,7 @@
   <data name="logo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPwAAAEdCAYAAAAoxAr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAYgpJREFUeF7tnWd8VEUXh02yJb1n+6b3XmgBQi8qxYJdkSKiKIooIlgRFSvSlaLS
+        wgAADsIBFShKgAAAYgpJREFUeF7tnWd8VEUXh02yJb1n+6b3XmgBQi8qxYJdkSKiKIooIlgRFSvSlaLS
         QUCaNBWl957ee9ls32TT27xz7mZ5Iw6SQBLYdT48v3v37L2z9T/nTDtzH0KIQqH8RyAaKRSKeUI0UigU
         84RopFAo5gnRSKFQzBOikUKhmCdEI4VCMU+IRgqFYp4QjRQKxTwhGikUinlCNFIoFPOEaKRQKOYJ0Ui5
         92hpabEg2SmUjkA0Uu4d1CqV6Mqly4MunDs/9tzpM+POnTrzyMVz58dcOn/h/sSr1wYnXUtMSE5M6pt4
@@ -729,5 +729,8 @@
   </metadata>
   <metadata name="PrintDocument2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>437, 17</value>
+  </metadata>
+  <metadata name="PrintDocument3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>578, 17</value>
   </metadata>
 </root>

@@ -43,7 +43,7 @@
             info.fechaRetiro = Date.Today
             info.tipopago = rbDivisa.Checked
             info.dias = DateDiff(DateInterval.Day, DateTime.Now.Date, dtpLimite.Value.Date)
-            factura.facturAlquiler_Load(info)
+            factura.nuevaFacturAlquiler_Load(info)
 
             DialogResult = DialogResult.OK
             Me.Close()

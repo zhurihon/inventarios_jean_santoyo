@@ -71,6 +71,7 @@ Partial Class factura
         Me.labelDireccion = New System.Windows.Forms.Label()
         Me.PrintDocument2 = New System.Drawing.Printing.PrintDocument()
         Me.idfactura = New System.Windows.Forms.Label()
+        Me.PrintDocument3 = New System.Drawing.Printing.PrintDocument()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_tabla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -532,6 +533,9 @@ Partial Class factura
         Me.idfactura.TabIndex = 81
         Me.idfactura.Text = "Factura"
         '
+        'PrintDocument3
+        '
+        '
         'factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -637,4 +641,5 @@ Partial Class factura
     Friend WithEvents labelDireccion As Label
     Friend WithEvents PrintDocument2 As Printing.PrintDocument
     Friend WithEvents idfactura As Label
+    Friend WithEvents PrintDocument3 As Printing.PrintDocument
 End Class
