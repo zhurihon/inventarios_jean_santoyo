@@ -51,7 +51,7 @@
         Else
             MsgBox("Selecione un servicio común, o cancela la operción")
         End If
-
+        prestamos.prestamos_Load()
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click

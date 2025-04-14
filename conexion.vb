@@ -1798,6 +1798,8 @@ ORDER BY total_ventas DESC;", miconexion)
                 ' Ejecutar la inserción
                 comando.ExecuteNonQuery()
 
+                comando.CommandText = "UPDATE producto SET cantidad = cantidad - @cantidad WHERE cod = @codh ;"
+                comando.ExecuteNonQuery()
                 ' Obtener el ID del último registro insertado
                 Dim idComando As New MySqlCommand("SELECT LAST_INSERT_ID()", miconexion)
                 idPrestamo = Convert.ToInt64(idComando.ExecuteScalar())

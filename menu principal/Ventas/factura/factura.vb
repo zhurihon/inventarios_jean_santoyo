@@ -92,6 +92,9 @@ Public Class factura
 
     Private Sub PrintDocument3_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument3.PrintPage
 
+        '
+        ' Factura, salida de herramientas prestadas
+        '
 
         Dim dt As New DataSet
         Dim FuenteTitulo As New Font("Microsoft Sans Serif", 10)
@@ -178,6 +181,7 @@ Public Class factura
         startY += 20
         e.Graphics.DrawString(servicio, FuenteSubtitulo, Brushes.Black, e.MarginBounds.Left, startY)
         e.Graphics.DrawString(precioservicio, FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
+        e.Graphics.DrawString(p3.Text, FuenteDetalles, Brushes.Black, Me.p3.Left, startY)
         startY += 20
 
         e.Graphics.DrawLine(Pens.Black, e.MarginBounds.Left, startY, e.MarginBounds.Right, startY)
@@ -244,6 +248,8 @@ Public Class factura
         clienteNumero.Text = "Número: " & dtcliente.Tables(0).Rows(0).Item("Telefono").ToString
         clienteDireccion.Text = dtcliente.Tables(0).Rows(0).Item("Direccion").ToString
 
+        p3.Text = info.cantidad
+
         total = info.inicial + (info.dias * info.costoDias)
 
         idfactura.Text = info.idfactura
@@ -251,7 +257,7 @@ Public Class factura
         dgv_tabla.Rows.Clear()
         dgv_tabla.Columns.Clear()
 
-        PrintDialog1.Document = PrintDocument2
+        PrintDialog1.Document = PrintDocument3
 
         PrintPreviewDialog1.Document = PrintDocument3
         PrintPreviewDialog1.WindowState = FormWindowState.Maximized
@@ -325,6 +331,7 @@ Public Class factura
 
         total = info.inicial + (info.dias * info.costoDias)
 
+        p3.Text = info.cantidad
         idfactura.Text = info.idfactura
 
         dgv_tabla.Rows.Clear()
@@ -426,6 +433,7 @@ Public Class factura
         startY += 20
         e.Graphics.DrawString(servicio, FuenteSubtitulo, Brushes.Black, e.MarginBounds.Left, startY)
         e.Graphics.DrawString(precioservicio, FuenteDetalles, Brushes.Black, Me.p4.Left, startY)
+        e.Graphics.DrawString(p3.Text, FuenteDetalles, Brushes.Black, Me.p3.Left, startY)
         startY += 20
 
         e.Graphics.DrawLine(Pens.Black, e.MarginBounds.Left, startY, e.MarginBounds.Right, startY)
