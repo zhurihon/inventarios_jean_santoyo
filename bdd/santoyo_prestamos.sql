@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: santoyo
+-- Host: localhost    Database: santoyo
 -- ------------------------------------------------------
--- Server version	9.0.1
+-- Server version	8.0.40
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -33,7 +33,7 @@ CREATE TABLE `prestamos` (
   `diario` double DEFAULT NULL,
   `dias` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `prestamos` (
 
 LOCK TABLES `prestamos` WRITE;
 /*!40000 ALTER TABLE `prestamos` DISABLE KEYS */;
-INSERT INTO `prestamos` VALUES (15,'H1','2024-12-12','2024-12-20',1,'458872326',200,50,8),(16,'H1','2024-12-12','2024-12-20',1,'44587114',45,20,8),(17,'H1','2024-12-12','2024-12-14',1,'458872326',90,100,2),(18,'H1','2024-12-12','2024-12-22',1,'45874125',400,100,10),(19,'H1','2024-12-12','2024-12-13',1,'45874125',100,100,1);
+INSERT INTO `prestamos` VALUES (21,'H1','2025-04-13','2025-04-24',1,'441555566',50,45,11),(22,'H1','2025-04-13','2025-08-16',1,'45874125',4,1,125),(24,'H1','2025-04-13','2025-06-18',1,'45841123',4,10,66),(25,'H1','2025-04-13','2029-11-30',1,'44587114',4,60,1692),(29,'H1','2025-04-13','2025-08-01',1,'458872326',8,8,110);
 /*!40000 ALTER TABLE `prestamos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-12 15:01:03
+-- Dump completed on 2025-04-13 22:06:26

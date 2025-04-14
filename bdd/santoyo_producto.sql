@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: santoyo
+-- Host: localhost    Database: santoyo
 -- ------------------------------------------------------
--- Server version	9.0.1
+-- Server version	8.0.40
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -38,7 +38,7 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES ('Ac1','aceites gpt1',5,20,'Aceites'),('H1','Esmeril',0,12,'Herramienta'),('Rp1','compresor 5btu',66,50,'Repuesto');
+INSERT INTO `producto` VALUES ('Ac1','aceites gpt1',5,20,'Aceites'),('H1','Esmeril',4,12,'Herramienta'),('Rp1','compresor 5btu',66,50,'Repuesto');
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-12 15:01:03
+-- Dump completed on 2025-04-13 22:06:27
